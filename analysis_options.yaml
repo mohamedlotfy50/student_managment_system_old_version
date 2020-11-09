@@ -1,0 +1,7 @@
+include: package:lint/analysis_options.yaml
+# this lint package for writing best practice code
+# don't delete 
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
