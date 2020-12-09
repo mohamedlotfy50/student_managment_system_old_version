@@ -2,15 +2,16 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/auth/auth_failure.dart';
-import 'package:e_exame/domain/auth/auth_methods.dart';
-import 'package:e_exame/domain/auth/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../domain/auth/auth_failure.dart';
+import '../../../domain/auth/auth_methods.dart';
+import '../../../domain/auth/value_objects.dart';
+
+part 'signin_bloc.freezed.dart';
 part 'signin_event.dart';
 part 'signin_state.dart';
-part 'signin_bloc.freezed.dart';
 
 @injectable
 class SigninBloc extends Bloc<SigninEvent, SigninState> {

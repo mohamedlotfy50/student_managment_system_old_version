@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/auth/auth_failure.dart';
-import 'package:e_exame/domain/auth/value_objects.dart';
 import 'package:flutter/foundation.dart';
+
+import 'auth_failure.dart';
+import 'value_objects.dart';
 
 abstract class AuthMethods {
   //TODO: fixing the right side after creating the data transfere objects
@@ -34,7 +35,7 @@ abstract class AuthMethods {
   Future<Either<AuthFailure, Unit>> setToken({
     @required String token,
   });
-  Future<Either<AuthFailure, Unit>> checkToken();
+  Future<Either<AuthFailure, String>> checkToken();
 
   Future<void> signOut();
 }

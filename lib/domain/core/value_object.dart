@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/core/error.dart';
-import 'package:e_exame/domain/core/value_failure.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:uuid/uuid.dart';
+
+import 'error.dart';
+import 'value_failure.dart';
 
 @immutable
 abstract class ValueObject<T> {
@@ -26,4 +28,21 @@ abstract class ValueObject<T> {
 
   @override
   String toString() => 'value:($value)';
+}
+
+class UniqueID extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory UniqueID() {
+    return UniqueID._(
+      right(Uuid().v1()),
+    );
+  }
+
+  factory UniqueID.fromUniqueString(String id) {
+    assert(id != null);
+    return UniqueID._(right(id));
+  }
+  const UniqueID._(this.value);
 }

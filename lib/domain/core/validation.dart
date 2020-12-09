@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/core/value_failure.dart';
+
+import 'value_failure.dart';
 
 Either<ValueFailure<String>, String> emailValidation(String value) {
   const String regex =

@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/core/validation.dart';
-import 'package:e_exame/domain/core/value_failure.dart';
-import 'package:e_exame/domain/core/value_object.dart';
+
+import '../core/validation.dart';
+import '../core/value_failure.dart';
+import '../core/value_object.dart';
 
 class EmailAddress extends ValueObject<String> {
   static const int maxLength = 30;
@@ -28,8 +29,8 @@ class Password extends ValueObject<String> {
   factory Password(String input) {
     assert(input != null);
     return Password._(
-      passwordValidation(input)
-          .flatMap((a) => minLengthValidation(a, minLength))
+      minLengthValidation(input, minLength)
+          .flatMap((a) => passwordValidation(a))
           .flatMap((a) => maxLengthValidation(a, maxLength)),
     );
   }

@@ -14,11 +14,6 @@ class _$AuthFailureTearOff {
   const _$AuthFailureTearOff();
 
 // ignore: unused_element
-  CancelledByUser cancelledByUser() {
-    return const CancelledByUser();
-  }
-
-// ignore: unused_element
   EmailIsAlreadyInUse emailIsAlreadyInUse() {
     return const EmailIsAlreadyInUse();
   }
@@ -44,8 +39,8 @@ class _$AuthFailureTearOff {
   }
 
 // ignore: unused_element
-  TokenError tokenError() {
-    return const TokenError();
+  NoTokenFound noTokenFound() {
+    return const NoTokenFound();
   }
 }
 
@@ -57,28 +52,25 @@ const $AuthFailure = _$AuthFailureTearOff();
 mixin _$AuthFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result cancelledByUser(),
     @required Result emailIsAlreadyInUse(),
     @required Result wrongEmailAndPasswordCompination(),
     @required Result serverError(),
     @required Result noSuchLevel(),
     @required Result noSuchCategory(),
-    @required Result tokenError(),
+    @required Result noTokenFound(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
     Result emailIsAlreadyInUse(),
     Result wrongEmailAndPasswordCompination(),
     Result serverError(),
     Result noSuchLevel(),
     Result noSuchCategory(),
-    Result tokenError(),
+    Result noTokenFound(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
     @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     @required
         Result wrongEmailAndPasswordCompination(
@@ -86,18 +78,17 @@ mixin _$AuthFailure {
     @required Result serverError(ServerError value),
     @required Result noSuchLevel(NoSuchLevel value),
     @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
+    @required Result noTokenFound(NoTokenFound value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
     Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     Result wrongEmailAndPasswordCompination(
         WrongEmailAndPasswordCompination value),
     Result serverError(ServerError value),
     Result noSuchLevel(NoSuchLevel value),
     Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
+    Result noTokenFound(NoTokenFound value),
     @required Result orElse(),
   });
 }
@@ -116,130 +107,6 @@ class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
   final AuthFailure _value;
   // ignore: unused_field
   final $Res Function(AuthFailure) _then;
-}
-
-/// @nodoc
-abstract class $CancelledByUserCopyWith<$Res> {
-  factory $CancelledByUserCopyWith(
-          CancelledByUser value, $Res Function(CancelledByUser) then) =
-      _$CancelledByUserCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$CancelledByUserCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
-    implements $CancelledByUserCopyWith<$Res> {
-  _$CancelledByUserCopyWithImpl(
-      CancelledByUser _value, $Res Function(CancelledByUser) _then)
-      : super(_value, (v) => _then(v as CancelledByUser));
-
-  @override
-  CancelledByUser get _value => super._value as CancelledByUser;
-}
-
-/// @nodoc
-class _$CancelledByUser implements CancelledByUser {
-  const _$CancelledByUser();
-
-  @override
-  String toString() {
-    return 'AuthFailure.cancelledByUser()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CancelledByUser);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
-    @required Result emailIsAlreadyInUse(),
-    @required Result wrongEmailAndPasswordCompination(),
-    @required Result serverError(),
-    @required Result noSuchLevel(),
-    @required Result noSuchCategory(),
-    @required Result tokenError(),
-  }) {
-    assert(cancelledByUser != null);
-    assert(emailIsAlreadyInUse != null);
-    assert(wrongEmailAndPasswordCompination != null);
-    assert(serverError != null);
-    assert(noSuchLevel != null);
-    assert(noSuchCategory != null);
-    assert(tokenError != null);
-    return cancelledByUser();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    Result emailIsAlreadyInUse(),
-    Result wrongEmailAndPasswordCompination(),
-    Result serverError(),
-    Result noSuchLevel(),
-    Result noSuchCategory(),
-    Result tokenError(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (cancelledByUser != null) {
-      return cancelledByUser();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
-    @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
-    @required
-        Result wrongEmailAndPasswordCompination(
-            WrongEmailAndPasswordCompination value),
-    @required Result serverError(ServerError value),
-    @required Result noSuchLevel(NoSuchLevel value),
-    @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
-  }) {
-    assert(cancelledByUser != null);
-    assert(emailIsAlreadyInUse != null);
-    assert(wrongEmailAndPasswordCompination != null);
-    assert(serverError != null);
-    assert(noSuchLevel != null);
-    assert(noSuchCategory != null);
-    assert(tokenError != null);
-    return cancelledByUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
-    Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
-    Result wrongEmailAndPasswordCompination(
-        WrongEmailAndPasswordCompination value),
-    Result serverError(ServerError value),
-    Result noSuchLevel(NoSuchLevel value),
-    Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (cancelledByUser != null) {
-      return cancelledByUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CancelledByUser implements AuthFailure {
-  const factory CancelledByUser() = _$CancelledByUser;
 }
 
 /// @nodoc
@@ -281,34 +148,31 @@ class _$EmailIsAlreadyInUse implements EmailIsAlreadyInUse {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result cancelledByUser(),
     @required Result emailIsAlreadyInUse(),
     @required Result wrongEmailAndPasswordCompination(),
     @required Result serverError(),
     @required Result noSuchLevel(),
     @required Result noSuchCategory(),
-    @required Result tokenError(),
+    @required Result noTokenFound(),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return emailIsAlreadyInUse();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
     Result emailIsAlreadyInUse(),
     Result wrongEmailAndPasswordCompination(),
     Result serverError(),
     Result noSuchLevel(),
     Result noSuchCategory(),
-    Result tokenError(),
+    Result noTokenFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -321,7 +185,6 @@ class _$EmailIsAlreadyInUse implements EmailIsAlreadyInUse {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
     @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     @required
         Result wrongEmailAndPasswordCompination(
@@ -329,29 +192,27 @@ class _$EmailIsAlreadyInUse implements EmailIsAlreadyInUse {
     @required Result serverError(ServerError value),
     @required Result noSuchLevel(NoSuchLevel value),
     @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
+    @required Result noTokenFound(NoTokenFound value),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return emailIsAlreadyInUse(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
     Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     Result wrongEmailAndPasswordCompination(
         WrongEmailAndPasswordCompination value),
     Result serverError(ServerError value),
     Result noSuchLevel(NoSuchLevel value),
     Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
+    Result noTokenFound(NoTokenFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -410,34 +271,31 @@ class _$WrongEmailAndPasswordCompination
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result cancelledByUser(),
     @required Result emailIsAlreadyInUse(),
     @required Result wrongEmailAndPasswordCompination(),
     @required Result serverError(),
     @required Result noSuchLevel(),
     @required Result noSuchCategory(),
-    @required Result tokenError(),
+    @required Result noTokenFound(),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return wrongEmailAndPasswordCompination();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
     Result emailIsAlreadyInUse(),
     Result wrongEmailAndPasswordCompination(),
     Result serverError(),
     Result noSuchLevel(),
     Result noSuchCategory(),
-    Result tokenError(),
+    Result noTokenFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -450,7 +308,6 @@ class _$WrongEmailAndPasswordCompination
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
     @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     @required
         Result wrongEmailAndPasswordCompination(
@@ -458,29 +315,27 @@ class _$WrongEmailAndPasswordCompination
     @required Result serverError(ServerError value),
     @required Result noSuchLevel(NoSuchLevel value),
     @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
+    @required Result noTokenFound(NoTokenFound value),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return wrongEmailAndPasswordCompination(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
     Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     Result wrongEmailAndPasswordCompination(
         WrongEmailAndPasswordCompination value),
     Result serverError(ServerError value),
     Result noSuchLevel(NoSuchLevel value),
     Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
+    Result noTokenFound(NoTokenFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -534,34 +389,31 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result cancelledByUser(),
     @required Result emailIsAlreadyInUse(),
     @required Result wrongEmailAndPasswordCompination(),
     @required Result serverError(),
     @required Result noSuchLevel(),
     @required Result noSuchCategory(),
-    @required Result tokenError(),
+    @required Result noTokenFound(),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return serverError();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
     Result emailIsAlreadyInUse(),
     Result wrongEmailAndPasswordCompination(),
     Result serverError(),
     Result noSuchLevel(),
     Result noSuchCategory(),
-    Result tokenError(),
+    Result noTokenFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -574,7 +426,6 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
     @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     @required
         Result wrongEmailAndPasswordCompination(
@@ -582,29 +433,27 @@ class _$ServerError implements ServerError {
     @required Result serverError(ServerError value),
     @required Result noSuchLevel(NoSuchLevel value),
     @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
+    @required Result noTokenFound(NoTokenFound value),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return serverError(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
     Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     Result wrongEmailAndPasswordCompination(
         WrongEmailAndPasswordCompination value),
     Result serverError(ServerError value),
     Result noSuchLevel(NoSuchLevel value),
     Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
+    Result noTokenFound(NoTokenFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -657,34 +506,31 @@ class _$NoSuchLevel implements NoSuchLevel {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result cancelledByUser(),
     @required Result emailIsAlreadyInUse(),
     @required Result wrongEmailAndPasswordCompination(),
     @required Result serverError(),
     @required Result noSuchLevel(),
     @required Result noSuchCategory(),
-    @required Result tokenError(),
+    @required Result noTokenFound(),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return noSuchLevel();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
     Result emailIsAlreadyInUse(),
     Result wrongEmailAndPasswordCompination(),
     Result serverError(),
     Result noSuchLevel(),
     Result noSuchCategory(),
-    Result tokenError(),
+    Result noTokenFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -697,7 +543,6 @@ class _$NoSuchLevel implements NoSuchLevel {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
     @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     @required
         Result wrongEmailAndPasswordCompination(
@@ -705,29 +550,27 @@ class _$NoSuchLevel implements NoSuchLevel {
     @required Result serverError(ServerError value),
     @required Result noSuchLevel(NoSuchLevel value),
     @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
+    @required Result noTokenFound(NoTokenFound value),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return noSuchLevel(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
     Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     Result wrongEmailAndPasswordCompination(
         WrongEmailAndPasswordCompination value),
     Result serverError(ServerError value),
     Result noSuchLevel(NoSuchLevel value),
     Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
+    Result noTokenFound(NoTokenFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -780,34 +623,31 @@ class _$NoSuchCategory implements NoSuchCategory {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result cancelledByUser(),
     @required Result emailIsAlreadyInUse(),
     @required Result wrongEmailAndPasswordCompination(),
     @required Result serverError(),
     @required Result noSuchLevel(),
     @required Result noSuchCategory(),
-    @required Result tokenError(),
+    @required Result noTokenFound(),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return noSuchCategory();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
     Result emailIsAlreadyInUse(),
     Result wrongEmailAndPasswordCompination(),
     Result serverError(),
     Result noSuchLevel(),
     Result noSuchCategory(),
-    Result tokenError(),
+    Result noTokenFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -820,7 +660,6 @@ class _$NoSuchCategory implements NoSuchCategory {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
     @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     @required
         Result wrongEmailAndPasswordCompination(
@@ -828,29 +667,27 @@ class _$NoSuchCategory implements NoSuchCategory {
     @required Result serverError(ServerError value),
     @required Result noSuchLevel(NoSuchLevel value),
     @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
+    @required Result noTokenFound(NoTokenFound value),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
+    assert(noTokenFound != null);
     return noSuchCategory(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
     Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     Result wrongEmailAndPasswordCompination(
         WrongEmailAndPasswordCompination value),
     Result serverError(ServerError value),
     Result noSuchLevel(NoSuchLevel value),
     Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
+    Result noTokenFound(NoTokenFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -866,34 +703,35 @@ abstract class NoSuchCategory implements AuthFailure {
 }
 
 /// @nodoc
-abstract class $TokenErrorCopyWith<$Res> {
-  factory $TokenErrorCopyWith(
-          TokenError value, $Res Function(TokenError) then) =
-      _$TokenErrorCopyWithImpl<$Res>;
+abstract class $NoTokenFoundCopyWith<$Res> {
+  factory $NoTokenFoundCopyWith(
+          NoTokenFound value, $Res Function(NoTokenFound) then) =
+      _$NoTokenFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$TokenErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
-    implements $TokenErrorCopyWith<$Res> {
-  _$TokenErrorCopyWithImpl(TokenError _value, $Res Function(TokenError) _then)
-      : super(_value, (v) => _then(v as TokenError));
+class _$NoTokenFoundCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements $NoTokenFoundCopyWith<$Res> {
+  _$NoTokenFoundCopyWithImpl(
+      NoTokenFound _value, $Res Function(NoTokenFound) _then)
+      : super(_value, (v) => _then(v as NoTokenFound));
 
   @override
-  TokenError get _value => super._value as TokenError;
+  NoTokenFound get _value => super._value as NoTokenFound;
 }
 
 /// @nodoc
-class _$TokenError implements TokenError {
-  const _$TokenError();
+class _$NoTokenFound implements NoTokenFound {
+  const _$NoTokenFound();
 
   @override
   String toString() {
-    return 'AuthFailure.tokenError()';
+    return 'AuthFailure.noTokenFound()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is TokenError);
+    return identical(this, other) || (other is NoTokenFound);
   }
 
   @override
@@ -902,39 +740,36 @@ class _$TokenError implements TokenError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result cancelledByUser(),
     @required Result emailIsAlreadyInUse(),
     @required Result wrongEmailAndPasswordCompination(),
     @required Result serverError(),
     @required Result noSuchLevel(),
     @required Result noSuchCategory(),
-    @required Result tokenError(),
+    @required Result noTokenFound(),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
-    return tokenError();
+    assert(noTokenFound != null);
+    return noTokenFound();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
     Result emailIsAlreadyInUse(),
     Result wrongEmailAndPasswordCompination(),
     Result serverError(),
     Result noSuchLevel(),
     Result noSuchCategory(),
-    Result tokenError(),
+    Result noTokenFound(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (tokenError != null) {
-      return tokenError();
+    if (noTokenFound != null) {
+      return noTokenFound();
     }
     return orElse();
   }
@@ -942,7 +777,6 @@ class _$TokenError implements TokenError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
     @required Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     @required
         Result wrongEmailAndPasswordCompination(
@@ -950,39 +784,37 @@ class _$TokenError implements TokenError {
     @required Result serverError(ServerError value),
     @required Result noSuchLevel(NoSuchLevel value),
     @required Result noSuchCategory(NoSuchCategory value),
-    @required Result tokenError(TokenError value),
+    @required Result noTokenFound(NoTokenFound value),
   }) {
-    assert(cancelledByUser != null);
     assert(emailIsAlreadyInUse != null);
     assert(wrongEmailAndPasswordCompination != null);
     assert(serverError != null);
     assert(noSuchLevel != null);
     assert(noSuchCategory != null);
-    assert(tokenError != null);
-    return tokenError(this);
+    assert(noTokenFound != null);
+    return noTokenFound(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
     Result emailIsAlreadyInUse(EmailIsAlreadyInUse value),
     Result wrongEmailAndPasswordCompination(
         WrongEmailAndPasswordCompination value),
     Result serverError(ServerError value),
     Result noSuchLevel(NoSuchLevel value),
     Result noSuchCategory(NoSuchCategory value),
-    Result tokenError(TokenError value),
+    Result noTokenFound(NoTokenFound value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (tokenError != null) {
-      return tokenError(this);
+    if (noTokenFound != null) {
+      return noTokenFound(this);
     }
     return orElse();
   }
 }
 
-abstract class TokenError implements AuthFailure {
-  const factory TokenError() = _$TokenError;
+abstract class NoTokenFound implements AuthFailure {
+  const factory NoTokenFound() = _$NoTokenFound;
 }

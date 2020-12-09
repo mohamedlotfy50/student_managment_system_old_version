@@ -1,4 +1,4 @@
-import 'package:e_exame/domain/core/value_failure.dart';
+import 'value_failure.dart';
 
 class UnExpectedError extends Error {
   final ValueFailure error;
