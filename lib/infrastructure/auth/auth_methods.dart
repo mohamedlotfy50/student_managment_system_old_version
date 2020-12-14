@@ -28,9 +28,12 @@ class AuthApiRequester implements AuthMethods {
 
   @override
   Future<Either<AuthFailure, Unit>> signIn(
-      {EmailAddress emailAddress, Password password}) async {
+      {EmailAddress emailAddress, SignInPassword password}) async {
     final String emailString = emailAddress.getOrCrash();
     final String passwordString = password.getOrCrash();
+    setToken(
+        token:
+            "1.eyJpZCI6IjEyMzQ1Njc4OTAiLCJmdWxsTmFtZSI6Ik1vaGFtZWQgTG90ZnkiLCJkZXBhcnRtZW50IjoiU0UiLCJsZXZlbCI6IjNyZCIsImVtYWlsQWRkcmVzcyI6Im1vbG90Znk1MEBnbWFpbC5jb20ifQ.1");
   }
 
   @override

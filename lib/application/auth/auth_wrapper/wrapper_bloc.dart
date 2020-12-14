@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -15,7 +16,7 @@ part 'wrapper_state.dart';
 @injectable
 class WrapperBloc extends Bloc<WrapperEvent, WrapperState> {
   final AuthMethods authMethods;
-  WrapperBloc(this.authMethods) : super(WrapperState.initial());
+  WrapperBloc(this.authMethods) : super(const WrapperState.initial());
 
   @override
   Stream<WrapperState> mapEventToState(
@@ -23,7 +24,9 @@ class WrapperBloc extends Bloc<WrapperEvent, WrapperState> {
   ) async* {
     yield* event.map(
       checkAuthRequest: (e) async* {
-        Either<AuthFailure, String> auth = await authMethods.checkToken();
+        sleep(const Duration(seconds: 3));
+
+        final Either<AuthFailure, String> auth = await authMethods.checkToken();
         yield auth.fold(
           (_) => const WrapperState.unAuthenticated(),
           (_) => const WrapperState.authenticated(),

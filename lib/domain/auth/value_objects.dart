@@ -38,6 +38,27 @@ class Password extends ValueObject<String> {
   const Password._(this.value);
 }
 
+class SignInPassword extends ValueObject<String> {
+  static const int maxLength = 128;
+  static const int minLength = 8;
+
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory SignInPassword(String input) {
+    assert(input != null);
+
+    if (input.length >= 8) {
+      return SignInPassword._(right(input));
+    } else {
+      return SignInPassword._(
+          left(const ValueFailure.shortLength(valuefailure: "")));
+    }
+  }
+
+  const SignInPassword._(this.value);
+}
+
 class PasswordConfirm extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;

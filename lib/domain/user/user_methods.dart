@@ -9,5 +9,5 @@ abstract class UserMethods {
   Future<Either<UserFailure, List<User>>> getAllUsersInSpecificDepartment(
       String department);
   Future<Either<UserFailure, Unit>> deleteUser(String id);
-  Future<Either<UserFailure, Map<String, dynamic>>> currentUser(String token);
+  Either<UserFailure, User> currentUser(String token);
 }

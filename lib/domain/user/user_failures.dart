@@ -11,4 +11,6 @@ abstract class UserFailure with _$UserFailure {
 
   const factory UserFailure.userNotFound({@required String failure}) =
       UserNotFound;
+  const factory UserFailure.invalidToken({@required String failure}) =
+      InvalidToken;
 }

@@ -10,7 +10,7 @@ abstract class AuthMethods {
     // the return type should be of type user
     //it should take a token and store to auto sign in
     @required EmailAddress emailAddress,
-    @required Password password,
+    @required SignInPassword password,
   });
   Future<Either<AuthFailure, Unit>> adminAndProfRegister({
     @required FullName fullName,

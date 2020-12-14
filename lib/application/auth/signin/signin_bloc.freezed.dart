@@ -434,7 +434,7 @@ class _$SigninStateTearOff {
 // ignore: unused_element
   _SigninState call(
       {@required EmailAddress emailAddress,
-      @required Password password,
+      @required SignInPassword password,
       @required bool isSubmiting,
       @required bool showErrorMessages,
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess}) {
@@ -455,7 +455,7 @@ const $SigninState = _$SigninStateTearOff();
 /// @nodoc
 mixin _$SigninState {
   EmailAddress get emailAddress;
-  Password get password;
+  SignInPassword get password;
   bool get isSubmiting;
   bool get showErrorMessages;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccess;
@@ -470,7 +470,7 @@ abstract class $SigninStateCopyWith<$Res> {
       _$SigninStateCopyWithImpl<$Res>;
   $Res call(
       {EmailAddress emailAddress,
-      Password password,
+      SignInPassword password,
       bool isSubmiting,
       bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -496,7 +496,8 @@ class _$SigninStateCopyWithImpl<$Res> implements $SigninStateCopyWith<$Res> {
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      password: password == freezed ? _value.password : password as Password,
+      password:
+          password == freezed ? _value.password : password as SignInPassword,
       isSubmiting:
           isSubmiting == freezed ? _value.isSubmiting : isSubmiting as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -518,7 +519,7 @@ abstract class _$SigninStateCopyWith<$Res>
   @override
   $Res call(
       {EmailAddress emailAddress,
-      Password password,
+      SignInPassword password,
       bool isSubmiting,
       bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess});
@@ -546,7 +547,8 @@ class __$SigninStateCopyWithImpl<$Res> extends _$SigninStateCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      password: password == freezed ? _value.password : password as Password,
+      password:
+          password == freezed ? _value.password : password as SignInPassword,
       isSubmiting:
           isSubmiting == freezed ? _value.isSubmiting : isSubmiting as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -576,7 +578,7 @@ class _$_SigninState implements _SigninState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Password password;
+  final SignInPassword password;
   @override
   final bool isSubmiting;
   @override
@@ -627,7 +629,7 @@ class _$_SigninState implements _SigninState {
 abstract class _SigninState implements SigninState {
   const factory _SigninState(
           {@required EmailAddress emailAddress,
-          @required Password password,
+          @required SignInPassword password,
           @required bool isSubmiting,
           @required bool showErrorMessages,
           @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess}) =
@@ -636,7 +638,7 @@ abstract class _SigninState implements SigninState {
   @override
   EmailAddress get emailAddress;
   @override
-  Password get password;
+  SignInPassword get password;
   @override
   bool get isSubmiting;
   @override

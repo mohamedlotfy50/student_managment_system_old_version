@@ -33,6 +33,13 @@ class _$UserFailureTearOff {
       failure: failure,
     );
   }
+
+// ignore: unused_element
+  InvalidToken invalidToken({@required String failure}) {
+    return InvalidToken(
+      failure: failure,
+    );
+  }
 }
 
 /// @nodoc
@@ -48,12 +55,14 @@ mixin _$UserFailure {
     @required Result invalidSignedInUser(String failure),
     @required Result serverError(String failure),
     @required Result userNotFound(String failure),
+    @required Result invalidToken(String failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidSignedInUser(String failure),
     Result serverError(String failure),
     Result userNotFound(String failure),
+    Result invalidToken(String failure),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -61,12 +70,14 @@ mixin _$UserFailure {
     @required Result invalidSignedInUser(InvalidSignedInUser value),
     @required Result serverError(ServerError value),
     @required Result userNotFound(UserNotFound value),
+    @required Result invalidToken(InvalidToken value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidSignedInUser(InvalidSignedInUser value),
     Result serverError(ServerError value),
     Result userNotFound(UserNotFound value),
+    Result invalidToken(InvalidToken value),
     @required Result orElse(),
   });
 
@@ -165,10 +176,12 @@ class _$InvalidSignedInUser implements InvalidSignedInUser {
     @required Result invalidSignedInUser(String failure),
     @required Result serverError(String failure),
     @required Result userNotFound(String failure),
+    @required Result invalidToken(String failure),
   }) {
     assert(invalidSignedInUser != null);
     assert(serverError != null);
     assert(userNotFound != null);
+    assert(invalidToken != null);
     return invalidSignedInUser(failure);
   }
 
@@ -178,6 +191,7 @@ class _$InvalidSignedInUser implements InvalidSignedInUser {
     Result invalidSignedInUser(String failure),
     Result serverError(String failure),
     Result userNotFound(String failure),
+    Result invalidToken(String failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -193,10 +207,12 @@ class _$InvalidSignedInUser implements InvalidSignedInUser {
     @required Result invalidSignedInUser(InvalidSignedInUser value),
     @required Result serverError(ServerError value),
     @required Result userNotFound(UserNotFound value),
+    @required Result invalidToken(InvalidToken value),
   }) {
     assert(invalidSignedInUser != null);
     assert(serverError != null);
     assert(userNotFound != null);
+    assert(invalidToken != null);
     return invalidSignedInUser(this);
   }
 
@@ -206,6 +222,7 @@ class _$InvalidSignedInUser implements InvalidSignedInUser {
     Result invalidSignedInUser(InvalidSignedInUser value),
     Result serverError(ServerError value),
     Result userNotFound(UserNotFound value),
+    Result invalidToken(InvalidToken value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -290,10 +307,12 @@ class _$ServerError implements ServerError {
     @required Result invalidSignedInUser(String failure),
     @required Result serverError(String failure),
     @required Result userNotFound(String failure),
+    @required Result invalidToken(String failure),
   }) {
     assert(invalidSignedInUser != null);
     assert(serverError != null);
     assert(userNotFound != null);
+    assert(invalidToken != null);
     return serverError(failure);
   }
 
@@ -303,6 +322,7 @@ class _$ServerError implements ServerError {
     Result invalidSignedInUser(String failure),
     Result serverError(String failure),
     Result userNotFound(String failure),
+    Result invalidToken(String failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -318,10 +338,12 @@ class _$ServerError implements ServerError {
     @required Result invalidSignedInUser(InvalidSignedInUser value),
     @required Result serverError(ServerError value),
     @required Result userNotFound(UserNotFound value),
+    @required Result invalidToken(InvalidToken value),
   }) {
     assert(invalidSignedInUser != null);
     assert(serverError != null);
     assert(userNotFound != null);
+    assert(invalidToken != null);
     return serverError(this);
   }
 
@@ -331,6 +353,7 @@ class _$ServerError implements ServerError {
     Result invalidSignedInUser(InvalidSignedInUser value),
     Result serverError(ServerError value),
     Result userNotFound(UserNotFound value),
+    Result invalidToken(InvalidToken value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -414,10 +437,12 @@ class _$UserNotFound implements UserNotFound {
     @required Result invalidSignedInUser(String failure),
     @required Result serverError(String failure),
     @required Result userNotFound(String failure),
+    @required Result invalidToken(String failure),
   }) {
     assert(invalidSignedInUser != null);
     assert(serverError != null);
     assert(userNotFound != null);
+    assert(invalidToken != null);
     return userNotFound(failure);
   }
 
@@ -427,6 +452,7 @@ class _$UserNotFound implements UserNotFound {
     Result invalidSignedInUser(String failure),
     Result serverError(String failure),
     Result userNotFound(String failure),
+    Result invalidToken(String failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -442,10 +468,12 @@ class _$UserNotFound implements UserNotFound {
     @required Result invalidSignedInUser(InvalidSignedInUser value),
     @required Result serverError(ServerError value),
     @required Result userNotFound(UserNotFound value),
+    @required Result invalidToken(InvalidToken value),
   }) {
     assert(invalidSignedInUser != null);
     assert(serverError != null);
     assert(userNotFound != null);
+    assert(invalidToken != null);
     return userNotFound(this);
   }
 
@@ -455,6 +483,7 @@ class _$UserNotFound implements UserNotFound {
     Result invalidSignedInUser(InvalidSignedInUser value),
     Result serverError(ServerError value),
     Result userNotFound(UserNotFound value),
+    Result invalidToken(InvalidToken value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -472,4 +501,134 @@ abstract class UserNotFound implements UserFailure {
   String get failure;
   @override
   $UserNotFoundCopyWith<UserNotFound> get copyWith;
+}
+
+/// @nodoc
+abstract class $InvalidTokenCopyWith<$Res>
+    implements $UserFailureCopyWith<$Res> {
+  factory $InvalidTokenCopyWith(
+          InvalidToken value, $Res Function(InvalidToken) then) =
+      _$InvalidTokenCopyWithImpl<$Res>;
+  @override
+  $Res call({String failure});
+}
+
+/// @nodoc
+class _$InvalidTokenCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
+    implements $InvalidTokenCopyWith<$Res> {
+  _$InvalidTokenCopyWithImpl(
+      InvalidToken _value, $Res Function(InvalidToken) _then)
+      : super(_value, (v) => _then(v as InvalidToken));
+
+  @override
+  InvalidToken get _value => super._value as InvalidToken;
+
+  @override
+  $Res call({
+    Object failure = freezed,
+  }) {
+    return _then(InvalidToken(
+      failure: failure == freezed ? _value.failure : failure as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$InvalidToken implements InvalidToken {
+  const _$InvalidToken({@required this.failure}) : assert(failure != null);
+
+  @override
+  final String failure;
+
+  @override
+  String toString() {
+    return 'UserFailure.invalidToken(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidToken &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+
+  @override
+  $InvalidTokenCopyWith<InvalidToken> get copyWith =>
+      _$InvalidTokenCopyWithImpl<InvalidToken>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidSignedInUser(String failure),
+    @required Result serverError(String failure),
+    @required Result userNotFound(String failure),
+    @required Result invalidToken(String failure),
+  }) {
+    assert(invalidSignedInUser != null);
+    assert(serverError != null);
+    assert(userNotFound != null);
+    assert(invalidToken != null);
+    return invalidToken(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidSignedInUser(String failure),
+    Result serverError(String failure),
+    Result userNotFound(String failure),
+    Result invalidToken(String failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidToken != null) {
+      return invalidToken(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidSignedInUser(InvalidSignedInUser value),
+    @required Result serverError(ServerError value),
+    @required Result userNotFound(UserNotFound value),
+    @required Result invalidToken(InvalidToken value),
+  }) {
+    assert(invalidSignedInUser != null);
+    assert(serverError != null);
+    assert(userNotFound != null);
+    assert(invalidToken != null);
+    return invalidToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidSignedInUser(InvalidSignedInUser value),
+    Result serverError(ServerError value),
+    Result userNotFound(UserNotFound value),
+    Result invalidToken(InvalidToken value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidToken != null) {
+      return invalidToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidToken implements UserFailure {
+  const factory InvalidToken({@required String failure}) = _$InvalidToken;
+
+  @override
+  String get failure;
+  @override
+  $InvalidTokenCopyWith<InvalidToken> get copyWith;
 }

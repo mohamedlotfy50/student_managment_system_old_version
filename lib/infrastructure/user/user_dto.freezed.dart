@@ -8,6 +8,9 @@ part of 'user_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
+  return _UserDto.fromJson(json);
+}
 
 /// @nodoc
 class _$UserDtoTearOff {
@@ -28,6 +31,11 @@ class _$UserDtoTearOff {
       emailAddress: emailAddress,
     );
   }
+
+// ignore: unused_element
+  UserDto fromJson(Map<String, Object> json) {
+    return UserDto.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -42,6 +50,7 @@ mixin _$UserDto {
   String get level;
   String get emailAddress;
 
+  Map<String, dynamic> toJson();
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 
@@ -129,6 +138,8 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
   const _$_UserDto(
@@ -143,6 +154,9 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
         assert(level != null),
         assert(emailAddress != null),
         super._();
+
+  factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_UserDtoFromJson(json);
 
   @override
   final String id;
@@ -203,6 +217,11 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith =>
       __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_UserDtoToJson(this);
+  }
 }
 
 abstract class _UserDto extends UserDto {
@@ -213,6 +232,8 @@ abstract class _UserDto extends UserDto {
       @required String department,
       @required String level,
       @required String emailAddress}) = _$_UserDto;
+
+  factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
   String get id;

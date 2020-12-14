@@ -1,88 +1,92 @@
+import 'package:e_exame/application/auth/register/register_bloc.dart';
+import 'package:e_exame/presentation/ui/auth/widgets/background.dart';
+import 'package:e_exame/presentation/ui/auth/widgets/text_form_field.dart';
+import 'package:fa_stepper/fa_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../application/auth/signin/signin_bloc.dart';
-import '../../../../injection.dart';
-import '../shared/my_button.dart';
-import '../shared/text_form_field.dart';
-
-class SignUp extends StatelessWidget {
-  const SignUp({Key key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: BlocProvider(
-          create: (context) => getIt<SigninBloc>(),
-          child: const SignUpView(),
-        ),
-      ),
-    );
-  }
-}
-
-class SignUpView extends StatelessWidget {
+class SignUpView extends StatefulWidget {
   const SignUpView({Key key}) : super(key: key);
 
   @override
+  _SignUpViewState createState() => _SignUpViewState();
+}
+
+class _SignUpViewState extends State<SignUpView> {
+  @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SigninBloc, SigninState>(
+    return BlocConsumer<RegisterBloc, RegisterState>(
       listener: (context, state) {},
       builder: (context, state) {
-        return Form(
-          autovalidateMode: state.showErrorMessages
-              ? AutovalidateMode.always
-              : AutovalidateMode.disabled,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              MyTextFormField(
-                isPassword: false,
-                hintText: 'Email address',
-                icon: Icons.person,
-                onChange: (value) => context
-                    .read<SigninBloc>()
-                    .add(SigninEvent.emailChanged(emailString: value)),
-                validator: (_) => context
-                    .read<SigninBloc>()
-                    .state
-                    .emailAddress
-                    .value
-                    .fold(
-                        (failure) => failure.maybeMap(
-                            invalidEmail: (_) => 'invalid email',
-                            orElse: () => null),
-                        (r) => null),
+        return Background(
+          showError: state.showErrorMessages,
+          child: FAStepper(
+            currentStep: 1,
+            steps: [
+              FAStep(
+                title: const Text("User"),
+                content: Column(
+                  children: [
+                    MyTextFormField(
+                        isPassword: false,
+                        icon: Icons.person,
+                        labelText: "User Name",
+                        showCheckMake: false),
+                    MyTextFormField(
+                        isPassword: false,
+                        icon: Icons.person,
+                        labelText: "CollegeID",
+                        showCheckMake: false),
+                    MyTextFormField(
+                        isPassword: false,
+                        icon: Icons.person,
+                        labelText: "Role",
+                        showCheckMake: false),
+                  ],
+                ),
               ),
-              const SizedBox(
-                height: 20,
+              FAStep(
+                title: const Text("Details"),
+                content: Column(
+                  children: [
+                    MyTextFormField(
+                        isPassword: false,
+                        icon: Icons.person,
+                        labelText: "Email",
+                        showCheckMake: false),
+                    MyTextFormField(
+                        isPassword: false,
+                        icon: Icons.person,
+                        labelText: "department",
+                        showCheckMake: false),
+                    if (state.userRole == "Student")
+                      MyTextFormField(
+                          isPassword: false,
+                          icon: Icons.person,
+                          labelText: "level",
+                          showCheckMake: false),
+                  ],
+                ),
               ),
-              MyTextFormField(
-                isPassword: true,
-                hintText: 'password',
-                icon: Icons.lock,
-                onChange: (value) => context
-                    .read<SigninBloc>()
-                    .add(SigninEvent.passwordChanged(passwordString: value)),
-                validator: (_) => context
-                    .read<SigninBloc>()
-                    .state
-                    .password
-                    .value
-                    .fold(
-                        (failure) => failure.maybeMap(
-                            shortLength: (_) => 'short password',
-                            weekPassword: (_) => 'week password',
-                            orElse: () => null),
-                        (r) => null),
+              FAStep(
+                title: const Text("Details"),
+                content: Column(
+                  children: [
+                    MyTextFormField(
+                        isPassword: false,
+                        icon: Icons.person,
+                        labelText: "password",
+                        showCheckMake: false),
+                    MyTextFormField(
+                        isPassword: false,
+                        icon: Icons.person,
+                        labelText: "Confirm password",
+                        showCheckMake: false),
+                  ],
+                ),
               ),
-              MyButton(
-                onpress: () {
-                  context.read<SigninBloc>().add(const SigninEvent.signIn());
-                },
-                text: "Sign in",
-              )
             ],
+            type: FAStepperType.horizontal,
           ),
         );
       },

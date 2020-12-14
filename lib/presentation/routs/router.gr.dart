@@ -8,20 +8,17 @@
 
 import 'package:auto_route/auto_route.dart';
 
+import '../ui/auth/auth_page.dart';
 import '../ui/auth/auth_wrapper.dart';
-import '../ui/auth/sign_in/sign_in_page.dart';
-import '../ui/auth/sign_up/sign_up_page.dart';
 import '../ui/main/main_page.dart';
 
 class Routes {
   static const String authWrapper = '/';
-  static const String signIn = '/sign-in';
-  static const String signUp = '/sign-up';
+  static const String authPage = '/auth-page';
   static const String mainPage = '/main-page';
   static const all = <String>{
     authWrapper,
-    signIn,
-    signUp,
+    authPage,
     mainPage,
   };
 }
@@ -31,8 +28,7 @@ class Pages extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.authWrapper, page: AuthWrapper),
-    RouteDef(Routes.signIn, page: SignIn),
-    RouteDef(Routes.signUp, page: SignUp),
+    RouteDef(Routes.authPage, page: AuthPage),
     RouteDef(Routes.mainPage, page: MainPage),
   ];
   @override
@@ -44,15 +40,9 @@ class Pages extends RouterBase {
         settings: data,
       );
     },
-    SignIn: (data) {
+    AuthPage: (data) {
       return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const SignIn(),
-        settings: data,
-      );
-    },
-    SignUp: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const SignUp(),
+        builder: (context) => const AuthPage(),
         settings: data,
       );
     },
@@ -72,9 +62,7 @@ class Pages extends RouterBase {
 extension PagesExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushAuthWrapper() => push<dynamic>(Routes.authWrapper);
 
-  Future<dynamic> pushSignIn() => push<dynamic>(Routes.signIn);
-
-  Future<dynamic> pushSignUp() => push<dynamic>(Routes.signUp);
+  Future<dynamic> pushAuthPage() => push<dynamic>(Routes.authPage);
 
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
 }

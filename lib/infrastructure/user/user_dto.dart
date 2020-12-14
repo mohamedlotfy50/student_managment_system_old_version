@@ -6,11 +6,10 @@ import '../../domain/core/value_object.dart';
 import '../../domain/user/user.dart';
 
 part 'user_dto.freezed.dart';
+part 'user_dto.g.dart';
 
 @freezed
-abstract class UserDto implements _$UserDto {
-  const UserDto._();
-
+abstract class UserDto with _$UserDto {
   const factory UserDto({
     @required String id,
     @required String fullName,
@@ -19,7 +18,10 @@ abstract class UserDto implements _$UserDto {
     @required String emailAddress,
   }) = _UserDto;
 
-  factory UserDto.fromDataBase(User user) {
+  factory UserDto.fromJson(Map<String, dynamic> json) =>
+      _$UserDtoFromJson(json);
+
+  factory UserDto.fromDomain(User user) {
     return UserDto(
       id: user.id.getOrCrash(),
       fullName: user.name.getOrCrash(),
@@ -29,7 +31,7 @@ abstract class UserDto implements _$UserDto {
     );
   }
 
-  User toDataBase() {
+  User toDomain() {
     return User(
       id: UniqueID.fromUniqueString(id),
       name: FullName(fullName),
@@ -38,4 +40,6 @@ abstract class UserDto implements _$UserDto {
       emailAddress: EmailAddress(emailAddress),
     );
   }
+
+  const UserDto._();
 }

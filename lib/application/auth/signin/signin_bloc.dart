@@ -32,7 +32,7 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
       },
       passwordChanged: (e) async* {
         yield state.copyWith(
-          password: Password(e.passwordString),
+          password: SignInPassword(e.passwordString),
           authFailureOrSuccess: none(),
         );
       },

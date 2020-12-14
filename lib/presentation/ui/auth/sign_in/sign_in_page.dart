@@ -1,26 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'package:e_exame/presentation/core/conts/colors.dart';
+import 'package:e_exame/presentation/ui/auth/widgets/background.dart';
+import 'package:e_exame/presentation/ui/auth/widgets/my_button.dart';
+import 'package:e_exame/presentation/ui/auth/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../application/auth/signin/signin_bloc.dart';
-import '../../../../injection.dart';
-import '../shared/my_button.dart';
-import '../shared/text_form_field.dart';
-
-class SignIn extends StatelessWidget {
-  const SignIn({Key key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: BlocProvider(
-          create: (context) => getIt<SigninBloc>(),
-          child: SignInView(),
-        ),
-      ),
-    );
-  }
-}
 
 class SignInView extends StatelessWidget {
   const SignInView({Key key}) : super(key: key);
@@ -30,16 +14,14 @@ class SignInView extends StatelessWidget {
     return BlocConsumer<SigninBloc, SigninState>(
       listener: (context, state) {},
       builder: (context, state) {
-        return Form(
-          autovalidateMode: state.showErrorMessages
-              ? AutovalidateMode.always
-              : AutovalidateMode.disabled,
+        return Background(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               MyTextFormField(
+                showCheckMake: state.emailAddress.isValid(),
                 isPassword: false,
-                hintText: 'Email address',
+                labelText: 'Email address',
                 icon: Icons.person,
                 onChange: (value) => context
                     .read<SigninBloc>()
@@ -55,12 +37,10 @@ class SignInView extends StatelessWidget {
                             orElse: () => null),
                         (r) => null),
               ),
-              const SizedBox(
-                height: 20,
-              ),
               MyTextFormField(
+                showCheckMake: false,
                 isPassword: true,
-                hintText: 'password',
+                labelText: 'Password',
                 icon: Icons.lock,
                 onChange: (value) => context
                     .read<SigninBloc>()
@@ -85,6 +65,7 @@ class SignInView extends StatelessWidget {
               )
             ],
           ),
+          showError: state.showErrorMessages,
         );
       },
     );
