@@ -5,18 +5,23 @@ import 'auth_failure.dart';
 import 'value_objects.dart';
 
 abstract class AuthMethods {
-  //TODO: fixing the right side after creating the data transfere objects
   Future<Either<AuthFailure, Unit>> signIn({
-    // the return type should be of type user
-    //it should take a token and store to auto sign in
     @required EmailAddress emailAddress,
     @required SignInPassword password,
   });
-  Future<Either<AuthFailure, Unit>> adminAndProfRegister({
+  Future<Either<AuthFailure, Unit>> adminRegister({
     @required FullName fullName,
     @required EmailAddress emailAddress,
     @required Password password,
     @required CollegeId collegeId,
+    @required UserRole userRole,
+  });
+  Future<Either<AuthFailure, Unit>> profRegister({
+    @required FullName fullName,
+    @required EmailAddress emailAddress,
+    @required Password password,
+    @required CollegeId collegeId,
+    @required Department department,
     @required UserRole userRole,
   });
   Future<Either<AuthFailure, Unit>> studentRegister({
@@ -36,6 +41,7 @@ abstract class AuthMethods {
     @required String token,
   });
   Future<Either<AuthFailure, String>> checkToken();
+  Future<String> getToken();
 
   Future<void> signOut();
 }

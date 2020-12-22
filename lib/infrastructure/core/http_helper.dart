@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
@@ -9,7 +11,6 @@ class HttpHelper<L, R> {
     @required String type,
     @required dynamic url,
     @required Map<int, L> failuresMap,
-    @required R Function(String) success,
     @required int successCode,
   }) async {
     http.Response _response;
@@ -29,7 +30,7 @@ class HttpHelper<L, R> {
     final int code = _response.statusCode;
 
     if (code == successCode) {
-      return right(success(_response.body));
+      return right(jsonDecode(_response.body) as R);
     } else {
       return left(failuresMap[code]);
     }

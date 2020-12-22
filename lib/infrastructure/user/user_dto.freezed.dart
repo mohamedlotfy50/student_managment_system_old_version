@@ -22,13 +22,15 @@ class _$UserDtoTearOff {
       @required String fullName,
       @required String department,
       @required String level,
-      @required String emailAddress}) {
+      @required String emailAddress,
+      @required String role}) {
     return _UserDto(
       id: id,
       fullName: fullName,
       department: department,
       level: level,
       emailAddress: emailAddress,
+      role: role,
     );
   }
 
@@ -49,6 +51,7 @@ mixin _$UserDto {
   String get department;
   String get level;
   String get emailAddress;
+  String get role;
 
   Map<String, dynamic> toJson();
   $UserDtoCopyWith<UserDto> get copyWith;
@@ -63,7 +66,8 @@ abstract class $UserDtoCopyWith<$Res> {
       String fullName,
       String department,
       String level,
-      String emailAddress});
+      String emailAddress,
+      String role});
 }
 
 /// @nodoc
@@ -81,6 +85,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object department = freezed,
     Object level = freezed,
     Object emailAddress = freezed,
+    Object role = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -91,6 +96,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as String,
+      role: role == freezed ? _value.role : role as String,
     ));
   }
 }
@@ -105,7 +111,8 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       String fullName,
       String department,
       String level,
-      String emailAddress});
+      String emailAddress,
+      String role});
 }
 
 /// @nodoc
@@ -124,6 +131,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     Object department = freezed,
     Object level = freezed,
     Object emailAddress = freezed,
+    Object role = freezed,
   }) {
     return _then(_UserDto(
       id: id == freezed ? _value.id : id as String,
@@ -134,6 +142,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as String,
+      role: role == freezed ? _value.role : role as String,
     ));
   }
 }
@@ -147,12 +156,14 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
       @required this.fullName,
       @required this.department,
       @required this.level,
-      @required this.emailAddress})
+      @required this.emailAddress,
+      @required this.role})
       : assert(id != null),
         assert(fullName != null),
         assert(department != null),
         assert(level != null),
         assert(emailAddress != null),
+        assert(role != null),
         super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
@@ -168,10 +179,12 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
   final String level;
   @override
   final String emailAddress;
+  @override
+  final String role;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserDto(id: $id, fullName: $fullName, department: $department, level: $level, emailAddress: $emailAddress)';
+    return 'UserDto(id: $id, fullName: $fullName, department: $department, level: $level, emailAddress: $emailAddress, role: $role)';
   }
 
   @override
@@ -183,7 +196,8 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('fullName', fullName))
       ..add(DiagnosticsProperty('department', department))
       ..add(DiagnosticsProperty('level', level))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress));
+      ..add(DiagnosticsProperty('emailAddress', emailAddress))
+      ..add(DiagnosticsProperty('role', role));
   }
 
   @override
@@ -202,7 +216,9 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
                 const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)));
+                    .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.role, role) ||
+                const DeepCollectionEquality().equals(other.role, role)));
   }
 
   @override
@@ -212,7 +228,8 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(fullName) ^
       const DeepCollectionEquality().hash(department) ^
       const DeepCollectionEquality().hash(level) ^
-      const DeepCollectionEquality().hash(emailAddress);
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(role);
 
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith =>
@@ -231,7 +248,8 @@ abstract class _UserDto extends UserDto {
       @required String fullName,
       @required String department,
       @required String level,
-      @required String emailAddress}) = _$_UserDto;
+      @required String emailAddress,
+      @required String role}) = _$_UserDto;
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
@@ -245,6 +263,8 @@ abstract class _UserDto extends UserDto {
   String get level;
   @override
   String get emailAddress;
+  @override
+  String get role;
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith;
 }

@@ -16,6 +16,7 @@ abstract class UserDto with _$UserDto {
     @required String department,
     @required String level,
     @required String emailAddress,
+    @required String role,
   }) = _UserDto;
 
   factory UserDto.fromJson(Map<String, dynamic> json) =>
@@ -23,6 +24,7 @@ abstract class UserDto with _$UserDto {
 
   factory UserDto.fromDomain(User user) {
     return UserDto(
+      role: user.userRole.getOrCrash(),
       id: user.id.getOrCrash(),
       fullName: user.name.getOrCrash(),
       department: user.department.getOrCrash(),
@@ -33,6 +35,7 @@ abstract class UserDto with _$UserDto {
 
   User toDomain() {
     return User(
+      userRole: UserRole(role),
       id: UniqueID.fromUniqueString(id),
       name: FullName(fullName),
       department: Department(department),

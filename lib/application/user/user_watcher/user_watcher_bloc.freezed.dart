@@ -21,10 +21,8 @@ class _$UserWatcherEventTearOff {
   }
 
 // ignore: unused_element
-  _GetcurrentUser getcurrentUser(String token) {
-    return _GetcurrentUser(
-      token,
-    );
+  _GetcurrentUser getcurrentUser() {
+    return const _GetcurrentUser();
   }
 }
 
@@ -37,12 +35,12 @@ mixin _$UserWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result getAllUsers(String role),
-    @required Result getcurrentUser(String token),
+    @required Result getcurrentUser(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result getAllUsers(String role),
-    Result getcurrentUser(String token),
+    Result getcurrentUser(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -136,7 +134,7 @@ class _$_GetAllStudents implements _GetAllStudents {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result getAllUsers(String role),
-    @required Result getcurrentUser(String token),
+    @required Result getcurrentUser(),
   }) {
     assert(getAllUsers != null);
     assert(getcurrentUser != null);
@@ -147,7 +145,7 @@ class _$_GetAllStudents implements _GetAllStudents {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result getAllUsers(String role),
-    Result getcurrentUser(String token),
+    Result getcurrentUser(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -195,7 +193,6 @@ abstract class _$GetcurrentUserCopyWith<$Res> {
   factory _$GetcurrentUserCopyWith(
           _GetcurrentUser value, $Res Function(_GetcurrentUser) then) =
       __$GetcurrentUserCopyWithImpl<$Res>;
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -208,66 +205,46 @@ class __$GetcurrentUserCopyWithImpl<$Res>
 
   @override
   _GetcurrentUser get _value => super._value as _GetcurrentUser;
-
-  @override
-  $Res call({
-    Object token = freezed,
-  }) {
-    return _then(_GetcurrentUser(
-      token == freezed ? _value.token : token as String,
-    ));
-  }
 }
 
 /// @nodoc
 class _$_GetcurrentUser implements _GetcurrentUser {
-  const _$_GetcurrentUser(this.token) : assert(token != null);
-
-  @override
-  final String token;
+  const _$_GetcurrentUser();
 
   @override
   String toString() {
-    return 'UserWatcherEvent.getcurrentUser(token: $token)';
+    return 'UserWatcherEvent.getcurrentUser()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _GetcurrentUser &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)));
+    return identical(this, other) || (other is _GetcurrentUser);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(token);
-
-  @override
-  _$GetcurrentUserCopyWith<_GetcurrentUser> get copyWith =>
-      __$GetcurrentUserCopyWithImpl<_GetcurrentUser>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result getAllUsers(String role),
-    @required Result getcurrentUser(String token),
+    @required Result getcurrentUser(),
   }) {
     assert(getAllUsers != null);
     assert(getcurrentUser != null);
-    return getcurrentUser(token);
+    return getcurrentUser();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result getAllUsers(String role),
-    Result getcurrentUser(String token),
+    Result getcurrentUser(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (getcurrentUser != null) {
-      return getcurrentUser(token);
+      return getcurrentUser();
     }
     return orElse();
   }
@@ -299,10 +276,7 @@ class _$_GetcurrentUser implements _GetcurrentUser {
 }
 
 abstract class _GetcurrentUser implements UserWatcherEvent {
-  const factory _GetcurrentUser(String token) = _$_GetcurrentUser;
-
-  String get token;
-  _$GetcurrentUserCopyWith<_GetcurrentUser> get copyWith;
+  const factory _GetcurrentUser() = _$_GetcurrentUser;
 }
 
 /// @nodoc
@@ -327,9 +301,9 @@ class _$UserWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  LoadSingleUserSuccess loadSingleUserSuccess(User users) {
+  LoadSingleUserSuccess loadSingleUserSuccess(User user) {
     return LoadSingleUserSuccess(
-      users,
+      user,
     );
   }
 
@@ -352,7 +326,7 @@ mixin _$UserWatcherState {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User users),
+    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   });
   @optionalTypeArgs
@@ -360,7 +334,7 @@ mixin _$UserWatcherState {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User users),
+    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   });
@@ -439,7 +413,7 @@ class _$Initial implements Initial {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User users),
+    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
@@ -456,7 +430,7 @@ class _$Initial implements Initial {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User users),
+    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
@@ -545,7 +519,7 @@ class _$Loading implements Loading {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User users),
+    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
@@ -562,7 +536,7 @@ class _$Loading implements Loading {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User users),
+    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
@@ -675,7 +649,7 @@ class _$LoadSuccess implements LoadSuccess {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User users),
+    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
@@ -692,7 +666,7 @@ class _$LoadSuccess implements LoadSuccess {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User users),
+    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
@@ -750,9 +724,9 @@ abstract class $LoadSingleUserSuccessCopyWith<$Res> {
   factory $LoadSingleUserSuccessCopyWith(LoadSingleUserSuccess value,
           $Res Function(LoadSingleUserSuccess) then) =
       _$LoadSingleUserSuccessCopyWithImpl<$Res>;
-  $Res call({User users});
+  $Res call({User user});
 
-  $UserCopyWith<$Res> get users;
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -768,47 +742,47 @@ class _$LoadSingleUserSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object users = freezed,
+    Object user = freezed,
   }) {
     return _then(LoadSingleUserSuccess(
-      users == freezed ? _value.users : users as User,
+      user == freezed ? _value.user : user as User,
     ));
   }
 
   @override
-  $UserCopyWith<$Res> get users {
-    if (_value.users == null) {
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
       return null;
     }
-    return $UserCopyWith<$Res>(_value.users, (value) {
-      return _then(_value.copyWith(users: value));
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
     });
   }
 }
 
 /// @nodoc
 class _$LoadSingleUserSuccess implements LoadSingleUserSuccess {
-  const _$LoadSingleUserSuccess(this.users) : assert(users != null);
+  const _$LoadSingleUserSuccess(this.user) : assert(user != null);
 
   @override
-  final User users;
+  final User user;
 
   @override
   String toString() {
-    return 'UserWatcherState.loadSingleUserSuccess(users: $users)';
+    return 'UserWatcherState.loadSingleUserSuccess(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is LoadSingleUserSuccess &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(users);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
   $LoadSingleUserSuccessCopyWith<LoadSingleUserSuccess> get copyWith =>
@@ -821,7 +795,7 @@ class _$LoadSingleUserSuccess implements LoadSingleUserSuccess {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User users),
+    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
@@ -829,7 +803,7 @@ class _$LoadSingleUserSuccess implements LoadSingleUserSuccess {
     assert(loadSuccess != null);
     assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
-    return loadSingleUserSuccess(users);
+    return loadSingleUserSuccess(user);
   }
 
   @override
@@ -838,13 +812,13 @@ class _$LoadSingleUserSuccess implements LoadSingleUserSuccess {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User users),
+    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (loadSingleUserSuccess != null) {
-      return loadSingleUserSuccess(users);
+      return loadSingleUserSuccess(user);
     }
     return orElse();
   }
@@ -885,9 +859,9 @@ class _$LoadSingleUserSuccess implements LoadSingleUserSuccess {
 }
 
 abstract class LoadSingleUserSuccess implements UserWatcherState {
-  const factory LoadSingleUserSuccess(User users) = _$LoadSingleUserSuccess;
+  const factory LoadSingleUserSuccess(User user) = _$LoadSingleUserSuccess;
 
-  User get users;
+  User get user;
   $LoadSingleUserSuccessCopyWith<LoadSingleUserSuccess> get copyWith;
 }
 
@@ -965,7 +939,7 @@ class _$LoadFailed implements LoadFailed {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User users),
+    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
@@ -982,7 +956,7 @@ class _$LoadFailed implements LoadFailed {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User users),
+    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {

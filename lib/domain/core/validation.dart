@@ -4,7 +4,7 @@ import 'value_failure.dart';
 
 Either<ValueFailure<String>, String> emailValidation(String value) {
   const String regex =
-      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"; //regular expresion to se the pattern of the email
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$"; //regular expresion to se the pattern of the email
   if (RegExp(regex).hasMatch(value)) {
     return right(value); //right means is valid
   } else {
@@ -14,10 +14,8 @@ Either<ValueFailure<String>, String> emailValidation(String value) {
 }
 
 Either<ValueFailure<String>, String> passwordValidation(String value) {
-  // ignore: unnecessary_raw_strings
-  final bool hasSmallLetters = RegExp(r"[a-z]").hasMatch(value);
-  // ignore: unnecessary_raw_strings
-  final bool hasCapitalLetters = RegExp(r"[A-Z]").hasMatch(value);
+  final bool hasSmallLetters = RegExp(r"[a-z]+$").hasMatch(value);
+  final bool hasCapitalLetters = RegExp(r"[A-Z]+$").hasMatch(value);
   final bool hasSpecialChar =
       RegExp(r"[.@!#$%&'*+-/=?^_`{|}~]").hasMatch(value);
   if (hasSmallLetters && hasCapitalLetters && hasSpecialChar) {
@@ -37,7 +35,9 @@ Either<ValueFailure<String>, String> passwordConfirmValidation(
 }
 
 Either<ValueFailure<String>, String> isnumberValidation(String value) {
-  if (int.tryParse(value) != null) {
+  final bool integer = RegExp(r"^[0-9]+$").hasMatch(value);
+
+  if (integer) {
     return right(value);
   } else {
     return left(ValueFailure.onlyAnInt(valuefailure: value));
@@ -45,8 +45,8 @@ Either<ValueFailure<String>, String> isnumberValidation(String value) {
 }
 
 Either<ValueFailure<String>, String> fullNameValidation(String fullName) {
-  // ignore: unnecessary_raw_strings
-  if (fullName.contains(RegExp(r"[^a-z]", caseSensitive: false))) {
+  final bool letters = RegExp(r"^[a-zA-z\s]+$").hasMatch(fullName);
+  if (letters) {
     return right(fullName);
   }
   return left(ValueFailure.invalidName(valuefailure: fullName));
@@ -55,21 +55,21 @@ Either<ValueFailure<String>, String> fullNameValidation(String fullName) {
 Either<ValueFailure<String>, String> lengthEqualityValidation(
     String value, int length) {
   final int valueLength = value.length;
-
   if (valueLength == length) {
     return right(value);
+  } else if (valueLength > length) {
+    return left(ValueFailure.lengthExceedTheLimit(valuefailure: value));
   } else if (valueLength < length) {
     return left(ValueFailure.shortLength(valuefailure: value));
-  } else {
-    return left(ValueFailure.lengthExceedTheLimit(valuefailure: value));
   }
+  return null;
 }
 
 Either<ValueFailure<String>, String> minLengthValidation(
     String value, int length) {
   final int valueLength = value.length;
 
-  if (valueLength > length) {
+  if (valueLength >= length) {
     return right(value);
   } else {
     return left(ValueFailure.shortLength(valuefailure: value));
@@ -80,7 +80,7 @@ Either<ValueFailure<String>, String> maxLengthValidation(
     String value, int length) {
   final int valueLength = value.length;
 
-  if (valueLength < length) {
+  if (valueLength <= length) {
     return right(value);
   } else {
     return left(ValueFailure.lengthExceedTheLimit(valuefailure: value));

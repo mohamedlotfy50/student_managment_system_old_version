@@ -18,14 +18,16 @@ class _$UserTearOff {
       {@required UniqueID id,
       @required FullName name,
       @required Department department,
-      @required Level level,
-      @required EmailAddress emailAddress}) {
+      Level level,
+      @required EmailAddress emailAddress,
+      @required UserRole userRole}) {
     return _Usesr(
       id: id,
       name: name,
       department: department,
       level: level,
       emailAddress: emailAddress,
+      userRole: userRole,
     );
   }
 }
@@ -41,6 +43,7 @@ mixin _$User {
   Department get department;
   Level get level;
   EmailAddress get emailAddress;
+  UserRole get userRole;
 
   $UserCopyWith<User> get copyWith;
 }
@@ -54,7 +57,8 @@ abstract class $UserCopyWith<$Res> {
       FullName name,
       Department department,
       Level level,
-      EmailAddress emailAddress});
+      EmailAddress emailAddress,
+      UserRole userRole});
 }
 
 /// @nodoc
@@ -72,6 +76,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object department = freezed,
     Object level = freezed,
     Object emailAddress = freezed,
+    Object userRole = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueID,
@@ -82,6 +87,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
+      userRole: userRole == freezed ? _value.userRole : userRole as UserRole,
     ));
   }
 }
@@ -96,7 +102,8 @@ abstract class _$UsesrCopyWith<$Res> implements $UserCopyWith<$Res> {
       FullName name,
       Department department,
       Level level,
-      EmailAddress emailAddress});
+      EmailAddress emailAddress,
+      UserRole userRole});
 }
 
 /// @nodoc
@@ -115,6 +122,7 @@ class __$UsesrCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object department = freezed,
     Object level = freezed,
     Object emailAddress = freezed,
+    Object userRole = freezed,
   }) {
     return _then(_Usesr(
       id: id == freezed ? _value.id : id as UniqueID,
@@ -125,6 +133,7 @@ class __$UsesrCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
+      userRole: userRole == freezed ? _value.userRole : userRole as UserRole,
     ));
   }
 }
@@ -135,13 +144,14 @@ class _$_Usesr implements _Usesr {
       {@required this.id,
       @required this.name,
       @required this.department,
-      @required this.level,
-      @required this.emailAddress})
+      this.level,
+      @required this.emailAddress,
+      @required this.userRole})
       : assert(id != null),
         assert(name != null),
         assert(department != null),
-        assert(level != null),
-        assert(emailAddress != null);
+        assert(emailAddress != null),
+        assert(userRole != null);
 
   @override
   final UniqueID id;
@@ -153,10 +163,12 @@ class _$_Usesr implements _Usesr {
   final Level level;
   @override
   final EmailAddress emailAddress;
+  @override
+  final UserRole userRole;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, department: $department, level: $level, emailAddress: $emailAddress)';
+    return 'User(id: $id, name: $name, department: $department, level: $level, emailAddress: $emailAddress, userRole: $userRole)';
   }
 
   @override
@@ -174,7 +186,10 @@ class _$_Usesr implements _Usesr {
                 const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)));
+                    .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.userRole, userRole) ||
+                const DeepCollectionEquality()
+                    .equals(other.userRole, userRole)));
   }
 
   @override
@@ -184,7 +199,8 @@ class _$_Usesr implements _Usesr {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(department) ^
       const DeepCollectionEquality().hash(level) ^
-      const DeepCollectionEquality().hash(emailAddress);
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(userRole);
 
   @override
   _$UsesrCopyWith<_Usesr> get copyWith =>
@@ -196,8 +212,9 @@ abstract class _Usesr implements User {
       {@required UniqueID id,
       @required FullName name,
       @required Department department,
-      @required Level level,
-      @required EmailAddress emailAddress}) = _$_Usesr;
+      Level level,
+      @required EmailAddress emailAddress,
+      @required UserRole userRole}) = _$_Usesr;
 
   @override
   UniqueID get id;
@@ -209,6 +226,8 @@ abstract class _Usesr implements User {
   Level get level;
   @override
   EmailAddress get emailAddress;
+  @override
+  UserRole get userRole;
   @override
   _$UsesrCopyWith<_Usesr> get copyWith;
 }

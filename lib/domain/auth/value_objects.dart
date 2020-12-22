@@ -91,7 +91,7 @@ class FullName extends ValueObject<String> {
 }
 
 class CollegeId extends ValueObject<String> {
-  static const int maxLength = 30;
+  static const int length = 10;
 
   @override
   final Either<ValueFailure<String>, String> value;
@@ -100,7 +100,7 @@ class CollegeId extends ValueObject<String> {
     assert(input != null);
     return CollegeId._(
       isnumberValidation(input)
-          .flatMap((a) => lengthEqualityValidation(input, maxLength)),
+          .flatMap((a) => lengthEqualityValidation(a, length)),
     );
   }
   const CollegeId._(this.value);
@@ -114,7 +114,7 @@ class Level extends ValueObject<String> {
   factory Level(String input) {
     assert(input != null);
     return Level._(
-      listValidation(levels, input),
+      right(input),
     );
   }
   const Level._(this.value);
@@ -129,7 +129,7 @@ class Department extends ValueObject<String> {
   factory Department(String input) {
     assert(input != null);
     return Department._(
-      listValidation(departments, input),
+      right(input),
     );
   }
   const Department._(this.value);
@@ -137,9 +137,9 @@ class Department extends ValueObject<String> {
 
 class UserRole extends ValueObject<String> {
   static List<String> roles = [
-    'student',
-    'professor',
-    'admin',
+    'Student',
+    'Professor',
+    'Admin',
   ];
   @override
   final Either<ValueFailure<String>, String> value;

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyTextFormField extends StatefulWidget {
+  final String initString;
   final bool showCheckMake;
   final bool isPassword;
   final IconData icon;
@@ -17,6 +18,7 @@ class MyTextFormField extends StatefulWidget {
     this.onChange,
     this.validator,
     @required this.showCheckMake,
+    this.initString,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: widget.initString ?? '',
       style: const TextStyle(color: Colors.white38, fontSize: 17),
       validator: widget.validator,
       onChanged: widget.onChange,

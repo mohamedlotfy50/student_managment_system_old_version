@@ -64,8 +64,13 @@ class _$RegisterEventTearOff {
   }
 
 // ignore: unused_element
-  _ProfOrAdminRegister profOrAdminRegister() {
-    return const _ProfOrAdminRegister();
+  _AdminRegister adminRegister() {
+    return const _AdminRegister();
+  }
+
+// ignore: unused_element
+  _ProfRegister profRegister() {
+    return const _ProfRegister();
   }
 }
 
@@ -86,7 +91,8 @@ mixin _$RegisterEvent {
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -98,7 +104,8 @@ mixin _$RegisterEvent {
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -110,7 +117,8 @@ mixin _$RegisterEvent {
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -121,7 +129,8 @@ mixin _$RegisterEvent {
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   });
 }
@@ -223,7 +232,8 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -232,7 +242,8 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return emailChanged(emailString);
   }
 
@@ -247,7 +258,8 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -267,7 +279,8 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -276,7 +289,8 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return emailChanged(this);
   }
 
@@ -290,7 +304,8 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -392,7 +407,8 @@ class _$_PasswordChanged
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -401,7 +417,8 @@ class _$_PasswordChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return passwordChanged(passwordString);
   }
 
@@ -416,7 +433,8 @@ class _$_PasswordChanged
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -436,7 +454,8 @@ class _$_PasswordChanged
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -445,7 +464,8 @@ class _$_PasswordChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return passwordChanged(this);
   }
 
@@ -459,7 +479,8 @@ class _$_PasswordChanged
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -576,7 +597,8 @@ class _$_ConfirmPasswordChanged
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -585,7 +607,8 @@ class _$_ConfirmPasswordChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return confirmpasswordChanged(confirmPasswordString, passwordString);
   }
 
@@ -600,7 +623,8 @@ class _$_ConfirmPasswordChanged
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -620,7 +644,8 @@ class _$_ConfirmPasswordChanged
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -629,7 +654,8 @@ class _$_ConfirmPasswordChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return confirmpasswordChanged(this);
   }
 
@@ -643,7 +669,8 @@ class _$_ConfirmPasswordChanged
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -745,7 +772,8 @@ class _$_FullNamedChanged
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -754,7 +782,8 @@ class _$_FullNamedChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return fullNamedChanged(fullName);
   }
 
@@ -769,7 +798,8 @@ class _$_FullNamedChanged
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -789,7 +819,8 @@ class _$_FullNamedChanged
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -798,7 +829,8 @@ class _$_FullNamedChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return fullNamedChanged(this);
   }
 
@@ -812,7 +844,8 @@ class _$_FullNamedChanged
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -912,7 +945,8 @@ class _$_UserRoleChanged
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -921,7 +955,8 @@ class _$_UserRoleChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return userRoleChanged(userRole);
   }
 
@@ -936,7 +971,8 @@ class _$_UserRoleChanged
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -956,7 +992,8 @@ class _$_UserRoleChanged
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -965,7 +1002,8 @@ class _$_UserRoleChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return userRoleChanged(this);
   }
 
@@ -979,7 +1017,8 @@ class _$_UserRoleChanged
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1079,7 +1118,8 @@ class _$_CollegeIdChanged
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1088,7 +1128,8 @@ class _$_CollegeIdChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return collegeIdChanged(collegeId);
   }
 
@@ -1103,7 +1144,8 @@ class _$_CollegeIdChanged
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1123,7 +1165,8 @@ class _$_CollegeIdChanged
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1132,7 +1175,8 @@ class _$_CollegeIdChanged
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return collegeIdChanged(this);
   }
 
@@ -1146,7 +1190,8 @@ class _$_CollegeIdChanged
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1222,7 +1267,8 @@ class _$_StudentRegister
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1231,7 +1277,8 @@ class _$_StudentRegister
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return studentRegister();
   }
 
@@ -1246,7 +1293,8 @@ class _$_StudentRegister
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1266,7 +1314,8 @@ class _$_StudentRegister
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1275,7 +1324,8 @@ class _$_StudentRegister
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
     return studentRegister(this);
   }
 
@@ -1289,7 +1339,8 @@ class _$_StudentRegister
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1305,45 +1356,42 @@ abstract class _StudentRegister implements RegisterEvent {
 }
 
 /// @nodoc
-abstract class _$ProfOrAdminRegisterCopyWith<$Res> {
-  factory _$ProfOrAdminRegisterCopyWith(_ProfOrAdminRegister value,
-          $Res Function(_ProfOrAdminRegister) then) =
-      __$ProfOrAdminRegisterCopyWithImpl<$Res>;
+abstract class _$AdminRegisterCopyWith<$Res> {
+  factory _$AdminRegisterCopyWith(
+          _AdminRegister value, $Res Function(_AdminRegister) then) =
+      __$AdminRegisterCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ProfOrAdminRegisterCopyWithImpl<$Res>
+class __$AdminRegisterCopyWithImpl<$Res>
     extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$ProfOrAdminRegisterCopyWith<$Res> {
-  __$ProfOrAdminRegisterCopyWithImpl(
-      _ProfOrAdminRegister _value, $Res Function(_ProfOrAdminRegister) _then)
-      : super(_value, (v) => _then(v as _ProfOrAdminRegister));
+    implements _$AdminRegisterCopyWith<$Res> {
+  __$AdminRegisterCopyWithImpl(
+      _AdminRegister _value, $Res Function(_AdminRegister) _then)
+      : super(_value, (v) => _then(v as _AdminRegister));
 
   @override
-  _ProfOrAdminRegister get _value => super._value as _ProfOrAdminRegister;
+  _AdminRegister get _value => super._value as _AdminRegister;
 }
 
 /// @nodoc
-class _$_ProfOrAdminRegister
-    with DiagnosticableTreeMixin
-    implements _ProfOrAdminRegister {
-  const _$_ProfOrAdminRegister();
+class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
+  const _$_AdminRegister();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.profOrAdminRegister()';
+    return 'RegisterEvent.adminRegister()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.profOrAdminRegister'));
+    properties..add(DiagnosticsProperty('type', 'RegisterEvent.adminRegister'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ProfOrAdminRegister);
+    return identical(this, other) || (other is _AdminRegister);
   }
 
   @override
@@ -1361,7 +1409,8 @@ class _$_ProfOrAdminRegister
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
     @required Result studentRegister(),
-    @required Result profOrAdminRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1370,8 +1419,9 @@ class _$_ProfOrAdminRegister
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
-    return profOrAdminRegister();
+    assert(adminRegister != null);
+    assert(profRegister != null);
+    return adminRegister();
   }
 
   @override
@@ -1385,12 +1435,13 @@ class _$_ProfOrAdminRegister
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
     Result studentRegister(),
-    Result profOrAdminRegister(),
+    Result adminRegister(),
+    Result profRegister(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (profOrAdminRegister != null) {
-      return profOrAdminRegister();
+    if (adminRegister != null) {
+      return adminRegister();
     }
     return orElse();
   }
@@ -1405,7 +1456,8 @@ class _$_ProfOrAdminRegister
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
     @required Result studentRegister(_StudentRegister value),
-    @required Result profOrAdminRegister(_ProfOrAdminRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1414,8 +1466,9 @@ class _$_ProfOrAdminRegister
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
     assert(studentRegister != null);
-    assert(profOrAdminRegister != null);
-    return profOrAdminRegister(this);
+    assert(adminRegister != null);
+    assert(profRegister != null);
+    return adminRegister(this);
   }
 
   @override
@@ -1428,19 +1481,162 @@ class _$_ProfOrAdminRegister
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
     Result studentRegister(_StudentRegister value),
-    Result profOrAdminRegister(_ProfOrAdminRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (profOrAdminRegister != null) {
-      return profOrAdminRegister(this);
+    if (adminRegister != null) {
+      return adminRegister(this);
     }
     return orElse();
   }
 }
 
-abstract class _ProfOrAdminRegister implements RegisterEvent {
-  const factory _ProfOrAdminRegister() = _$_ProfOrAdminRegister;
+abstract class _AdminRegister implements RegisterEvent {
+  const factory _AdminRegister() = _$_AdminRegister;
+}
+
+/// @nodoc
+abstract class _$ProfRegisterCopyWith<$Res> {
+  factory _$ProfRegisterCopyWith(
+          _ProfRegister value, $Res Function(_ProfRegister) then) =
+      __$ProfRegisterCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ProfRegisterCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res>
+    implements _$ProfRegisterCopyWith<$Res> {
+  __$ProfRegisterCopyWithImpl(
+      _ProfRegister _value, $Res Function(_ProfRegister) _then)
+      : super(_value, (v) => _then(v as _ProfRegister));
+
+  @override
+  _ProfRegister get _value => super._value as _ProfRegister;
+}
+
+/// @nodoc
+class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
+  const _$_ProfRegister();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RegisterEvent.profRegister()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'RegisterEvent.profRegister'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ProfRegister);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required
+        Result confirmpasswordChanged(
+            String confirmPasswordString, String passwordString),
+    @required Result fullNamedChanged(String fullName),
+    @required Result userRoleChanged(String userRole),
+    @required Result collegeIdChanged(String collegeId),
+    @required Result studentRegister(),
+    @required Result adminRegister(),
+    @required Result profRegister(),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmpasswordChanged != null);
+    assert(fullNamedChanged != null);
+    assert(userRoleChanged != null);
+    assert(collegeIdChanged != null);
+    assert(studentRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
+    return profRegister();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result confirmpasswordChanged(
+        String confirmPasswordString, String passwordString),
+    Result fullNamedChanged(String fullName),
+    Result userRoleChanged(String userRole),
+    Result collegeIdChanged(String collegeId),
+    Result studentRegister(),
+    Result adminRegister(),
+    Result profRegister(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (profRegister != null) {
+      return profRegister();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result confirmpasswordChanged(_ConfirmPasswordChanged value),
+    @required Result fullNamedChanged(_FullNamedChanged value),
+    @required Result userRoleChanged(_UserRoleChanged value),
+    @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result studentRegister(_StudentRegister value),
+    @required Result adminRegister(_AdminRegister value),
+    @required Result profRegister(_ProfRegister value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmpasswordChanged != null);
+    assert(fullNamedChanged != null);
+    assert(userRoleChanged != null);
+    assert(collegeIdChanged != null);
+    assert(studentRegister != null);
+    assert(adminRegister != null);
+    assert(profRegister != null);
+    return profRegister(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result confirmpasswordChanged(_ConfirmPasswordChanged value),
+    Result fullNamedChanged(_FullNamedChanged value),
+    Result userRoleChanged(_UserRoleChanged value),
+    Result collegeIdChanged(_CollegeIdChanged value),
+    Result studentRegister(_StudentRegister value),
+    Result adminRegister(_AdminRegister value),
+    Result profRegister(_ProfRegister value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (profRegister != null) {
+      return profRegister(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProfRegister implements RegisterEvent {
+  const factory _ProfRegister() = _$_ProfRegister;
 }
 
 /// @nodoc
@@ -1458,8 +1654,8 @@ class _$RegisterStateTearOff {
       @required bool isSubmiting,
       @required bool showErrorMessages,
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
-      @required Level level,
-      @required Department department}) {
+      Level level,
+      Department department}) {
     return _RegisterState(
       fullName: fullName,
       emailAddress: emailAddress,
@@ -1651,8 +1847,8 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
       @required this.isSubmiting,
       @required this.showErrorMessages,
       @required this.authFailureOrSuccess,
-      @required this.level,
-      @required this.department})
+      this.level,
+      this.department})
       : assert(fullName != null),
         assert(emailAddress != null),
         assert(password != null),
@@ -1661,9 +1857,7 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
         assert(userRole != null),
         assert(isSubmiting != null),
         assert(showErrorMessages != null),
-        assert(authFailureOrSuccess != null),
-        assert(level != null),
-        assert(department != null);
+        assert(authFailureOrSuccess != null);
 
   @override
   final FullName fullName;
@@ -1780,8 +1974,8 @@ abstract class _RegisterState implements RegisterState {
       @required bool isSubmiting,
       @required bool showErrorMessages,
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
-      @required Level level,
-      @required Department department}) = _$_RegisterState;
+      Level level,
+      Department department}) = _$_RegisterState;
 
   @override
   FullName get fullName;

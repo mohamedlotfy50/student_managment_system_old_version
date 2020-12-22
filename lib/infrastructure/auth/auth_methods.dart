@@ -13,7 +13,7 @@ class AuthApiRequester implements AuthMethods {
   AuthApiRequester(this.flutterSecureStorage);
 
   @override
-  Future<Either<AuthFailure, Unit>> adminAndProfRegister(
+  Future<Either<AuthFailure, Unit>> adminRegister(
       {FullName fullName,
       EmailAddress emailAddress,
       Password password,
@@ -31,9 +31,6 @@ class AuthApiRequester implements AuthMethods {
       {EmailAddress emailAddress, SignInPassword password}) async {
     final String emailString = emailAddress.getOrCrash();
     final String passwordString = password.getOrCrash();
-    setToken(
-        token:
-            "1.eyJpZCI6IjEyMzQ1Njc4OTAiLCJmdWxsTmFtZSI6Ik1vaGFtZWQgTG90ZnkiLCJkZXBhcnRtZW50IjoiU0UiLCJsZXZlbCI6IjNyZCIsImVtYWlsQWRkcmVzcyI6Im1vbG90Znk1MEBnbWFpbC5jb20ifQ.1");
   }
 
   @override
@@ -81,9 +78,10 @@ class AuthApiRequester implements AuthMethods {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> setToken({String token}) async {
+  Future<Either<AuthFailure, Unit>> setToken({@required String token}) async {
     try {
       await flutterSecureStorage.write(key: 'token', value: token);
+
       return right(unit);
     } catch (_) {
       return left(const AuthFailure.noTokenFound());
@@ -93,5 +91,27 @@ class AuthApiRequester implements AuthMethods {
   @override
   Future<void> signOut() async {
     await flutterSecureStorage.delete(key: 'token');
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> profRegister(
+      {FullName fullName,
+      EmailAddress emailAddress,
+      Password password,
+      CollegeId collegeId,
+      Department department,
+      UserRole userRole}) {
+    final String nameString = fullName.getOrCrash();
+    final String emailString = emailAddress.getOrCrash();
+    final String passwordString = password.getOrCrash();
+    final String collegeIDString = collegeId.getOrCrash();
+    final String userRoleString = userRole.getOrCrash();
+    final String departmentString = department.getOrCrash();
+  }
+
+  @override
+  Future<String> getToken() async {
+    final String token = await flutterSecureStorage.read(key: 'token');
+    return token;
   }
 }

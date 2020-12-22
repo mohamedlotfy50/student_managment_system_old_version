@@ -16,5 +16,6 @@ abstract class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.collegeIdChanged({@required String collegeId}) =
       _CollegeIdChanged;
   const factory RegisterEvent.studentRegister() = _StudentRegister;
-  const factory RegisterEvent.profOrAdminRegister() = _ProfOrAdminRegister;
+  const factory RegisterEvent.adminRegister() = _AdminRegister;
+  const factory RegisterEvent.profRegister() = _ProfRegister;
 }

@@ -17,7 +17,7 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
-  bool isActive = true; //TODO: change it back to false after you finsh
+  bool isActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _AuthPageState extends State<AuthPage> {
               ),
               child: SafeArea(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,7 +72,7 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                     if (!isActive) const SignInView() else const SignUpView(),
                     const Text(
-                      "Powerd by",
+                      "Powerd by M.Lotfy",
                       style: TextStyle(
                         color: Colors.white54,
                       ),

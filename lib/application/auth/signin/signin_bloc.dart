@@ -55,6 +55,10 @@ class SigninBloc extends Bloc<SigninEvent, SigninState> {
             showErrorMessages: false,
             authFailureOrSuccess: some(authFailureOrSuccess),
           );
+          await _authMethods.signOut();
+          await _authMethods.setToken(
+              token:
+                  "1.eyJkZXBhcnRtZW50IjoiU0UiLCJmdWxsTmFtZSI6IkpvaG4gRG9lIiwiRW1haWwiOjE1MTYyMzkwMjIsImxldmVsIjoiM3JkIiwiZW1haWxBZGRyZXNzIjoibW9sb3RmeTUwQGdtYWlsLmNvbSIsInJvbGUiOiJTdHVkZW50IiwiaWQiOiIwMTIzNDU2Nzg5In0.1");
         }
         yield state.copyWith(
           showErrorMessages: true,

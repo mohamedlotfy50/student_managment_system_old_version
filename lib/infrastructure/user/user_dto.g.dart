@@ -13,6 +13,7 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     department: json['department'] as String,
     level: json['level'] as String,
     emailAddress: json['emailAddress'] as String,
+    role: json['role'] as String,
   );
 }
 
@@ -23,4 +24,5 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
       'department': instance.department,
       'level': instance.level,
       'emailAddress': instance.emailAddress,
+      'role': instance.role,
     };

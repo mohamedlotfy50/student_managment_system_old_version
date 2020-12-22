@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/auth/auth_wrapper/wrapper_bloc.dart';
-import '../../../application/auth/signin/signin_bloc.dart';
 import '../../../injection.dart';
 import '../../routs/router.gr.dart';
 import '../../ui/auth/auth_wrapper.dart';
@@ -15,10 +14,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              getIt<WrapperBloc>()..add(const WrapperEvent.signOut()),
-        ),
-        BlocProvider(
-          create: (context) => getIt<SigninBloc>(),
+              getIt<WrapperBloc>()..add(const WrapperEvent.checkAuthRequest()),
         ),
       ],
       child: MaterialApp(

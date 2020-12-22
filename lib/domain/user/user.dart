@@ -11,7 +11,8 @@ abstract class User with _$User {
     @required UniqueID id,
     @required FullName name,
     @required Department department,
-    @required Level level,
+    Level level,
     @required EmailAddress emailAddress,
+    @required UserRole userRole,
   }) = _Usesr;
 }

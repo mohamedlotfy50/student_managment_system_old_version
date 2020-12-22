@@ -12,8 +12,8 @@ abstract class RegisterState with _$RegisterState {
     @required bool isSubmiting,
     @required bool showErrorMessages,
     @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
-    @required Level level,
-    @required Department department,
+    Level level,
+    Department department,
   }) = _RegisterState;
   factory RegisterState.inistial() => RegisterState(
         fullName: FullName(''),
@@ -21,7 +21,7 @@ abstract class RegisterState with _$RegisterState {
         password: Password(''),
         passwordConfirm: PasswordConfirm('', ''),
         collegeId: CollegeId(''),
-        userRole: UserRole(''),
+        userRole: UserRole('Student'),
         authFailureOrSuccess: none(),
         isSubmiting: false,
         showErrorMessages: false,

@@ -1,4 +1,5 @@
-import 'package:e_exame/presentation/core/conts/colors.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:e_exame/presentation/routs/router.gr.dart';
 import 'package:e_exame/presentation/ui/auth/widgets/background.dart';
 import 'package:e_exame/presentation/ui/auth/widgets/my_button.dart';
 import 'package:e_exame/presentation/ui/auth/widgets/text_form_field.dart';
@@ -11,13 +12,19 @@ class SignInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return BlocConsumer<SigninBloc, SigninState>(
       listener: (context, state) {},
       builder: (context, state) {
         return Background(
+          formKey: formKey,
+          showError: state.showErrorMessages,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              const SizedBox(
+                height: 10,
+              ),
               MyTextFormField(
                 showCheckMake: state.emailAddress.isValid(),
                 isPassword: false,
@@ -59,13 +66,18 @@ class SignInView extends StatelessWidget {
               ),
               MyButton(
                 onpress: () {
-                  context.read<SigninBloc>().add(const SigninEvent.signIn());
+                  if (formKey.currentState.validate()) {
+                    context.read<SigninBloc>().add(const SigninEvent.signIn());
+                    ExtendedNavigator.root.popAndPush(Routes.mainPage);
+                  }
                 },
                 text: "Sign in",
-              )
+              ),
+              const SizedBox(
+                height: 10,
+              ),
             ],
           ),
-          showError: state.showErrorMessages,
         );
       },
     );

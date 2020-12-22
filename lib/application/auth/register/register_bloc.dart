@@ -52,7 +52,6 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       userRoleChanged: (e) async* {
         yield state.copyWith(
           userRole: UserRole(e.userRole),
-          //TODO:fix the roll value object
           authFailureOrSuccess: none(),
         );
       },
@@ -104,7 +103,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           isSubmiting: false,
         );
       },
-      profOrAdminRegister: (e) async* {
+      adminRegister: (e) async* {
         final bool isValidEmail = state.emailAddress.isValid();
         final bool isValidpassword = state.password.isValid();
         final bool isValidName = state.fullName.isValid();
@@ -121,7 +120,46 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
             authFailureOrSuccess: none(),
           );
           final Either<AuthFailure, Unit> authFailureOrSuccess =
-              await _authMethods.adminAndProfRegister(
+              await _authMethods.adminRegister(
+            fullName: state.fullName,
+            emailAddress: state.emailAddress,
+            password: state.password,
+            collegeId: state.collegeId,
+            userRole: state.userRole,
+          );
+          yield state.copyWith(
+            isSubmiting: false,
+            showErrorMessages: false,
+            authFailureOrSuccess: some(authFailureOrSuccess),
+          );
+        }
+        yield state.copyWith(
+          showErrorMessages: true,
+          authFailureOrSuccess: none(),
+          isSubmiting: false,
+        );
+      },
+      profRegister: (e) async* {
+        final bool isValidEmail = state.emailAddress.isValid();
+        final bool isValidpassword = state.password.isValid();
+        final bool isValidName = state.fullName.isValid();
+        final bool isValidDepartment = state.department.isValid();
+        final bool isValidCollege = state.collegeId.isValid();
+        final bool isValidUserRole = state.userRole.isValid();
+        if (isValidEmail &&
+            isValidpassword &&
+            isValidName &&
+            isValidDepartment &&
+            isValidCollege &&
+            isValidUserRole) {
+          yield state.copyWith(
+            isSubmiting: true,
+            showErrorMessages: false,
+            authFailureOrSuccess: none(),
+          );
+          final Either<AuthFailure, Unit> authFailureOrSuccess =
+              await _authMethods.profRegister(
+            department: state.department,
             fullName: state.fullName,
             emailAddress: state.emailAddress,
             password: state.password,

@@ -31,11 +31,12 @@ GetIt $initGetIt(
   gh.lazySingleton<FlutterSecureStorage>(
       () => injectabaleModule.lutterSecureStorage);
   gh.lazySingleton<UserMethods>(() => IUser());
-  gh.factory<UserWatcherBloc>(() => UserWatcherBloc(get<UserMethods>()));
   gh.lazySingleton<AuthMethods>(
       () => AuthApiRequester(get<FlutterSecureStorage>()));
   gh.factory<RegisterBloc>(() => RegisterBloc(get<AuthMethods>()));
   gh.factory<SigninBloc>(() => SigninBloc(get<AuthMethods>()));
+  gh.factory<UserWatcherBloc>(
+      () => UserWatcherBloc(get<UserMethods>(), get<AuthMethods>()));
   gh.factory<WrapperBloc>(() => WrapperBloc(get<AuthMethods>()));
   return get;
 }
