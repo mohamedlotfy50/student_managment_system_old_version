@@ -2,26 +2,27 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
+import 'package:e_exame/domain/auth/auth_failure.dart';
+import 'package:e_exame/domain/auth/auth_methods.dart';
+import 'package:e_exame/domain/auth/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../domain/auth/auth_failure.dart';
-import '../../../domain/auth/auth_methods.dart';
-import '../../../domain/auth/value_objects.dart';
-
-part 'register_bloc.freezed.dart';
-part 'register_event.dart';
-part 'register_state.dart';
+part 'signin_and_register_event.dart';
+part 'signin_and_register_state.dart';
+part 'signin_and_register_bloc.freezed.dart';
 
 @injectable
-class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
+class SigninAndRegisterBloc
+    extends Bloc<SigninAndRegisterEvent, SigninAndRegisterState> {
   final AuthMethods _authMethods;
-  RegisterBloc(this._authMethods) : super(RegisterState.inistial());
+
+  SigninAndRegisterBloc(this._authMethods)
+      : super(SigninAndRegisterState.inistial());
 
   @override
-  Stream<RegisterState> mapEventToState(
-    RegisterEvent event,
+  Stream<SigninAndRegisterState> mapEventToState(
+    SigninAndRegisterEvent event,
   ) async* {
     yield* event.map(
       emailChanged: (e) async* {
@@ -33,6 +34,12 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       passwordChanged: (e) async* {
         yield state.copyWith(
           password: Password(e.passwordString),
+          authFailureOrSuccess: none(),
+        );
+      },
+      signinPasswordChanged: (e) async* {
+        yield state.copyWith(
+          signinPassword: SignInPassword(e.signinPasswordString),
           authFailureOrSuccess: none(),
         );
       },
@@ -61,7 +68,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           authFailureOrSuccess: none(),
         );
       },
-      studentRegister: (e) async* {
+      register: (e) async* {
         final bool isValidEmail = state.emailAddress.isValid();
         final bool isValidpassword = state.password.isValid();
         final bool isValidName = state.fullName.isValid();
@@ -82,7 +89,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
             authFailureOrSuccess: none(),
           );
           final Either<AuthFailure, Unit> authFailureOrSuccess =
-              await _authMethods.studentRegister(
+              await _authMethods.register(
             level: state.level,
             department: state.department,
             fullName: state.fullName,
@@ -103,68 +110,19 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           isSubmiting: false,
         );
       },
-      adminRegister: (e) async* {
+      signIn: (e) async* {
         final bool isValidEmail = state.emailAddress.isValid();
-        final bool isValidpassword = state.password.isValid();
-        final bool isValidName = state.fullName.isValid();
-        final bool isValidCollege = state.collegeId.isValid();
-        final bool isValidUserRole = state.userRole.isValid();
-        if (isValidEmail &&
-            isValidpassword &&
-            isValidName &&
-            isValidCollege &&
-            isValidUserRole) {
+        final bool isValidpassword = state.signinPassword.isValid();
+        if (isValidEmail && isValidpassword) {
           yield state.copyWith(
             isSubmiting: true,
             showErrorMessages: false,
             authFailureOrSuccess: none(),
           );
           final Either<AuthFailure, Unit> authFailureOrSuccess =
-              await _authMethods.adminRegister(
-            fullName: state.fullName,
+              await _authMethods.signIn(
             emailAddress: state.emailAddress,
-            password: state.password,
-            collegeId: state.collegeId,
-            userRole: state.userRole,
-          );
-          yield state.copyWith(
-            isSubmiting: false,
-            showErrorMessages: false,
-            authFailureOrSuccess: some(authFailureOrSuccess),
-          );
-        }
-        yield state.copyWith(
-          showErrorMessages: true,
-          authFailureOrSuccess: none(),
-          isSubmiting: false,
-        );
-      },
-      profRegister: (e) async* {
-        final bool isValidEmail = state.emailAddress.isValid();
-        final bool isValidpassword = state.password.isValid();
-        final bool isValidName = state.fullName.isValid();
-        final bool isValidDepartment = state.department.isValid();
-        final bool isValidCollege = state.collegeId.isValid();
-        final bool isValidUserRole = state.userRole.isValid();
-        if (isValidEmail &&
-            isValidpassword &&
-            isValidName &&
-            isValidDepartment &&
-            isValidCollege &&
-            isValidUserRole) {
-          yield state.copyWith(
-            isSubmiting: true,
-            showErrorMessages: false,
-            authFailureOrSuccess: none(),
-          );
-          final Either<AuthFailure, Unit> authFailureOrSuccess =
-              await _authMethods.profRegister(
-            department: state.department,
-            fullName: state.fullName,
-            emailAddress: state.emailAddress,
-            password: state.password,
-            collegeId: state.collegeId,
-            userRole: state.userRole,
+            password: state.signinPassword,
           );
           yield state.copyWith(
             isSubmiting: false,

@@ -1,8 +1,9 @@
-part of 'register_bloc.dart';
+part of 'signin_and_register_bloc.dart';
 
 @freezed
-abstract class RegisterState with _$RegisterState {
-  const factory RegisterState({
+abstract class SigninAndRegisterState with _$SigninAndRegisterState {
+  const factory SigninAndRegisterState({
+    @required SignInPassword signinPassword,
     @required FullName fullName,
     @required EmailAddress emailAddress,
     @required Password password,
@@ -14,8 +15,9 @@ abstract class RegisterState with _$RegisterState {
     @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
     Level level,
     Department department,
-  }) = _RegisterState;
-  factory RegisterState.inistial() => RegisterState(
+  }) = _SigninAndRegisterState;
+  factory SigninAndRegisterState.inistial() => SigninAndRegisterState(
+        signinPassword: SignInPassword(''),
         fullName: FullName(''),
         emailAddress: EmailAddress(''),
         password: Password(''),

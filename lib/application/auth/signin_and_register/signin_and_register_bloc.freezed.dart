@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'register_bloc.dart';
+part of 'signin_and_register_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'register_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$RegisterEventTearOff {
-  const _$RegisterEventTearOff();
+class _$SigninAndRegisterEventTearOff {
+  const _$SigninAndRegisterEventTearOff();
 
 // ignore: unused_element
   _EmailChanged emailChanged({@required String emailString}) {
@@ -59,27 +59,30 @@ class _$RegisterEventTearOff {
   }
 
 // ignore: unused_element
-  _StudentRegister studentRegister() {
+  _StudentRegister register() {
     return const _StudentRegister();
   }
 
 // ignore: unused_element
-  _AdminRegister adminRegister() {
-    return const _AdminRegister();
+  _SignIn signIn() {
+    return const _SignIn();
   }
 
 // ignore: unused_element
-  _ProfRegister profRegister() {
-    return const _ProfRegister();
+  _SigninPasswordChanged signinPasswordChanged(
+      {@required String signinPasswordString}) {
+    return _SigninPasswordChanged(
+      signinPasswordString: signinPasswordString,
+    );
   }
 }
 
 /// @nodoc
 // ignore: unused_element
-const $RegisterEvent = _$RegisterEventTearOff();
+const $SigninAndRegisterEvent = _$SigninAndRegisterEventTearOff();
 
 /// @nodoc
-mixin _$RegisterEvent {
+mixin _$SigninAndRegisterEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
@@ -90,9 +93,9 @@ mixin _$RegisterEvent {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -103,9 +106,9 @@ mixin _$RegisterEvent {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -116,9 +119,9 @@ mixin _$RegisterEvent {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -128,28 +131,28 @@ mixin _$RegisterEvent {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   });
 }
 
 /// @nodoc
-abstract class $RegisterEventCopyWith<$Res> {
-  factory $RegisterEventCopyWith(
-          RegisterEvent value, $Res Function(RegisterEvent) then) =
-      _$RegisterEventCopyWithImpl<$Res>;
+abstract class $SigninAndRegisterEventCopyWith<$Res> {
+  factory $SigninAndRegisterEventCopyWith(SigninAndRegisterEvent value,
+          $Res Function(SigninAndRegisterEvent) then) =
+      _$SigninAndRegisterEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RegisterEventCopyWithImpl<$Res>
-    implements $RegisterEventCopyWith<$Res> {
-  _$RegisterEventCopyWithImpl(this._value, this._then);
+class _$SigninAndRegisterEventCopyWithImpl<$Res>
+    implements $SigninAndRegisterEventCopyWith<$Res> {
+  _$SigninAndRegisterEventCopyWithImpl(this._value, this._then);
 
-  final RegisterEvent _value;
+  final SigninAndRegisterEvent _value;
   // ignore: unused_field
-  final $Res Function(RegisterEvent) _then;
+  final $Res Function(SigninAndRegisterEvent) _then;
 }
 
 /// @nodoc
@@ -162,7 +165,7 @@ abstract class _$EmailChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$EmailChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
     implements _$EmailChangedCopyWith<$Res> {
   __$EmailChangedCopyWithImpl(
       _EmailChanged _value, $Res Function(_EmailChanged) _then)
@@ -183,7 +186,7 @@ class __$EmailChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
+class _$_EmailChanged implements _EmailChanged {
   const _$_EmailChanged({@required this.emailString})
       : assert(emailString != null);
 
@@ -191,16 +194,8 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
   final String emailString;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.emailChanged(emailString: $emailString)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.emailChanged'))
-      ..add(DiagnosticsProperty('emailString', emailString));
+  String toString() {
+    return 'SigninAndRegisterEvent.emailChanged(emailString: $emailString)';
   }
 
   @override
@@ -231,9 +226,9 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -241,9 +236,9 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return emailChanged(emailString);
   }
 
@@ -257,9 +252,9 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -278,9 +273,9 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -288,9 +283,9 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return emailChanged(this);
   }
 
@@ -303,9 +298,9 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -316,7 +311,7 @@ class _$_EmailChanged with DiagnosticableTreeMixin implements _EmailChanged {
   }
 }
 
-abstract class _EmailChanged implements RegisterEvent {
+abstract class _EmailChanged implements SigninAndRegisterEvent {
   const factory _EmailChanged({@required String emailString}) = _$_EmailChanged;
 
   String get emailString;
@@ -333,7 +328,7 @@ abstract class _$PasswordChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$PasswordChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
     implements _$PasswordChangedCopyWith<$Res> {
   __$PasswordChangedCopyWithImpl(
       _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
@@ -355,9 +350,7 @@ class __$PasswordChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_PasswordChanged
-    with DiagnosticableTreeMixin
-    implements _PasswordChanged {
+class _$_PasswordChanged implements _PasswordChanged {
   const _$_PasswordChanged({@required this.passwordString})
       : assert(passwordString != null);
 
@@ -365,16 +358,8 @@ class _$_PasswordChanged
   final String passwordString;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.passwordChanged(passwordString: $passwordString)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.passwordChanged'))
-      ..add(DiagnosticsProperty('passwordString', passwordString));
+  String toString() {
+    return 'SigninAndRegisterEvent.passwordChanged(passwordString: $passwordString)';
   }
 
   @override
@@ -406,9 +391,9 @@ class _$_PasswordChanged
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -416,9 +401,9 @@ class _$_PasswordChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return passwordChanged(passwordString);
   }
 
@@ -432,9 +417,9 @@ class _$_PasswordChanged
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -453,9 +438,9 @@ class _$_PasswordChanged
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -463,9 +448,9 @@ class _$_PasswordChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return passwordChanged(this);
   }
 
@@ -478,9 +463,9 @@ class _$_PasswordChanged
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -491,7 +476,7 @@ class _$_PasswordChanged
   }
 }
 
-abstract class _PasswordChanged implements RegisterEvent {
+abstract class _PasswordChanged implements SigninAndRegisterEvent {
   const factory _PasswordChanged({@required String passwordString}) =
       _$_PasswordChanged;
 
@@ -509,7 +494,7 @@ abstract class _$ConfirmPasswordChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$ConfirmPasswordChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
     implements _$ConfirmPasswordChangedCopyWith<$Res> {
   __$ConfirmPasswordChangedCopyWithImpl(_ConfirmPasswordChanged _value,
       $Res Function(_ConfirmPasswordChanged) _then)
@@ -535,9 +520,7 @@ class __$ConfirmPasswordChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_ConfirmPasswordChanged
-    with DiagnosticableTreeMixin
-    implements _ConfirmPasswordChanged {
+class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
   const _$_ConfirmPasswordChanged(
       {@required this.confirmPasswordString, @required this.passwordString})
       : assert(confirmPasswordString != null),
@@ -549,17 +532,8 @@ class _$_ConfirmPasswordChanged
   final String passwordString;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.confirmpasswordChanged(confirmPasswordString: $confirmPasswordString, passwordString: $passwordString)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.confirmpasswordChanged'))
-      ..add(DiagnosticsProperty('confirmPasswordString', confirmPasswordString))
-      ..add(DiagnosticsProperty('passwordString', passwordString));
+  String toString() {
+    return 'SigninAndRegisterEvent.confirmpasswordChanged(confirmPasswordString: $confirmPasswordString, passwordString: $passwordString)';
   }
 
   @override
@@ -596,9 +570,9 @@ class _$_ConfirmPasswordChanged
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -606,9 +580,9 @@ class _$_ConfirmPasswordChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return confirmpasswordChanged(confirmPasswordString, passwordString);
   }
 
@@ -622,9 +596,9 @@ class _$_ConfirmPasswordChanged
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -643,9 +617,9 @@ class _$_ConfirmPasswordChanged
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -653,9 +627,9 @@ class _$_ConfirmPasswordChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return confirmpasswordChanged(this);
   }
 
@@ -668,9 +642,9 @@ class _$_ConfirmPasswordChanged
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -681,7 +655,7 @@ class _$_ConfirmPasswordChanged
   }
 }
 
-abstract class _ConfirmPasswordChanged implements RegisterEvent {
+abstract class _ConfirmPasswordChanged implements SigninAndRegisterEvent {
   const factory _ConfirmPasswordChanged(
       {@required String confirmPasswordString,
       @required String passwordString}) = _$_ConfirmPasswordChanged;
@@ -701,7 +675,7 @@ abstract class _$FullNamedChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$FullNamedChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
     implements _$FullNamedChangedCopyWith<$Res> {
   __$FullNamedChangedCopyWithImpl(
       _FullNamedChanged _value, $Res Function(_FullNamedChanged) _then)
@@ -721,9 +695,7 @@ class __$FullNamedChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_FullNamedChanged
-    with DiagnosticableTreeMixin
-    implements _FullNamedChanged {
+class _$_FullNamedChanged implements _FullNamedChanged {
   const _$_FullNamedChanged({@required this.fullName})
       : assert(fullName != null);
 
@@ -731,16 +703,8 @@ class _$_FullNamedChanged
   final String fullName;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.fullNamedChanged(fullName: $fullName)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.fullNamedChanged'))
-      ..add(DiagnosticsProperty('fullName', fullName));
+  String toString() {
+    return 'SigninAndRegisterEvent.fullNamedChanged(fullName: $fullName)';
   }
 
   @override
@@ -771,9 +735,9 @@ class _$_FullNamedChanged
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -781,9 +745,9 @@ class _$_FullNamedChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return fullNamedChanged(fullName);
   }
 
@@ -797,9 +761,9 @@ class _$_FullNamedChanged
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -818,9 +782,9 @@ class _$_FullNamedChanged
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -828,9 +792,9 @@ class _$_FullNamedChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return fullNamedChanged(this);
   }
 
@@ -843,9 +807,9 @@ class _$_FullNamedChanged
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -856,7 +820,7 @@ class _$_FullNamedChanged
   }
 }
 
-abstract class _FullNamedChanged implements RegisterEvent {
+abstract class _FullNamedChanged implements SigninAndRegisterEvent {
   const factory _FullNamedChanged({@required String fullName}) =
       _$_FullNamedChanged;
 
@@ -874,7 +838,7 @@ abstract class _$UserRoleChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$UserRoleChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
     implements _$UserRoleChangedCopyWith<$Res> {
   __$UserRoleChangedCopyWithImpl(
       _UserRoleChanged _value, $Res Function(_UserRoleChanged) _then)
@@ -894,9 +858,7 @@ class __$UserRoleChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_UserRoleChanged
-    with DiagnosticableTreeMixin
-    implements _UserRoleChanged {
+class _$_UserRoleChanged implements _UserRoleChanged {
   const _$_UserRoleChanged({@required this.userRole})
       : assert(userRole != null);
 
@@ -904,16 +866,8 @@ class _$_UserRoleChanged
   final String userRole;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.userRoleChanged(userRole: $userRole)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.userRoleChanged'))
-      ..add(DiagnosticsProperty('userRole', userRole));
+  String toString() {
+    return 'SigninAndRegisterEvent.userRoleChanged(userRole: $userRole)';
   }
 
   @override
@@ -944,9 +898,9 @@ class _$_UserRoleChanged
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -954,9 +908,9 @@ class _$_UserRoleChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return userRoleChanged(userRole);
   }
 
@@ -970,9 +924,9 @@ class _$_UserRoleChanged
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -991,9 +945,9 @@ class _$_UserRoleChanged
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1001,9 +955,9 @@ class _$_UserRoleChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return userRoleChanged(this);
   }
 
@@ -1016,9 +970,9 @@ class _$_UserRoleChanged
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1029,7 +983,7 @@ class _$_UserRoleChanged
   }
 }
 
-abstract class _UserRoleChanged implements RegisterEvent {
+abstract class _UserRoleChanged implements SigninAndRegisterEvent {
   const factory _UserRoleChanged({@required String userRole}) =
       _$_UserRoleChanged;
 
@@ -1047,7 +1001,7 @@ abstract class _$CollegeIdChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$CollegeIdChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
     implements _$CollegeIdChangedCopyWith<$Res> {
   __$CollegeIdChangedCopyWithImpl(
       _CollegeIdChanged _value, $Res Function(_CollegeIdChanged) _then)
@@ -1067,9 +1021,7 @@ class __$CollegeIdChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_CollegeIdChanged
-    with DiagnosticableTreeMixin
-    implements _CollegeIdChanged {
+class _$_CollegeIdChanged implements _CollegeIdChanged {
   const _$_CollegeIdChanged({@required this.collegeId})
       : assert(collegeId != null);
 
@@ -1077,16 +1029,8 @@ class _$_CollegeIdChanged
   final String collegeId;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.collegeIdChanged(collegeId: $collegeId)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.collegeIdChanged'))
-      ..add(DiagnosticsProperty('collegeId', collegeId));
+  String toString() {
+    return 'SigninAndRegisterEvent.collegeIdChanged(collegeId: $collegeId)';
   }
 
   @override
@@ -1117,9 +1061,9 @@ class _$_CollegeIdChanged
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1127,9 +1071,9 @@ class _$_CollegeIdChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return collegeIdChanged(collegeId);
   }
 
@@ -1143,9 +1087,9 @@ class _$_CollegeIdChanged
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1164,9 +1108,9 @@ class _$_CollegeIdChanged
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1174,9 +1118,9 @@ class _$_CollegeIdChanged
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
     return collegeIdChanged(this);
   }
 
@@ -1189,9 +1133,9 @@ class _$_CollegeIdChanged
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1202,7 +1146,7 @@ class _$_CollegeIdChanged
   }
 }
 
-abstract class _CollegeIdChanged implements RegisterEvent {
+abstract class _CollegeIdChanged implements SigninAndRegisterEvent {
   const factory _CollegeIdChanged({@required String collegeId}) =
       _$_CollegeIdChanged;
 
@@ -1219,7 +1163,7 @@ abstract class _$StudentRegisterCopyWith<$Res> {
 
 /// @nodoc
 class __$StudentRegisterCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
     implements _$StudentRegisterCopyWith<$Res> {
   __$StudentRegisterCopyWithImpl(
       _StudentRegister _value, $Res Function(_StudentRegister) _then)
@@ -1230,21 +1174,12 @@ class __$StudentRegisterCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_StudentRegister
-    with DiagnosticableTreeMixin
-    implements _StudentRegister {
+class _$_StudentRegister implements _StudentRegister {
   const _$_StudentRegister();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.studentRegister()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.studentRegister'));
+  String toString() {
+    return 'SigninAndRegisterEvent.register()';
   }
 
   @override
@@ -1266,9 +1201,9 @@ class _$_StudentRegister
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1276,10 +1211,10 @@ class _$_StudentRegister
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
-    return studentRegister();
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return register();
   }
 
   @override
@@ -1292,14 +1227,14 @@ class _$_StudentRegister
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (studentRegister != null) {
-      return studentRegister();
+    if (register != null) {
+      return register();
     }
     return orElse();
   }
@@ -1313,9 +1248,9 @@ class _$_StudentRegister
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1323,10 +1258,10 @@ class _$_StudentRegister
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
-    return studentRegister(this);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return register(this);
   }
 
   @override
@@ -1338,60 +1273,52 @@ class _$_StudentRegister
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (studentRegister != null) {
-      return studentRegister(this);
+    if (register != null) {
+      return register(this);
     }
     return orElse();
   }
 }
 
-abstract class _StudentRegister implements RegisterEvent {
+abstract class _StudentRegister implements SigninAndRegisterEvent {
   const factory _StudentRegister() = _$_StudentRegister;
 }
 
 /// @nodoc
-abstract class _$AdminRegisterCopyWith<$Res> {
-  factory _$AdminRegisterCopyWith(
-          _AdminRegister value, $Res Function(_AdminRegister) then) =
-      __$AdminRegisterCopyWithImpl<$Res>;
+abstract class _$SignInCopyWith<$Res> {
+  factory _$SignInCopyWith(_SignIn value, $Res Function(_SignIn) then) =
+      __$SignInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AdminRegisterCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$AdminRegisterCopyWith<$Res> {
-  __$AdminRegisterCopyWithImpl(
-      _AdminRegister _value, $Res Function(_AdminRegister) _then)
-      : super(_value, (v) => _then(v as _AdminRegister));
+class __$SignInCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
+    implements _$SignInCopyWith<$Res> {
+  __$SignInCopyWithImpl(_SignIn _value, $Res Function(_SignIn) _then)
+      : super(_value, (v) => _then(v as _SignIn));
 
   @override
-  _AdminRegister get _value => super._value as _AdminRegister;
+  _SignIn get _value => super._value as _SignIn;
 }
 
 /// @nodoc
-class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
-  const _$_AdminRegister();
+class _$_SignIn implements _SignIn {
+  const _$_SignIn();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.adminRegister()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'RegisterEvent.adminRegister'));
+  String toString() {
+    return 'SigninAndRegisterEvent.signIn()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AdminRegister);
+    return identical(this, other) || (other is _SignIn);
   }
 
   @override
@@ -1408,9 +1335,9 @@ class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1418,10 +1345,10 @@ class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
-    return adminRegister();
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return signIn();
   }
 
   @override
@@ -1434,14 +1361,14 @@ class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (adminRegister != null) {
-      return adminRegister();
+    if (signIn != null) {
+      return signIn();
     }
     return orElse();
   }
@@ -1455,9 +1382,9 @@ class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1465,10 +1392,10 @@ class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
-    return adminRegister(this);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return signIn(this);
   }
 
   @override
@@ -1480,64 +1407,85 @@ class _$_AdminRegister with DiagnosticableTreeMixin implements _AdminRegister {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (adminRegister != null) {
-      return adminRegister(this);
+    if (signIn != null) {
+      return signIn(this);
     }
     return orElse();
   }
 }
 
-abstract class _AdminRegister implements RegisterEvent {
-  const factory _AdminRegister() = _$_AdminRegister;
+abstract class _SignIn implements SigninAndRegisterEvent {
+  const factory _SignIn() = _$_SignIn;
 }
 
 /// @nodoc
-abstract class _$ProfRegisterCopyWith<$Res> {
-  factory _$ProfRegisterCopyWith(
-          _ProfRegister value, $Res Function(_ProfRegister) then) =
-      __$ProfRegisterCopyWithImpl<$Res>;
+abstract class _$SigninPasswordChangedCopyWith<$Res> {
+  factory _$SigninPasswordChangedCopyWith(_SigninPasswordChanged value,
+          $Res Function(_SigninPasswordChanged) then) =
+      __$SigninPasswordChangedCopyWithImpl<$Res>;
+  $Res call({String signinPasswordString});
 }
 
 /// @nodoc
-class __$ProfRegisterCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$ProfRegisterCopyWith<$Res> {
-  __$ProfRegisterCopyWithImpl(
-      _ProfRegister _value, $Res Function(_ProfRegister) _then)
-      : super(_value, (v) => _then(v as _ProfRegister));
+class __$SigninPasswordChangedCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
+    implements _$SigninPasswordChangedCopyWith<$Res> {
+  __$SigninPasswordChangedCopyWithImpl(_SigninPasswordChanged _value,
+      $Res Function(_SigninPasswordChanged) _then)
+      : super(_value, (v) => _then(v as _SigninPasswordChanged));
 
   @override
-  _ProfRegister get _value => super._value as _ProfRegister;
-}
-
-/// @nodoc
-class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
-  const _$_ProfRegister();
+  _SigninPasswordChanged get _value => super._value as _SigninPasswordChanged;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.profRegister()';
+  $Res call({
+    Object signinPasswordString = freezed,
+  }) {
+    return _then(_SigninPasswordChanged(
+      signinPasswordString: signinPasswordString == freezed
+          ? _value.signinPasswordString
+          : signinPasswordString as String,
+    ));
   }
+}
+
+/// @nodoc
+class _$_SigninPasswordChanged implements _SigninPasswordChanged {
+  const _$_SigninPasswordChanged({@required this.signinPasswordString})
+      : assert(signinPasswordString != null);
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'RegisterEvent.profRegister'));
+  final String signinPasswordString;
+
+  @override
+  String toString() {
+    return 'SigninAndRegisterEvent.signinPasswordChanged(signinPasswordString: $signinPasswordString)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ProfRegister);
+    return identical(this, other) ||
+        (other is _SigninPasswordChanged &&
+            (identical(other.signinPasswordString, signinPasswordString) ||
+                const DeepCollectionEquality()
+                    .equals(other.signinPasswordString, signinPasswordString)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(signinPasswordString);
+
+  @override
+  _$SigninPasswordChangedCopyWith<_SigninPasswordChanged> get copyWith =>
+      __$SigninPasswordChangedCopyWithImpl<_SigninPasswordChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1550,9 +1498,9 @@ class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
-    @required Result studentRegister(),
-    @required Result adminRegister(),
-    @required Result profRegister(),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1560,10 +1508,10 @@ class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
-    return profRegister();
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return signinPasswordChanged(signinPasswordString);
   }
 
   @override
@@ -1576,14 +1524,14 @@ class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
-    Result studentRegister(),
-    Result adminRegister(),
-    Result profRegister(),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (profRegister != null) {
-      return profRegister();
+    if (signinPasswordChanged != null) {
+      return signinPasswordChanged(signinPasswordString);
     }
     return orElse();
   }
@@ -1597,9 +1545,9 @@ class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
-    @required Result studentRegister(_StudentRegister value),
-    @required Result adminRegister(_AdminRegister value),
-    @required Result profRegister(_ProfRegister value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -1607,10 +1555,10 @@ class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
-    assert(studentRegister != null);
-    assert(adminRegister != null);
-    assert(profRegister != null);
-    return profRegister(this);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return signinPasswordChanged(this);
   }
 
   @override
@@ -1622,30 +1570,35 @@ class _$_ProfRegister with DiagnosticableTreeMixin implements _ProfRegister {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
-    Result studentRegister(_StudentRegister value),
-    Result adminRegister(_AdminRegister value),
-    Result profRegister(_ProfRegister value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (profRegister != null) {
-      return profRegister(this);
+    if (signinPasswordChanged != null) {
+      return signinPasswordChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _ProfRegister implements RegisterEvent {
-  const factory _ProfRegister() = _$_ProfRegister;
+abstract class _SigninPasswordChanged implements SigninAndRegisterEvent {
+  const factory _SigninPasswordChanged(
+      {@required String signinPasswordString}) = _$_SigninPasswordChanged;
+
+  String get signinPasswordString;
+  _$SigninPasswordChangedCopyWith<_SigninPasswordChanged> get copyWith;
 }
 
 /// @nodoc
-class _$RegisterStateTearOff {
-  const _$RegisterStateTearOff();
+class _$SigninAndRegisterStateTearOff {
+  const _$SigninAndRegisterStateTearOff();
 
 // ignore: unused_element
-  _RegisterState call(
-      {@required FullName fullName,
+  _SigninAndRegisterState call(
+      {@required SignInPassword signinPassword,
+      @required FullName fullName,
       @required EmailAddress emailAddress,
       @required Password password,
       @required PasswordConfirm passwordConfirm,
@@ -1656,7 +1609,8 @@ class _$RegisterStateTearOff {
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
       Level level,
       Department department}) {
-    return _RegisterState(
+    return _SigninAndRegisterState(
+      signinPassword: signinPassword,
       fullName: fullName,
       emailAddress: emailAddress,
       password: password,
@@ -1674,10 +1628,11 @@ class _$RegisterStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $RegisterState = _$RegisterStateTearOff();
+const $SigninAndRegisterState = _$SigninAndRegisterStateTearOff();
 
 /// @nodoc
-mixin _$RegisterState {
+mixin _$SigninAndRegisterState {
+  SignInPassword get signinPassword;
   FullName get fullName;
   EmailAddress get emailAddress;
   Password get password;
@@ -1690,16 +1645,17 @@ mixin _$RegisterState {
   Level get level;
   Department get department;
 
-  $RegisterStateCopyWith<RegisterState> get copyWith;
+  $SigninAndRegisterStateCopyWith<SigninAndRegisterState> get copyWith;
 }
 
 /// @nodoc
-abstract class $RegisterStateCopyWith<$Res> {
-  factory $RegisterStateCopyWith(
-          RegisterState value, $Res Function(RegisterState) then) =
-      _$RegisterStateCopyWithImpl<$Res>;
+abstract class $SigninAndRegisterStateCopyWith<$Res> {
+  factory $SigninAndRegisterStateCopyWith(SigninAndRegisterState value,
+          $Res Function(SigninAndRegisterState) then) =
+      _$SigninAndRegisterStateCopyWithImpl<$Res>;
   $Res call(
-      {FullName fullName,
+      {SignInPassword signinPassword,
+      FullName fullName,
       EmailAddress emailAddress,
       Password password,
       PasswordConfirm passwordConfirm,
@@ -1713,16 +1669,17 @@ abstract class $RegisterStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegisterStateCopyWithImpl<$Res>
-    implements $RegisterStateCopyWith<$Res> {
-  _$RegisterStateCopyWithImpl(this._value, this._then);
+class _$SigninAndRegisterStateCopyWithImpl<$Res>
+    implements $SigninAndRegisterStateCopyWith<$Res> {
+  _$SigninAndRegisterStateCopyWithImpl(this._value, this._then);
 
-  final RegisterState _value;
+  final SigninAndRegisterState _value;
   // ignore: unused_field
-  final $Res Function(RegisterState) _then;
+  final $Res Function(SigninAndRegisterState) _then;
 
   @override
   $Res call({
+    Object signinPassword = freezed,
     Object fullName = freezed,
     Object emailAddress = freezed,
     Object password = freezed,
@@ -1736,6 +1693,9 @@ class _$RegisterStateCopyWithImpl<$Res>
     Object department = freezed,
   }) {
     return _then(_value.copyWith(
+      signinPassword: signinPassword == freezed
+          ? _value.signinPassword
+          : signinPassword as SignInPassword,
       fullName: fullName == freezed ? _value.fullName : fullName as FullName,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
@@ -1763,14 +1723,15 @@ class _$RegisterStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RegisterStateCopyWith<$Res>
-    implements $RegisterStateCopyWith<$Res> {
-  factory _$RegisterStateCopyWith(
-          _RegisterState value, $Res Function(_RegisterState) then) =
-      __$RegisterStateCopyWithImpl<$Res>;
+abstract class _$SigninAndRegisterStateCopyWith<$Res>
+    implements $SigninAndRegisterStateCopyWith<$Res> {
+  factory _$SigninAndRegisterStateCopyWith(_SigninAndRegisterState value,
+          $Res Function(_SigninAndRegisterState) then) =
+      __$SigninAndRegisterStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {FullName fullName,
+      {SignInPassword signinPassword,
+      FullName fullName,
       EmailAddress emailAddress,
       Password password,
       PasswordConfirm passwordConfirm,
@@ -1784,18 +1745,19 @@ abstract class _$RegisterStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RegisterStateCopyWithImpl<$Res>
-    extends _$RegisterStateCopyWithImpl<$Res>
-    implements _$RegisterStateCopyWith<$Res> {
-  __$RegisterStateCopyWithImpl(
-      _RegisterState _value, $Res Function(_RegisterState) _then)
-      : super(_value, (v) => _then(v as _RegisterState));
+class __$SigninAndRegisterStateCopyWithImpl<$Res>
+    extends _$SigninAndRegisterStateCopyWithImpl<$Res>
+    implements _$SigninAndRegisterStateCopyWith<$Res> {
+  __$SigninAndRegisterStateCopyWithImpl(_SigninAndRegisterState _value,
+      $Res Function(_SigninAndRegisterState) _then)
+      : super(_value, (v) => _then(v as _SigninAndRegisterState));
 
   @override
-  _RegisterState get _value => super._value as _RegisterState;
+  _SigninAndRegisterState get _value => super._value as _SigninAndRegisterState;
 
   @override
   $Res call({
+    Object signinPassword = freezed,
     Object fullName = freezed,
     Object emailAddress = freezed,
     Object password = freezed,
@@ -1808,7 +1770,10 @@ class __$RegisterStateCopyWithImpl<$Res>
     Object level = freezed,
     Object department = freezed,
   }) {
-    return _then(_RegisterState(
+    return _then(_SigninAndRegisterState(
+      signinPassword: signinPassword == freezed
+          ? _value.signinPassword
+          : signinPassword as SignInPassword,
       fullName: fullName == freezed ? _value.fullName : fullName as FullName,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
@@ -1836,9 +1801,10 @@ class __$RegisterStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
-  const _$_RegisterState(
-      {@required this.fullName,
+class _$_SigninAndRegisterState implements _SigninAndRegisterState {
+  const _$_SigninAndRegisterState(
+      {@required this.signinPassword,
+      @required this.fullName,
       @required this.emailAddress,
       @required this.password,
       @required this.passwordConfirm,
@@ -1849,7 +1815,8 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
       @required this.authFailureOrSuccess,
       this.level,
       this.department})
-      : assert(fullName != null),
+      : assert(signinPassword != null),
+        assert(fullName != null),
         assert(emailAddress != null),
         assert(password != null),
         assert(passwordConfirm != null),
@@ -1859,6 +1826,8 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
         assert(showErrorMessages != null),
         assert(authFailureOrSuccess != null);
 
+  @override
+  final SignInPassword signinPassword;
   @override
   final FullName fullName;
   @override
@@ -1883,32 +1852,17 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
   final Department department;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterState(fullName: $fullName, emailAddress: $emailAddress, password: $password, passwordConfirm: $passwordConfirm, collegeId: $collegeId, userRole: $userRole, isSubmiting: $isSubmiting, showErrorMessages: $showErrorMessages, authFailureOrSuccess: $authFailureOrSuccess, level: $level, department: $department)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterState'))
-      ..add(DiagnosticsProperty('fullName', fullName))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('passwordConfirm', passwordConfirm))
-      ..add(DiagnosticsProperty('collegeId', collegeId))
-      ..add(DiagnosticsProperty('userRole', userRole))
-      ..add(DiagnosticsProperty('isSubmiting', isSubmiting))
-      ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
-      ..add(DiagnosticsProperty('authFailureOrSuccess', authFailureOrSuccess))
-      ..add(DiagnosticsProperty('level', level))
-      ..add(DiagnosticsProperty('department', department));
+  String toString() {
+    return 'SigninAndRegisterState(signinPassword: $signinPassword, fullName: $fullName, emailAddress: $emailAddress, password: $password, passwordConfirm: $passwordConfirm, collegeId: $collegeId, userRole: $userRole, isSubmiting: $isSubmiting, showErrorMessages: $showErrorMessages, authFailureOrSuccess: $authFailureOrSuccess, level: $level, department: $department)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RegisterState &&
+        (other is _SigninAndRegisterState &&
+            (identical(other.signinPassword, signinPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.signinPassword, signinPassword)) &&
             (identical(other.fullName, fullName) ||
                 const DeepCollectionEquality()
                     .equals(other.fullName, fullName)) &&
@@ -1946,6 +1900,7 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(signinPassword) ^
       const DeepCollectionEquality().hash(fullName) ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(password) ^
@@ -1959,13 +1914,15 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
       const DeepCollectionEquality().hash(department);
 
   @override
-  _$RegisterStateCopyWith<_RegisterState> get copyWith =>
-      __$RegisterStateCopyWithImpl<_RegisterState>(this, _$identity);
+  _$SigninAndRegisterStateCopyWith<_SigninAndRegisterState> get copyWith =>
+      __$SigninAndRegisterStateCopyWithImpl<_SigninAndRegisterState>(
+          this, _$identity);
 }
 
-abstract class _RegisterState implements RegisterState {
-  const factory _RegisterState(
-      {@required FullName fullName,
+abstract class _SigninAndRegisterState implements SigninAndRegisterState {
+  const factory _SigninAndRegisterState(
+      {@required SignInPassword signinPassword,
+      @required FullName fullName,
       @required EmailAddress emailAddress,
       @required Password password,
       @required PasswordConfirm passwordConfirm,
@@ -1975,8 +1932,10 @@ abstract class _RegisterState implements RegisterState {
       @required bool showErrorMessages,
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
       Level level,
-      Department department}) = _$_RegisterState;
+      Department department}) = _$_SigninAndRegisterState;
 
+  @override
+  SignInPassword get signinPassword;
   @override
   FullName get fullName;
   @override
@@ -2000,5 +1959,5 @@ abstract class _RegisterState implements RegisterState {
   @override
   Department get department;
   @override
-  _$RegisterStateCopyWith<_RegisterState> get copyWith;
+  _$SigninAndRegisterStateCopyWith<_SigninAndRegisterState> get copyWith;
 }
