@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -24,12 +23,7 @@ class WrapperBloc extends Bloc<WrapperEvent, WrapperState> {
   ) async* {
     yield* event.map(
       checkAuthRequest: (e) async* {
-        final Either<AuthFailure, String> auth =
-            await _authMethods.checkToken();
-        yield auth.fold(
-          (_) => const WrapperState.unAuthenticated(),
-          (_) => const WrapperState.authenticated(),
-        );
+        yield const WrapperState.unAuthenticated();
       },
       signOut: (e) async* {
         await _authMethods.signOut();

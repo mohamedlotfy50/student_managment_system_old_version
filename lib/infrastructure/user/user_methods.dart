@@ -1,11 +1,12 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/user/user.dart';
-import 'package:e_exame/domain/user/user_failures.dart';
-import 'package:e_exame/domain/user/user_methods.dart';
-import 'package:e_exame/infrastructure/user/user_dto.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../domain/user/user.dart';
+import '../../domain/user/user_failures.dart';
+import '../../domain/user/user_methods.dart';
+import 'user_dto.dart';
 
 @LazySingleton(as: UserMethods)
 class IUser extends UserMethods {

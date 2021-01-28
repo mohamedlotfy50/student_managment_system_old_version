@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/auth/auth_failure.dart';
@@ -9,109 +10,75 @@ import '../../domain/auth/value_objects.dart';
 
 @LazySingleton(as: AuthMethods)
 class AuthApiRequester implements AuthMethods {
-  final FlutterSecureStorage flutterSecureStorage;
-  AuthApiRequester(this.flutterSecureStorage);
-
-  @override
-  Future<Either<AuthFailure, Unit>> adminRegister(
-      {FullName fullName,
-      EmailAddress emailAddress,
-      Password password,
-      CollegeId collegeId,
-      UserRole userRole}) async {
-    final String nameString = fullName.getOrCrash();
-    final String emailString = emailAddress.getOrCrash();
-    final String passwordString = password.getOrCrash();
-    final String collegeIDString = collegeId.getOrCrash();
-    final String userRoleString = userRole.getOrCrash();
-  }
+  final FirebaseAuth _firebaseAuth;
+  final CollectionReference _users =
+      FirebaseFirestore.instance.collection('users');
+  AuthApiRequester(this._firebaseAuth);
 
   @override
   Future<Either<AuthFailure, Unit>> signIn(
       {EmailAddress emailAddress, SignInPassword password}) async {
-    final String emailString = emailAddress.getOrCrash();
-    final String passwordString = password.getOrCrash();
+    final String _emailString = emailAddress.getOrCrash();
+    final String _passwordString = password.getOrCrash();
+    try {
+      print("start sigining in");
+
+      await _firebaseAuth.signInWithEmailAndPassword(
+          email: _emailString, password: _passwordString);
+      print("I am done");
+      return right(unit);
+    } on FirebaseAuthException catch (e) {
+      print("I failed $e");
+
+      return left(const WrongEmailAndPasswordCompination());
+    }
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> studentRegister({
+  Future<Either<AuthFailure, Unit>> register({
     @required FullName fullName,
     @required EmailAddress emailAddress,
     @required Password password,
     @required CollegeId collegeId,
     @required UserRole userRole,
-    @required Level level,
-    @required Department department,
-  }) async {
-    final String nameString = fullName.getOrCrash();
-    final String emailString = emailAddress.getOrCrash();
-    final String passwordString = password.getOrCrash();
-    final String collegeIDString = collegeId.getOrCrash();
-    final String userRoleString = userRole.getOrCrash();
-    final String levelString = level.getOrCrash();
-    final String departmentString = department.getOrCrash();
-    final Map<String, String> _body = {
-      'userName': nameString,
-      'email': emailString,
-      'password': passwordString,
-      'collegeID': collegeIDString,
-      'userRole': userRoleString,
-      'level': levelString,
-      'department': departmentString,
-    };
-  }
-
-  @override
-  Future<Either<AuthFailure, String>> getLevelAndDepartment({
     Level level,
     Department department,
-  }) async {}
-
-  @override
-  Future<Either<AuthFailure, String>> checkToken() async {
-    final String token = await flutterSecureStorage.read(key: 'token');
-    if (token != null) {
-      return right(token);
-    } else {
-      return left(const AuthFailure.noTokenFound());
-    }
-  }
-
-  @override
-  Future<Either<AuthFailure, Unit>> setToken({@required String token}) async {
+  }) async {
+    final String _nameString = fullName.getOrCrash();
+    final String _emailString = emailAddress.getOrCrash();
+    final String _passwordString = password.getOrCrash();
+    final String _collegeIDString = collegeId.getOrCrash();
+    final String _userRoleString = userRole.getOrCrash();
+    final String _levelString = level.getOrCrash();
+    final String _departmentString = department.getOrCrash();
     try {
-      await flutterSecureStorage.write(key: 'token', value: token);
+      print("start registering");
+
+      await _firebaseAuth
+          .createUserWithEmailAndPassword(
+              email: _emailString, password: _passwordString)
+          .then((value) {
+        print("I am done with regiter now start saving to database");
+
+        _users.doc(value.user.uid).set({
+          'name': _nameString,
+          'email': _emailString,
+          'college id': _collegeIDString,
+          'role': _userRoleString,
+          '_level': _levelString,
+          '_department': _departmentString,
+        });
+      });
+      print("finish registering and saving to the datatbase");
 
       return right(unit);
-    } catch (_) {
-      return left(const AuthFailure.noTokenFound());
+    } on FirebaseAuthException catch (_) {
+      return left(const EmailIsAlreadyInUse());
     }
   }
 
   @override
   Future<void> signOut() async {
-    await flutterSecureStorage.delete(key: 'token');
-  }
-
-  @override
-  Future<Either<AuthFailure, Unit>> profRegister(
-      {FullName fullName,
-      EmailAddress emailAddress,
-      Password password,
-      CollegeId collegeId,
-      Department department,
-      UserRole userRole}) {
-    final String nameString = fullName.getOrCrash();
-    final String emailString = emailAddress.getOrCrash();
-    final String passwordString = password.getOrCrash();
-    final String collegeIDString = collegeId.getOrCrash();
-    final String userRoleString = userRole.getOrCrash();
-    final String departmentString = department.getOrCrash();
-  }
-
-  @override
-  Future<String> getToken() async {
-    final String token = await flutterSecureStorage.read(key: 'token');
-    return token;
+    await _firebaseAuth.signOut();
   }
 }

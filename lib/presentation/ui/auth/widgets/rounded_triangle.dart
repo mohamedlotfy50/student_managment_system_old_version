@@ -1,7 +1,8 @@
-import 'package:e_exame/presentation/core/conts/colors.dart';
-import 'package:e_exame/presentation/core/conts/images_class.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../core/conts/colors.dart';
+import '../../../core/conts/images_class.dart';
 
 class RoundedTriangleButton extends StatelessWidget {
   final void Function() onPress;

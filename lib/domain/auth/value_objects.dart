@@ -112,10 +112,13 @@ class Level extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory Level(String input) {
-    assert(input != null);
-    return Level._(
-      right(input),
-    );
+    if (input != null) {
+      return Level._(
+        right(input),
+      );
+    } else {
+      return null;
+    }
   }
   const Level._(this.value);
 }
@@ -127,10 +130,13 @@ class Department extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory Department(String input) {
-    assert(input != null);
-    return Department._(
-      right(input),
-    );
+    if (input != null) {
+      return Department._(
+        right(input),
+      );
+    } else {
+      return null;
+    }
   }
   const Department._(this.value);
 }

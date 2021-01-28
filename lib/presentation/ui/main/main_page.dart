@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_exame/application/auth/auth_wrapper/wrapper_bloc.dart';
-import 'package:e_exame/application/user/user_watcher/user_watcher_bloc.dart';
-import 'package:e_exame/injection.dart';
-import 'package:e_exame/presentation/core/conts/colors.dart';
-import 'package:e_exame/presentation/core/conts/images_class.dart';
-import 'package:e_exame/presentation/routs/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../application/auth/auth_wrapper/wrapper_bloc.dart';
+import '../../../application/user/user_watcher/user_watcher_bloc.dart';
+import '../../../injection.dart';
+import '../../core/conts/colors.dart';
+import '../../core/conts/images_class.dart';
+import '../../routs/router.gr.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key key}) : super(key: key);
@@ -27,22 +28,7 @@ class MainPage extends StatelessWidget {
           create: (context) => getIt<WrapperBloc>(),
         ),
       ],
-      child: MaterialApp(
-        theme: ThemeData(
-            scaffoldBackgroundColor: const Color(
-              MyColors.backGround,
-            ),
-            primaryColor: const Color(
-              MyColors.backGroundLightShade,
-            ),
-            canvasColor: const Color(
-              MyColors.backGround,
-            ),
-            textTheme:
-                const TextTheme(bodyText2: TextStyle(color: Colors.white))),
-        debugShowCheckedModeBanner: false,
-        home: const MainPageBody(),
-      ),
+      child: MainPageBody(),
     );
   }
 }

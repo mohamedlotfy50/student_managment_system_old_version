@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/chat/message_methods.dart';
-import 'package:e_exame/domain/core/value_failure.dart';
-import 'package:e_exame/domain/chat/message_object.dart';
+
+import '../../domain/chat/message_methods.dart';
+import '../../domain/chat/message_object.dart';
+import '../../domain/core/value_failure.dart';
 
 class IMessageMethods extends MessageMethod {
   @override

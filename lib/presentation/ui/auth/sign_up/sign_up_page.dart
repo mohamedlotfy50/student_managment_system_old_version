@@ -1,11 +1,12 @@
-import 'package:e_exame/application/auth/register/register_bloc.dart';
-import 'package:e_exame/domain/auth/value_objects.dart';
-import 'package:e_exame/presentation/core/conts/colors.dart';
-import 'package:e_exame/presentation/ui/auth/widgets/background.dart';
-import 'package:e_exame/presentation/ui/auth/widgets/text_form_field.dart';
+import 'package:e_exame/application/auth/signin_and_register/signin_and_register_bloc.dart';
 import 'package:fa_stepper/fa_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../domain/auth/value_objects.dart';
+import '../../../core/conts/colors.dart';
+import '../widgets/background.dart';
+import '../widgets/text_form_field.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({Key key}) : super(key: key);
@@ -21,8 +22,20 @@ class _SignUpViewState extends State<SignUpView> {
   List<String> roles = UserRole.roles;
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<RegisterBloc, RegisterState>(
-      listener: (context, state) {},
+    return BlocConsumer<SigninAndRegisterBloc, SigninAndRegisterState>(
+      listener: (context, state) {
+        state.authFailureOrSuccess.fold(
+            () => Text('left side of auth failure or success'),
+            (a) => a.fold(
+                (l) => showDialog(
+                    context: context,
+                    builder: (newContext) {
+                      return AlertDialog(
+                        content: Text('l'),
+                      );
+                    }),
+                (r) => null));
+      },
       builder: (context, state) {
         return Background(
           formKey: _formKey,
@@ -87,26 +100,7 @@ class _SignUpViewState extends State<SignUpView> {
                 setState(() {
                   _currentStep += 1;
                 });
-              } else {
-                _formKey.currentState.save();
-                if (_formKey.currentState.validate()) {
-                  if (_currentDropDownValue == "Admin") {
-                    context
-                        .read<RegisterBloc>()
-                        .add(const RegisterEvent.adminRegister());
-                  } else if (_currentDropDownValue == "Professor") {
-                    context
-                        .read<RegisterBloc>()
-                        .add(const RegisterEvent.profRegister());
-                  } else {
-                    context
-                        .read<RegisterBloc>()
-                        .add(const RegisterEvent.studentRegister());
-                  }
-                } else {
-                  setState(() {});
-                }
-              }
+              } else {}
             },
             titleHeight: 60,
             currentStep: _currentStep,
@@ -131,7 +125,7 @@ class _SignUpViewState extends State<SignUpView> {
                   children: <Widget>[
                     MyTextFormField(
                       initString: context
-                          .watch<RegisterBloc>()
+                          .watch<SigninAndRegisterBloc>()
                           .state
                           .fullName
                           .value
@@ -144,10 +138,11 @@ class _SignUpViewState extends State<SignUpView> {
                       labelText: "User Name",
                       showCheckMake: false,
                       onChange: (value) => context
-                          .read<RegisterBloc>()
-                          .add(RegisterEvent.fullNamedChanged(fullName: value)),
+                          .read<SigninAndRegisterBloc>()
+                          .add(SigninAndRegisterEvent.fullNamedChanged(
+                              fullName: value)),
                       validator: (_) => context
-                          .read<RegisterBloc>()
+                          .read<SigninAndRegisterBloc>()
                           .state
                           .fullName
                           .value
@@ -164,11 +159,13 @@ class _SignUpViewState extends State<SignUpView> {
                       icon: Icons.person,
                       labelText: "CollegeID",
                       showCheckMake: false,
-                      onChange: (value) => context.read<RegisterBloc>().add(
-                            RegisterEvent.collegeIdChanged(collegeId: value),
-                          ),
+                      onChange: (value) =>
+                          context.read<SigninAndRegisterBloc>().add(
+                                SigninAndRegisterEvent.collegeIdChanged(
+                                    collegeId: value),
+                              ),
                       validator: (_) => context
-                          .read<RegisterBloc>()
+                          .read<SigninAndRegisterBloc>()
                           .state
                           .collegeId
                           .value
@@ -214,8 +211,8 @@ class _SignUpViewState extends State<SignUpView> {
                                 );
                               }).toList(),
                               onChanged: (val) {
-                                context.read<RegisterBloc>().add(
-                                      RegisterEvent.userRoleChanged(
+                                context.read<SigninAndRegisterBloc>().add(
+                                      SigninAndRegisterEvent.userRoleChanged(
                                           userRole: val),
                                     );
                                 setState(() {
