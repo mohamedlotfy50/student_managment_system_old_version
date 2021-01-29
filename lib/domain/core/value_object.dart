@@ -14,6 +14,10 @@ abstract class ValueObject<T> {
     return value.fold((l) => throw UnExpectedError(l), id);
   }
 
+  T getRight() {
+    return value.fold((l) => null, id);
+  }
+
   bool isValid() => value.isRight();
 
   @override

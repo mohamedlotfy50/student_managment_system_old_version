@@ -14,11 +14,11 @@ Either<ValueFailure<String>, String> emailValidation(String value) {
 }
 
 Either<ValueFailure<String>, String> passwordValidation(String value) {
-  final bool hasSmallLetters = RegExp(r"[a-z]+$").hasMatch(value);
-  final bool hasCapitalLetters = RegExp(r"[A-Z]+$").hasMatch(value);
-  final bool hasSpecialChar =
-      RegExp(r"[.@!#$%&'*+-/=?^_`{|}~]").hasMatch(value);
-  if (hasSmallLetters && hasCapitalLetters && hasSpecialChar) {
+  final bool passwordRegex =
+      RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+          .hasMatch(value);
+
+  if (passwordRegex) {
     return right(value);
   } else {
     return left(ValueFailure.weekPassword(valuefailure: value));

@@ -10,6 +10,9 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidName({
     @required String valuefailure,
   }) = InvalidName<T>;
+  const factory ValueFailure.invalidDepartment({
+    @required String valuefailure,
+  }) = InvalidDepartmentt<T>;
 
   const factory ValueFailure.shortLength({
     @required String valuefailure,
