@@ -52,24 +52,19 @@ class AuthApiRequester implements AuthMethods {
     final String _levelString = level.getOrCrash();
     final String _departmentString = department.getOrCrash();
     try {
-      print("start registering");
-
       await _firebaseAuth
           .createUserWithEmailAndPassword(
               email: _emailString, password: _passwordString)
           .then((value) {
-        print("I am done with regiter now start saving to database");
-
         _users.doc(value.user.uid).set({
           'name': _nameString,
           'email': _emailString,
           'college id': _collegeIDString,
           'role': _userRoleString,
-          '_level': _levelString,
-          '_department': _departmentString,
+          'level': _levelString,
+          'department': _departmentString,
         });
       });
-      print("finish registering and saving to the datatbase");
 
       return right(unit);
     } on FirebaseAuthException catch (_) {

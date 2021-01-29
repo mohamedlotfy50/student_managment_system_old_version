@@ -15,19 +15,7 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return BlocConsumer<SigninAndRegisterBloc, SigninAndRegisterState>(
-      listener: (context, state) {
-        state.authFailureOrSuccess.fold(
-            () => Text('left side of auth failure or success'),
-            (a) => a.fold(
-                (l) => showDialog(
-                    context: context,
-                    builder: (newContext) {
-                      return AlertDialog(
-                        content: Text('l'),
-                      );
-                    }),
-                (r) => null));
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return Background(
           formKey: formKey,
