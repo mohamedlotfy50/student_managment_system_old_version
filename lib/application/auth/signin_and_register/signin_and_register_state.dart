@@ -27,7 +27,9 @@ abstract class SigninAndRegisterState with _$SigninAndRegisterState {
         authFailureOrSuccess: none(),
         isSubmiting: false,
         showErrorMessages: false,
-        department: Department(''),
-        level: Level(''),
+        department: Department(
+          'General',
+        ),
+        level: Level('One'),
       );
 }

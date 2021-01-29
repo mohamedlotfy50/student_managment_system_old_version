@@ -59,6 +59,20 @@ class _$SigninAndRegisterEventTearOff {
   }
 
 // ignore: unused_element
+  _LevelChanged levelChanged({@required String level}) {
+    return _LevelChanged(
+      level: level,
+    );
+  }
+
+// ignore: unused_element
+  _DepartmentChanged departmentChanged({@required String department}) {
+    return _DepartmentChanged(
+      department: department,
+    );
+  }
+
+// ignore: unused_element
   _StudentRegister register() {
     return const _StudentRegister();
   }
@@ -93,6 +107,8 @@ mixin _$SigninAndRegisterEvent {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -106,6 +122,8 @@ mixin _$SigninAndRegisterEvent {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -119,6 +137,8 @@ mixin _$SigninAndRegisterEvent {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -131,6 +151,8 @@ mixin _$SigninAndRegisterEvent {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -226,6 +248,8 @@ class _$_EmailChanged implements _EmailChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -236,6 +260,8 @@ class _$_EmailChanged implements _EmailChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -252,6 +278,8 @@ class _$_EmailChanged implements _EmailChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -273,6 +301,8 @@ class _$_EmailChanged implements _EmailChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -283,6 +313,8 @@ class _$_EmailChanged implements _EmailChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -298,6 +330,8 @@ class _$_EmailChanged implements _EmailChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -391,6 +425,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -401,6 +437,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -417,6 +455,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -438,6 +478,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -448,6 +490,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -463,6 +507,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -570,6 +616,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -580,6 +628,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -596,6 +646,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -617,6 +669,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -627,6 +681,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -642,6 +698,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -735,6 +793,8 @@ class _$_FullNamedChanged implements _FullNamedChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -745,6 +805,8 @@ class _$_FullNamedChanged implements _FullNamedChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -761,6 +823,8 @@ class _$_FullNamedChanged implements _FullNamedChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -782,6 +846,8 @@ class _$_FullNamedChanged implements _FullNamedChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -792,6 +858,8 @@ class _$_FullNamedChanged implements _FullNamedChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -807,6 +875,8 @@ class _$_FullNamedChanged implements _FullNamedChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -898,6 +968,8 @@ class _$_UserRoleChanged implements _UserRoleChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -908,6 +980,8 @@ class _$_UserRoleChanged implements _UserRoleChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -924,6 +998,8 @@ class _$_UserRoleChanged implements _UserRoleChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -945,6 +1021,8 @@ class _$_UserRoleChanged implements _UserRoleChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -955,6 +1033,8 @@ class _$_UserRoleChanged implements _UserRoleChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -970,6 +1050,8 @@ class _$_UserRoleChanged implements _UserRoleChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1061,6 +1143,8 @@ class _$_CollegeIdChanged implements _CollegeIdChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -1071,6 +1155,8 @@ class _$_CollegeIdChanged implements _CollegeIdChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1087,6 +1173,8 @@ class _$_CollegeIdChanged implements _CollegeIdChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -1108,6 +1196,8 @@ class _$_CollegeIdChanged implements _CollegeIdChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1118,6 +1208,8 @@ class _$_CollegeIdChanged implements _CollegeIdChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1133,6 +1225,8 @@ class _$_CollegeIdChanged implements _CollegeIdChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1152,6 +1246,354 @@ abstract class _CollegeIdChanged implements SigninAndRegisterEvent {
 
   String get collegeId;
   _$CollegeIdChangedCopyWith<_CollegeIdChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$LevelChangedCopyWith<$Res> {
+  factory _$LevelChangedCopyWith(
+          _LevelChanged value, $Res Function(_LevelChanged) then) =
+      __$LevelChangedCopyWithImpl<$Res>;
+  $Res call({String level});
+}
+
+/// @nodoc
+class __$LevelChangedCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
+    implements _$LevelChangedCopyWith<$Res> {
+  __$LevelChangedCopyWithImpl(
+      _LevelChanged _value, $Res Function(_LevelChanged) _then)
+      : super(_value, (v) => _then(v as _LevelChanged));
+
+  @override
+  _LevelChanged get _value => super._value as _LevelChanged;
+
+  @override
+  $Res call({
+    Object level = freezed,
+  }) {
+    return _then(_LevelChanged(
+      level: level == freezed ? _value.level : level as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_LevelChanged implements _LevelChanged {
+  const _$_LevelChanged({@required this.level}) : assert(level != null);
+
+  @override
+  final String level;
+
+  @override
+  String toString() {
+    return 'SigninAndRegisterEvent.levelChanged(level: $level)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LevelChanged &&
+            (identical(other.level, level) ||
+                const DeepCollectionEquality().equals(other.level, level)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(level);
+
+  @override
+  _$LevelChangedCopyWith<_LevelChanged> get copyWith =>
+      __$LevelChangedCopyWithImpl<_LevelChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required
+        Result confirmpasswordChanged(
+            String confirmPasswordString, String passwordString),
+    @required Result fullNamedChanged(String fullName),
+    @required Result userRoleChanged(String userRole),
+    @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmpasswordChanged != null);
+    assert(fullNamedChanged != null);
+    assert(userRoleChanged != null);
+    assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return levelChanged(level);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result confirmpasswordChanged(
+        String confirmPasswordString, String passwordString),
+    Result fullNamedChanged(String fullName),
+    Result userRoleChanged(String userRole),
+    Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (levelChanged != null) {
+      return levelChanged(level);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result confirmpasswordChanged(_ConfirmPasswordChanged value),
+    @required Result fullNamedChanged(_FullNamedChanged value),
+    @required Result userRoleChanged(_UserRoleChanged value),
+    @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmpasswordChanged != null);
+    assert(fullNamedChanged != null);
+    assert(userRoleChanged != null);
+    assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return levelChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result confirmpasswordChanged(_ConfirmPasswordChanged value),
+    Result fullNamedChanged(_FullNamedChanged value),
+    Result userRoleChanged(_UserRoleChanged value),
+    Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (levelChanged != null) {
+      return levelChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LevelChanged implements SigninAndRegisterEvent {
+  const factory _LevelChanged({@required String level}) = _$_LevelChanged;
+
+  String get level;
+  _$LevelChangedCopyWith<_LevelChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DepartmentChangedCopyWith<$Res> {
+  factory _$DepartmentChangedCopyWith(
+          _DepartmentChanged value, $Res Function(_DepartmentChanged) then) =
+      __$DepartmentChangedCopyWithImpl<$Res>;
+  $Res call({String department});
+}
+
+/// @nodoc
+class __$DepartmentChangedCopyWithImpl<$Res>
+    extends _$SigninAndRegisterEventCopyWithImpl<$Res>
+    implements _$DepartmentChangedCopyWith<$Res> {
+  __$DepartmentChangedCopyWithImpl(
+      _DepartmentChanged _value, $Res Function(_DepartmentChanged) _then)
+      : super(_value, (v) => _then(v as _DepartmentChanged));
+
+  @override
+  _DepartmentChanged get _value => super._value as _DepartmentChanged;
+
+  @override
+  $Res call({
+    Object department = freezed,
+  }) {
+    return _then(_DepartmentChanged(
+      department:
+          department == freezed ? _value.department : department as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DepartmentChanged implements _DepartmentChanged {
+  const _$_DepartmentChanged({@required this.department})
+      : assert(department != null);
+
+  @override
+  final String department;
+
+  @override
+  String toString() {
+    return 'SigninAndRegisterEvent.departmentChanged(department: $department)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DepartmentChanged &&
+            (identical(other.department, department) ||
+                const DeepCollectionEquality()
+                    .equals(other.department, department)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(department);
+
+  @override
+  _$DepartmentChangedCopyWith<_DepartmentChanged> get copyWith =>
+      __$DepartmentChangedCopyWithImpl<_DepartmentChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
+    @required
+        Result confirmpasswordChanged(
+            String confirmPasswordString, String passwordString),
+    @required Result fullNamedChanged(String fullName),
+    @required Result userRoleChanged(String userRole),
+    @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
+    @required Result register(),
+    @required Result signIn(),
+    @required Result signinPasswordChanged(String signinPasswordString),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmpasswordChanged != null);
+    assert(fullNamedChanged != null);
+    assert(userRoleChanged != null);
+    assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return departmentChanged(department);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailString),
+    Result passwordChanged(String passwordString),
+    Result confirmpasswordChanged(
+        String confirmPasswordString, String passwordString),
+    Result fullNamedChanged(String fullName),
+    Result userRoleChanged(String userRole),
+    Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
+    Result register(),
+    Result signIn(),
+    Result signinPasswordChanged(String signinPasswordString),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (departmentChanged != null) {
+      return departmentChanged(department);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result emailChanged(_EmailChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result confirmpasswordChanged(_ConfirmPasswordChanged value),
+    @required Result fullNamedChanged(_FullNamedChanged value),
+    @required Result userRoleChanged(_UserRoleChanged value),
+    @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
+    @required Result register(_StudentRegister value),
+    @required Result signIn(_SignIn value),
+    @required Result signinPasswordChanged(_SigninPasswordChanged value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmpasswordChanged != null);
+    assert(fullNamedChanged != null);
+    assert(userRoleChanged != null);
+    assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
+    assert(register != null);
+    assert(signIn != null);
+    assert(signinPasswordChanged != null);
+    return departmentChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(_EmailChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result confirmpasswordChanged(_ConfirmPasswordChanged value),
+    Result fullNamedChanged(_FullNamedChanged value),
+    Result userRoleChanged(_UserRoleChanged value),
+    Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
+    Result register(_StudentRegister value),
+    Result signIn(_SignIn value),
+    Result signinPasswordChanged(_SigninPasswordChanged value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (departmentChanged != null) {
+      return departmentChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DepartmentChanged implements SigninAndRegisterEvent {
+  const factory _DepartmentChanged({@required String department}) =
+      _$_DepartmentChanged;
+
+  String get department;
+  _$DepartmentChangedCopyWith<_DepartmentChanged> get copyWith;
 }
 
 /// @nodoc
@@ -1201,6 +1643,8 @@ class _$_StudentRegister implements _StudentRegister {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -1211,6 +1655,8 @@ class _$_StudentRegister implements _StudentRegister {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1227,6 +1673,8 @@ class _$_StudentRegister implements _StudentRegister {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -1248,6 +1696,8 @@ class _$_StudentRegister implements _StudentRegister {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1258,6 +1708,8 @@ class _$_StudentRegister implements _StudentRegister {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1273,6 +1725,8 @@ class _$_StudentRegister implements _StudentRegister {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1335,6 +1789,8 @@ class _$_SignIn implements _SignIn {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -1345,6 +1801,8 @@ class _$_SignIn implements _SignIn {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1361,6 +1819,8 @@ class _$_SignIn implements _SignIn {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -1382,6 +1842,8 @@ class _$_SignIn implements _SignIn {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1392,6 +1854,8 @@ class _$_SignIn implements _SignIn {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1407,6 +1871,8 @@ class _$_SignIn implements _SignIn {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1498,6 +1964,8 @@ class _$_SigninPasswordChanged implements _SigninPasswordChanged {
     @required Result fullNamedChanged(String fullName),
     @required Result userRoleChanged(String userRole),
     @required Result collegeIdChanged(String collegeId),
+    @required Result levelChanged(String level),
+    @required Result departmentChanged(String department),
     @required Result register(),
     @required Result signIn(),
     @required Result signinPasswordChanged(String signinPasswordString),
@@ -1508,6 +1976,8 @@ class _$_SigninPasswordChanged implements _SigninPasswordChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1524,6 +1994,8 @@ class _$_SigninPasswordChanged implements _SigninPasswordChanged {
     Result fullNamedChanged(String fullName),
     Result userRoleChanged(String userRole),
     Result collegeIdChanged(String collegeId),
+    Result levelChanged(String level),
+    Result departmentChanged(String department),
     Result register(),
     Result signIn(),
     Result signinPasswordChanged(String signinPasswordString),
@@ -1545,6 +2017,8 @@ class _$_SigninPasswordChanged implements _SigninPasswordChanged {
     @required Result fullNamedChanged(_FullNamedChanged value),
     @required Result userRoleChanged(_UserRoleChanged value),
     @required Result collegeIdChanged(_CollegeIdChanged value),
+    @required Result levelChanged(_LevelChanged value),
+    @required Result departmentChanged(_DepartmentChanged value),
     @required Result register(_StudentRegister value),
     @required Result signIn(_SignIn value),
     @required Result signinPasswordChanged(_SigninPasswordChanged value),
@@ -1555,6 +2029,8 @@ class _$_SigninPasswordChanged implements _SigninPasswordChanged {
     assert(fullNamedChanged != null);
     assert(userRoleChanged != null);
     assert(collegeIdChanged != null);
+    assert(levelChanged != null);
+    assert(departmentChanged != null);
     assert(register != null);
     assert(signIn != null);
     assert(signinPasswordChanged != null);
@@ -1570,6 +2046,8 @@ class _$_SigninPasswordChanged implements _SigninPasswordChanged {
     Result fullNamedChanged(_FullNamedChanged value),
     Result userRoleChanged(_UserRoleChanged value),
     Result collegeIdChanged(_CollegeIdChanged value),
+    Result levelChanged(_LevelChanged value),
+    Result departmentChanged(_DepartmentChanged value),
     Result register(_StudentRegister value),
     Result signIn(_SignIn value),
     Result signinPasswordChanged(_SigninPasswordChanged value),

@@ -136,6 +136,18 @@ class SigninAndRegisterBloc
           isSubmiting: false,
         );
       },
+      departmentChanged: (e) async* {
+        yield state.copyWith(
+          department: Department(e.department),
+          authFailureOrSuccess: none(),
+        );
+      },
+      levelChanged: (e) async* {
+        yield state.copyWith(
+          level: Level(e.level),
+          authFailureOrSuccess: none(),
+        );
+      },
     );
   }
 }

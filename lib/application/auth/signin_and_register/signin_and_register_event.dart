@@ -15,6 +15,10 @@ abstract class SigninAndRegisterEvent with _$SigninAndRegisterEvent {
       {@required String userRole}) = _UserRoleChanged;
   const factory SigninAndRegisterEvent.collegeIdChanged(
       {@required String collegeId}) = _CollegeIdChanged;
+  const factory SigninAndRegisterEvent.levelChanged({@required String level}) =
+      _LevelChanged;
+  const factory SigninAndRegisterEvent.departmentChanged(
+      {@required String department}) = _DepartmentChanged;
   const factory SigninAndRegisterEvent.register() = _StudentRegister;
   const factory SigninAndRegisterEvent.signIn() = _SignIn;
   const factory SigninAndRegisterEvent.signinPasswordChanged(
