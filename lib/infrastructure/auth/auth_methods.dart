@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:e_exame/domain/user/user.dart' as my;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
@@ -7,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/auth_methods.dart';
 import '../../domain/auth/value_objects.dart';
+import './extentios.dart';
 
 @LazySingleton(as: AuthMethods)
 class AuthApiRequester implements AuthMethods {
@@ -21,15 +23,10 @@ class AuthApiRequester implements AuthMethods {
     final String _emailString = emailAddress.getOrCrash();
     final String _passwordString = password.getOrCrash();
     try {
-      print("start sigining in");
-
       await _firebaseAuth.signInWithEmailAndPassword(
           email: _emailString, password: _passwordString);
-      print("I am done");
       return right(unit);
-    } on FirebaseAuthException catch (e) {
-      print("I failed $e");
-
+    } on FirebaseAuthException catch (_) {
       return left(const WrongEmailAndPasswordCompination());
     }
   }
@@ -71,6 +68,10 @@ class AuthApiRequester implements AuthMethods {
       return left(const EmailIsAlreadyInUse());
     }
   }
+
+  @override
+  Future<Option<my.User>> currentUser() async =>
+      optionOf(await _firebaseAuth.currentUser?.toDomain());
 
   @override
   Future<void> signOut() async {

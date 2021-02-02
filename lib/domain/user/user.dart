@@ -10,7 +10,7 @@ abstract class User with _$User {
   const factory User({
     @required UniqueID id,
     @required FullName name,
-    @required Department department,
+    Department department,
     Level level,
     @required EmailAddress emailAddress,
     @required UserRole userRole,

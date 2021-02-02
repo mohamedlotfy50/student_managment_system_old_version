@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:e_exame/presentation/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,7 +29,7 @@ class MainPage extends StatelessWidget {
           create: (context) => getIt<WrapperBloc>(),
         ),
       ],
-      child: MainPageBody(),
+      child: const MainPageBody(),
     );
   }
 }
@@ -44,7 +45,9 @@ class MainPageBody extends StatelessWidget {
         return state.maybeMap(
           loadSingleUserSuccess: (state) => Center(
             child: Scaffold(
+              backgroundColor: const Color(MyColors.backGround),
               appBar: AppBar(
+                backgroundColor: const Color(MyColors.backGroundLightShade),
                 title: const Text("Kolity"),
                 centerTitle: true,
               ),
@@ -52,7 +55,6 @@ class MainPageBody extends StatelessWidget {
                 child: ListView(
                   children: [
                     UserAccountsDrawerHeader(
-                      //currentAccountPicture: ,
                       accountName: Text(state.user.name.getOrCrash()),
                       accountEmail: Text(state.user.emailAddress.getOrCrash()),
                     ),
@@ -226,11 +228,7 @@ class MainPageBody extends StatelessWidget {
               ),
             ),
           ),
-          loading: (_) => const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
-          ),
+          loading: (_) => const LoadingIndecator(),
           orElse: () => const Center(
             child: Scaffold(
               body: Text("error"),

@@ -13,7 +13,5 @@ class IMessageMethods extends MessageMethod {
   @override
   Future<Either<ValueFailure<String>, Unit>> sendMessage(Message message) {
     // TODO: implement sendMessage
-
-    final String messageString = message.getOrCrash();
   }
 }

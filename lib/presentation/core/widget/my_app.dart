@@ -25,9 +25,7 @@ class MyApp extends StatelessWidget {
           builder: (context, snapShot) {
             if (snapShot.connectionState == ConnectionState.done) {
               if (snapShot.hasError) {
-                return Container(
-                  child: Center(child: Text('somthing went wrong')),
-                );
+                return const Center(child: Text('somthing went wrong'));
               }
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
@@ -43,7 +41,7 @@ class MyApp extends StatelessWidget {
                 home: AuthWrapper(),
               );
             }
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }),
     );
   }

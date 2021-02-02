@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:e_exame/presentation/shared/loading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/auth/auth_wrapper/wrapper_bloc.dart';
-import '../../core/conts/colors.dart';
 import '../../routs/router.gr.dart';
 
 class AuthWrapper extends StatelessWidget {
@@ -21,14 +21,7 @@ class AuthWrapper extends StatelessWidget {
               return ExtendedNavigator.root.popAndPush(Routes.authPage);
             });
       },
-      child: const Scaffold(
-        backgroundColor: Color(MyColors.backGround),
-        body: Center(
-          child: CupertinoActivityIndicator(
-            radius: 30,
-          ),
-        ),
-      ),
+      child: const LoadingIndecator(),
     );
   }
 }

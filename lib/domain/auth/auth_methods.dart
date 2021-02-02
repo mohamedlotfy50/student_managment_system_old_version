@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:e_exame/domain/user/user.dart';
 import 'package:flutter/foundation.dart';
 
 import 'auth_failure.dart';
@@ -21,4 +22,5 @@ abstract class AuthMethods {
   });
 
   Future<void> signOut();
+  Future<Option<User>> currentUser();
 }
