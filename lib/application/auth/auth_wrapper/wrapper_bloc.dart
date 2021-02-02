@@ -1,12 +1,11 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:e_exame/domain/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../domain/auth/auth_failure.dart';
 import '../../../domain/auth/auth_methods.dart';
 
 part 'wrapper_bloc.freezed.dart';
@@ -24,11 +23,10 @@ class WrapperBloc extends Bloc<WrapperEvent, WrapperState> {
   ) async* {
     yield* event.map(
       checkAuthRequest: (e) async* {
-        final Either<AuthFailure, String> auth =
-            await _authMethods.checkToken();
-        yield auth.fold(
-          (_) => const WrapperState.unAuthenticated(),
-          (_) => const WrapperState.authenticated(),
+        final Option<User> _userOption = await _authMethods.currentUser();
+        yield _userOption.fold(
+          () => const WrapperState.unAuthenticated(),
+          (a) => const WrapperState.authenticated(),
         );
       },
       signOut: (e) async* {

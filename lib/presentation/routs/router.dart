@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route_annotations.dart';
-import 'package:e_exame/presentation/ui/auth/auth_page.dart';
+import '../ui/auth/auth_page.dart';
 
 import '../ui/auth/auth_wrapper.dart';
 

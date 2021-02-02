@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:e_exame/application/auth/signin_and_register/signin_and_register_bloc.dart';
 import 'package:e_exame/presentation/routs/router.gr.dart';
-import 'package:e_exame/presentation/ui/auth/widgets/background.dart';
-import 'package:e_exame/presentation/ui/auth/widgets/my_button.dart';
-import 'package:e_exame/presentation/ui/auth/widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../application/auth/signin/signin_bloc.dart';
+
+import '../widgets/background.dart';
+import '../widgets/my_button.dart';
+import '../widgets/text_form_field.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({Key key}) : super(key: key);
@@ -13,8 +14,12 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    return BlocConsumer<SigninBloc, SigninState>(
-      listener: (context, state) {},
+    return BlocConsumer<SigninAndRegisterBloc, SigninAndRegisterState>(
+      listener: (context, state) {
+        if (state.authFailureOrSuccess.isSome()) {
+          ExtendedNavigator.root.popAndPush(Routes.mainPage);
+        }
+      },
       builder: (context, state) {
         return Background(
           formKey: formKey,
@@ -30,11 +35,10 @@ class SignInView extends StatelessWidget {
                 isPassword: false,
                 labelText: 'Email address',
                 icon: Icons.person,
-                onChange: (value) => context
-                    .read<SigninBloc>()
-                    .add(SigninEvent.emailChanged(emailString: value)),
+                onChange: (value) => context.read<SigninAndRegisterBloc>().add(
+                    SigninAndRegisterEvent.emailChanged(emailString: value)),
                 validator: (_) => context
-                    .read<SigninBloc>()
+                    .read<SigninAndRegisterBloc>()
                     .state
                     .emailAddress
                     .value
@@ -49,13 +53,13 @@ class SignInView extends StatelessWidget {
                 isPassword: true,
                 labelText: 'Password',
                 icon: Icons.lock,
-                onChange: (value) => context
-                    .read<SigninBloc>()
-                    .add(SigninEvent.passwordChanged(passwordString: value)),
+                onChange: (value) => context.read<SigninAndRegisterBloc>().add(
+                    SigninAndRegisterEvent.signinPasswordChanged(
+                        signinPasswordString: value)),
                 validator: (_) => context
-                    .read<SigninBloc>()
+                    .read<SigninAndRegisterBloc>()
                     .state
-                    .password
+                    .signinPassword
                     .value
                     .fold(
                         (failure) => failure.maybeMap(
@@ -67,8 +71,9 @@ class SignInView extends StatelessWidget {
               MyButton(
                 onpress: () {
                   if (formKey.currentState.validate()) {
-                    context.read<SigninBloc>().add(const SigninEvent.signIn());
-                    ExtendedNavigator.root.popAndPush(Routes.mainPage);
+                    context
+                        .read<SigninAndRegisterBloc>()
+                        .add(const SigninAndRegisterEvent.signIn());
                   }
                 },
                 text: "Sign in",

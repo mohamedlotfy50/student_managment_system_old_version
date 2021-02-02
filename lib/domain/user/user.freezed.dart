@@ -17,7 +17,7 @@ class _$UserTearOff {
   _Usesr call(
       {@required UniqueID id,
       @required FullName name,
-      @required Department department,
+      Department department,
       Level level,
       @required EmailAddress emailAddress,
       @required UserRole userRole}) {
@@ -143,13 +143,12 @@ class _$_Usesr implements _Usesr {
   const _$_Usesr(
       {@required this.id,
       @required this.name,
-      @required this.department,
+      this.department,
       this.level,
       @required this.emailAddress,
       @required this.userRole})
       : assert(id != null),
         assert(name != null),
-        assert(department != null),
         assert(emailAddress != null),
         assert(userRole != null);
 
@@ -211,7 +210,7 @@ abstract class _Usesr implements User {
   const factory _Usesr(
       {@required UniqueID id,
       @required FullName name,
-      @required Department department,
+      Department department,
       Level level,
       @required EmailAddress emailAddress,
       @required UserRole userRole}) = _$_Usesr;

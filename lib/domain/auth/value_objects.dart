@@ -29,8 +29,7 @@ class Password extends ValueObject<String> {
   factory Password(String input) {
     assert(input != null);
     return Password._(
-      minLengthValidation(input, minLength)
-          .flatMap((a) => passwordValidation(a))
+      passwordValidation(input)
           .flatMap((a) => maxLengthValidation(a, maxLength)),
     );
   }
@@ -107,27 +106,29 @@ class CollegeId extends ValueObject<String> {
 }
 
 class Level extends ValueObject<String> {
-  static const List<String> levels = [];
+  static const List<String> levels = ['One', 'Two', 'Three', 'Four'];
   @override
   final Either<ValueFailure<String>, String> value;
 
   factory Level(String input) {
-    assert(input != null);
-    return Level._(
-      right(input),
-    );
+    if (input != null) {
+      return Level._(
+        right(input),
+      );
+    } else {
+      return null;
+    }
   }
   const Level._(this.value);
 }
 
 //TODO: fix the two value objects
 class Department extends ValueObject<String> {
-  static List<String> departments = [];
+  static List<String> departments = ['General', 'SE', 'CS', 'IT', 'IS'];
   @override
   final Either<ValueFailure<String>, String> value;
 
   factory Department(String input) {
-    assert(input != null);
     return Department._(
       right(input),
     );

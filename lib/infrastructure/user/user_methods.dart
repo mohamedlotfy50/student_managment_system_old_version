@@ -1,30 +1,13 @@
-import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/user/user.dart';
-import 'package:e_exame/domain/user/user_failures.dart';
-import 'package:e_exame/domain/user/user_methods.dart';
-import 'package:e_exame/infrastructure/user/user_dto.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../domain/user/user.dart';
+import '../../domain/user/user_failures.dart';
+import '../../domain/user/user_methods.dart';
 
 @LazySingleton(as: UserMethods)
 class IUser extends UserMethods {
-  @override
-  Either<UserFailure, User> currentUser(String token) {
-    final List<String> parts = token.split(".");
-    assert(parts.length == 3);
-    final String payload = parts[1];
-    final String normalized = base64Url.normalize(payload);
-    final String resp = utf8.decode(base64Url.decode(normalized));
-    final payloadMap = json.decode(resp);
-    if (payloadMap is! Map<String, dynamic>) {
-      return left(UserFailure.invalidToken(failure: null));
-    }
-
-    return right(
-      UserDto.fromJson(payloadMap as Map<String, dynamic>).toDomain(),
-    );
-  }
+  IUser();
 
   @override
   Future<Either<UserFailure, Unit>> deleteUser(String id) {

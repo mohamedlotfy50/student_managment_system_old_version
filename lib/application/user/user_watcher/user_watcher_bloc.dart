@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/auth/auth_failure.dart';
-import 'package:e_exame/domain/auth/auth_methods.dart';
-import 'package:e_exame/domain/user/user.dart';
-import 'package:e_exame/domain/user/user_failures.dart';
-import 'package:e_exame/domain/user/user_methods.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../domain/auth/auth_methods.dart';
+import '../../../domain/user/user.dart';
+import '../../../domain/user/user_failures.dart';
+import '../../../domain/user/user_methods.dart';
+
+part 'user_watcher_bloc.freezed.dart';
 part 'user_watcher_event.dart';
 part 'user_watcher_state.dart';
-part 'user_watcher_bloc.freezed.dart';
 
 @injectable
 class UserWatcherBloc extends Bloc<UserWatcherEvent, UserWatcherState> {
@@ -37,14 +37,10 @@ class UserWatcherBloc extends Bloc<UserWatcherEvent, UserWatcherState> {
       },
       getcurrentUser: (e) async* {
         yield const UserWatcherState.loading();
-        await _authMethods.checkToken();
-        final String token = await _authMethods.getToken();
-
-        final Either<UserFailure, User> currentUser =
-            _userMethods.currentUser(token);
-
-        yield currentUser.fold(
-          (failureUser) => UserWatcherState.loadFailed(failureUser),
+        final Option<User> _user = await _authMethods.currentUser();
+        yield _user.fold(
+          () => const UserWatcherState.loadFailed(
+              UserFailure.invalidSignedInUser(failure: 'error')),
           (successUser) => UserWatcherState.loadSingleUserSuccess(successUser),
         );
       },

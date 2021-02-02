@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_exame/domain/chat/message_object.dart';
-import 'package:e_exame/domain/core/value_failure.dart';
+
+import '../core/value_failure.dart';
+import 'message_object.dart';
 
 abstract class MessageMethod {
   Future<Either<ValueFailure<String>, List<Message>>> readAllMessages();
