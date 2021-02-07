@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:e_exame/domain/chat/message.dart';
 
 import '../core/value_failure.dart';
-import 'message_object.dart';
 
 abstract class MessageMethod {
-  Future<Either<ValueFailure<String>, List<Message>>> readAllMessages();
-  Future<Either<ValueFailure<String>, Unit>> sendMessage(Message message);
+  Stream<QuerySnapshot> readAllMessages(String department);
+  Future<Either<ValueFailure<String>, Unit>> sendMessage(
+      String department, Message message);
 }

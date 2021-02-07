@@ -4,16 +4,16 @@ import '../core/formater.dart';
 import '../core/value_failure.dart';
 import '../core/value_object.dart';
 
-class Message extends ValueObject<String> {
+class MessageBody extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
-  factory Message(String input) {
-    assert(input == null);
-    return Message._(
+  factory MessageBody(String input) {
+    assert(input != null);
+    return MessageBody._(
       right(
         formateString(input),
       ),
     );
   }
-  const Message._(this.value);
+  const MessageBody._(this.value);
 }
