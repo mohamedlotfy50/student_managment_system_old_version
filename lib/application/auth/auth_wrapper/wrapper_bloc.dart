@@ -26,7 +26,7 @@ class WrapperBloc extends Bloc<WrapperEvent, WrapperState> {
         final Option<User> _userOption = await _authMethods.currentUser();
         yield _userOption.fold(
           () => const WrapperState.unAuthenticated(),
-          (a) => const WrapperState.authenticated(),
+          (user) => WrapperState.authenticated(user: user),
         );
       },
       signOut: (e) async* {

@@ -2085,6 +2085,7 @@ class _$SigninAndRegisterStateTearOff {
       @required bool isSubmiting,
       @required bool showErrorMessages,
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
+      @required Option<User> user,
       Level level,
       Department department}) {
     return _SigninAndRegisterState(
@@ -2098,6 +2099,7 @@ class _$SigninAndRegisterStateTearOff {
       isSubmiting: isSubmiting,
       showErrorMessages: showErrorMessages,
       authFailureOrSuccess: authFailureOrSuccess,
+      user: user,
       level: level,
       department: department,
     );
@@ -2120,6 +2122,7 @@ mixin _$SigninAndRegisterState {
   bool get isSubmiting;
   bool get showErrorMessages;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccess;
+  Option<User> get user;
   Level get level;
   Department get department;
 
@@ -2142,6 +2145,7 @@ abstract class $SigninAndRegisterStateCopyWith<$Res> {
       bool isSubmiting,
       bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
+      Option<User> user,
       Level level,
       Department department});
 }
@@ -2167,6 +2171,7 @@ class _$SigninAndRegisterStateCopyWithImpl<$Res>
     Object isSubmiting = freezed,
     Object showErrorMessages = freezed,
     Object authFailureOrSuccess = freezed,
+    Object user = freezed,
     Object level = freezed,
     Object department = freezed,
   }) {
@@ -2193,6 +2198,7 @@ class _$SigninAndRegisterStateCopyWithImpl<$Res>
       authFailureOrSuccess: authFailureOrSuccess == freezed
           ? _value.authFailureOrSuccess
           : authFailureOrSuccess as Option<Either<AuthFailure, Unit>>,
+      user: user == freezed ? _value.user : user as Option<User>,
       level: level == freezed ? _value.level : level as Level,
       department:
           department == freezed ? _value.department : department as Department,
@@ -2218,6 +2224,7 @@ abstract class _$SigninAndRegisterStateCopyWith<$Res>
       bool isSubmiting,
       bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
+      Option<User> user,
       Level level,
       Department department});
 }
@@ -2245,6 +2252,7 @@ class __$SigninAndRegisterStateCopyWithImpl<$Res>
     Object isSubmiting = freezed,
     Object showErrorMessages = freezed,
     Object authFailureOrSuccess = freezed,
+    Object user = freezed,
     Object level = freezed,
     Object department = freezed,
   }) {
@@ -2271,6 +2279,7 @@ class __$SigninAndRegisterStateCopyWithImpl<$Res>
       authFailureOrSuccess: authFailureOrSuccess == freezed
           ? _value.authFailureOrSuccess
           : authFailureOrSuccess as Option<Either<AuthFailure, Unit>>,
+      user: user == freezed ? _value.user : user as Option<User>,
       level: level == freezed ? _value.level : level as Level,
       department:
           department == freezed ? _value.department : department as Department,
@@ -2291,6 +2300,7 @@ class _$_SigninAndRegisterState implements _SigninAndRegisterState {
       @required this.isSubmiting,
       @required this.showErrorMessages,
       @required this.authFailureOrSuccess,
+      @required this.user,
       this.level,
       this.department})
       : assert(signinPassword != null),
@@ -2302,7 +2312,8 @@ class _$_SigninAndRegisterState implements _SigninAndRegisterState {
         assert(userRole != null),
         assert(isSubmiting != null),
         assert(showErrorMessages != null),
-        assert(authFailureOrSuccess != null);
+        assert(authFailureOrSuccess != null),
+        assert(user != null);
 
   @override
   final SignInPassword signinPassword;
@@ -2325,13 +2336,15 @@ class _$_SigninAndRegisterState implements _SigninAndRegisterState {
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccess;
   @override
+  final Option<User> user;
+  @override
   final Level level;
   @override
   final Department department;
 
   @override
   String toString() {
-    return 'SigninAndRegisterState(signinPassword: $signinPassword, fullName: $fullName, emailAddress: $emailAddress, password: $password, passwordConfirm: $passwordConfirm, collegeId: $collegeId, userRole: $userRole, isSubmiting: $isSubmiting, showErrorMessages: $showErrorMessages, authFailureOrSuccess: $authFailureOrSuccess, level: $level, department: $department)';
+    return 'SigninAndRegisterState(signinPassword: $signinPassword, fullName: $fullName, emailAddress: $emailAddress, password: $password, passwordConfirm: $passwordConfirm, collegeId: $collegeId, userRole: $userRole, isSubmiting: $isSubmiting, showErrorMessages: $showErrorMessages, authFailureOrSuccess: $authFailureOrSuccess, user: $user, level: $level, department: $department)';
   }
 
   @override
@@ -2368,6 +2381,8 @@ class _$_SigninAndRegisterState implements _SigninAndRegisterState {
             (identical(other.authFailureOrSuccess, authFailureOrSuccess) ||
                 const DeepCollectionEquality().equals(
                     other.authFailureOrSuccess, authFailureOrSuccess)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.level, level) ||
                 const DeepCollectionEquality().equals(other.level, level)) &&
             (identical(other.department, department) ||
@@ -2388,6 +2403,7 @@ class _$_SigninAndRegisterState implements _SigninAndRegisterState {
       const DeepCollectionEquality().hash(isSubmiting) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(authFailureOrSuccess) ^
+      const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(level) ^
       const DeepCollectionEquality().hash(department);
 
@@ -2409,6 +2425,7 @@ abstract class _SigninAndRegisterState implements SigninAndRegisterState {
       @required bool isSubmiting,
       @required bool showErrorMessages,
       @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
+      @required Option<User> user,
       Level level,
       Department department}) = _$_SigninAndRegisterState;
 
@@ -2432,6 +2449,8 @@ abstract class _SigninAndRegisterState implements SigninAndRegisterState {
   bool get showErrorMessages;
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccess;
+  @override
+  Option<User> get user;
   @override
   Level get level;
   @override

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:e_exame/application/auth/signin_and_register/signin_and_register_bloc.dart';
+import 'package:e_exame/domain/user/user.dart';
 import 'package:e_exame/presentation/routs/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,10 @@ class SignInView extends StatelessWidget {
     return BlocConsumer<SigninAndRegisterBloc, SigninAndRegisterState>(
       listener: (context, state) {
         if (state.authFailureOrSuccess.isSome()) {
-          ExtendedNavigator.root.popAndPush(Routes.mainPage);
+          state.user.fold(() {}, (a) {
+            ExtendedNavigator.root.popAndPush(Routes.mainPage,
+                arguments: MainPageArguments(user: a));
+          });
         }
       },
       builder: (context, state) {

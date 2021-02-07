@@ -14,8 +14,9 @@ class AuthWrapper extends StatelessWidget {
       listener: (context, state) {
         state.map(
             initial: (_) {},
-            authenticated: (_) {
-              return ExtendedNavigator.root.popAndPush(Routes.mainPage);
+            authenticated: (auth) {
+              return ExtendedNavigator.root.popAndPush(Routes.mainPage,
+                  arguments: MainPageArguments(user: auth.user));
             },
             unAuthenticated: (_) {
               return ExtendedNavigator.root.popAndPush(Routes.authPage);

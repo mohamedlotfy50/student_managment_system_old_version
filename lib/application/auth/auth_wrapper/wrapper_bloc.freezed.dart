@@ -259,8 +259,10 @@ class _$WrapperStateTearOff {
   }
 
 // ignore: unused_element
-  Authenticated authenticated() {
-    return const Authenticated();
+  Authenticated authenticated({@required User user}) {
+    return Authenticated(
+      user: user,
+    );
   }
 
 // ignore: unused_element
@@ -278,13 +280,13 @@ mixin _$WrapperState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticated(),
+    @required Result authenticated(User user),
     @required Result unAuthenticated(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticated(),
+    Result authenticated(User user),
     Result unAuthenticated(),
     @required Result orElse(),
   });
@@ -356,7 +358,7 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticated(),
+    @required Result authenticated(User user),
     @required Result unAuthenticated(),
   }) {
     assert(initial != null);
@@ -369,7 +371,7 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticated(),
+    Result authenticated(User user),
     Result unAuthenticated(),
     @required Result orElse(),
   }) {
@@ -418,6 +420,9 @@ abstract class $AuthenticatedCopyWith<$Res> {
   factory $AuthenticatedCopyWith(
           Authenticated value, $Res Function(Authenticated) then) =
       _$AuthenticatedCopyWithImpl<$Res>;
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -429,49 +434,79 @@ class _$AuthenticatedCopyWithImpl<$Res> extends _$WrapperStateCopyWithImpl<$Res>
 
   @override
   Authenticated get _value => super._value as Authenticated;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(Authenticated(
+      user: user == freezed ? _value.user : user as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 /// @nodoc
 class _$Authenticated implements Authenticated {
-  const _$Authenticated();
+  const _$Authenticated({@required this.user}) : assert(user != null);
+
+  @override
+  final User user;
 
   @override
   String toString() {
-    return 'WrapperState.authenticated()';
+    return 'WrapperState.authenticated(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Authenticated);
+    return identical(this, other) ||
+        (other is Authenticated &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @override
+  $AuthenticatedCopyWith<Authenticated> get copyWith =>
+      _$AuthenticatedCopyWithImpl<Authenticated>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticated(),
+    @required Result authenticated(User user),
     @required Result unAuthenticated(),
   }) {
     assert(initial != null);
     assert(authenticated != null);
     assert(unAuthenticated != null);
-    return authenticated();
+    return authenticated(user);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticated(),
+    Result authenticated(User user),
     Result unAuthenticated(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (authenticated != null) {
-      return authenticated();
+      return authenticated(user);
     }
     return orElse();
   }
@@ -506,7 +541,10 @@ class _$Authenticated implements Authenticated {
 }
 
 abstract class Authenticated implements WrapperState {
-  const factory Authenticated() = _$Authenticated;
+  const factory Authenticated({@required User user}) = _$Authenticated;
+
+  User get user;
+  $AuthenticatedCopyWith<Authenticated> get copyWith;
 }
 
 /// @nodoc
@@ -549,7 +587,7 @@ class _$UnAuthenticated implements UnAuthenticated {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticated(),
+    @required Result authenticated(User user),
     @required Result unAuthenticated(),
   }) {
     assert(initial != null);
@@ -562,7 +600,7 @@ class _$UnAuthenticated implements UnAuthenticated {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticated(),
+    Result authenticated(User user),
     Result unAuthenticated(),
     @required Result orElse(),
   }) {

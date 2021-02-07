@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/auth_methods.dart';
 import '../../domain/auth/value_objects.dart';
-import './extentios.dart';
+import './extension.dart';
 
 @LazySingleton(as: AuthMethods)
 class AuthApiRequester implements AuthMethods {
@@ -26,7 +26,8 @@ class AuthApiRequester implements AuthMethods {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: _emailString, password: _passwordString);
       return right(unit);
-    } on FirebaseAuthException catch (_) {
+    } on FirebaseAuthException catch (e) {
+      print(e);
       return left(const WrongEmailAndPasswordCompination());
     }
   }
@@ -71,7 +72,7 @@ class AuthApiRequester implements AuthMethods {
 
   @override
   Future<Option<my.User>> currentUser() async =>
-      optionOf(await _firebaseAuth.currentUser?.toDomain());
+      optionOf(await _firebaseAuth.currentUser?.toDomain(_users));
 
   @override
   Future<void> signOut() async {

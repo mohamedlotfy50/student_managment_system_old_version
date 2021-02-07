@@ -13,6 +13,7 @@ abstract class SigninAndRegisterState with _$SigninAndRegisterState {
     @required bool isSubmiting,
     @required bool showErrorMessages,
     @required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
+    @required Option<User> user,
     Level level,
     Department department,
   }) = _SigninAndRegisterState;
@@ -31,5 +32,6 @@ abstract class SigninAndRegisterState with _$SigninAndRegisterState {
           'General',
         ),
         level: Level('One'),
+        user: none(),
       );
 }

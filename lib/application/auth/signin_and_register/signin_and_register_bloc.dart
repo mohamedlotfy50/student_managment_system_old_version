@@ -5,6 +5,8 @@ import 'package:dartz/dartz.dart';
 import 'package:e_exame/domain/auth/auth_failure.dart';
 import 'package:e_exame/domain/auth/auth_methods.dart';
 import 'package:e_exame/domain/auth/value_objects.dart';
+import 'package:e_exame/domain/core/value_object.dart';
+import 'package:e_exame/domain/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -124,12 +126,15 @@ class SigninAndRegisterBloc
             emailAddress: state.emailAddress,
             password: state.signinPassword,
           );
+          final Option<User> _user = await _authMethods.currentUser();
           yield state.copyWith(
             isSubmiting: false,
             showErrorMessages: false,
             authFailureOrSuccess: some(authFailureOrSuccess),
+            user: _user,
           );
         }
+
         yield state.copyWith(
           showErrorMessages: true,
           authFailureOrSuccess: none(),
