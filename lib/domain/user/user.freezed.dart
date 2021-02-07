@@ -16,6 +16,7 @@ class _$UserTearOff {
 // ignore: unused_element
   _Usesr call(
       {@required UniqueID id,
+      @required CollegeId collegeId,
       @required FullName name,
       Department department,
       Level level,
@@ -23,6 +24,7 @@ class _$UserTearOff {
       @required UserRole userRole}) {
     return _Usesr(
       id: id,
+      collegeId: collegeId,
       name: name,
       department: department,
       level: level,
@@ -39,6 +41,7 @@ const $User = _$UserTearOff();
 /// @nodoc
 mixin _$User {
   UniqueID get id;
+  CollegeId get collegeId;
   FullName get name;
   Department get department;
   Level get level;
@@ -54,6 +57,7 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res>;
   $Res call(
       {UniqueID id,
+      CollegeId collegeId,
       FullName name,
       Department department,
       Level level,
@@ -72,6 +76,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
+    Object collegeId = freezed,
     Object name = freezed,
     Object department = freezed,
     Object level = freezed,
@@ -80,6 +85,8 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueID,
+      collegeId:
+          collegeId == freezed ? _value.collegeId : collegeId as CollegeId,
       name: name == freezed ? _value.name : name as FullName,
       department:
           department == freezed ? _value.department : department as Department,
@@ -99,6 +106,7 @@ abstract class _$UsesrCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call(
       {UniqueID id,
+      CollegeId collegeId,
       FullName name,
       Department department,
       Level level,
@@ -118,6 +126,7 @@ class __$UsesrCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
+    Object collegeId = freezed,
     Object name = freezed,
     Object department = freezed,
     Object level = freezed,
@@ -126,6 +135,8 @@ class __$UsesrCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   }) {
     return _then(_Usesr(
       id: id == freezed ? _value.id : id as UniqueID,
+      collegeId:
+          collegeId == freezed ? _value.collegeId : collegeId as CollegeId,
       name: name == freezed ? _value.name : name as FullName,
       department:
           department == freezed ? _value.department : department as Department,
@@ -142,18 +153,22 @@ class __$UsesrCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 class _$_Usesr implements _Usesr {
   const _$_Usesr(
       {@required this.id,
+      @required this.collegeId,
       @required this.name,
       this.department,
       this.level,
       @required this.emailAddress,
       @required this.userRole})
       : assert(id != null),
+        assert(collegeId != null),
         assert(name != null),
         assert(emailAddress != null),
         assert(userRole != null);
 
   @override
   final UniqueID id;
+  @override
+  final CollegeId collegeId;
   @override
   final FullName name;
   @override
@@ -167,7 +182,7 @@ class _$_Usesr implements _Usesr {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, department: $department, level: $level, emailAddress: $emailAddress, userRole: $userRole)';
+    return 'User(id: $id, collegeId: $collegeId, name: $name, department: $department, level: $level, emailAddress: $emailAddress, userRole: $userRole)';
   }
 
   @override
@@ -176,6 +191,9 @@ class _$_Usesr implements _Usesr {
         (other is _Usesr &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.collegeId, collegeId) ||
+                const DeepCollectionEquality()
+                    .equals(other.collegeId, collegeId)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.department, department) ||
@@ -195,6 +213,7 @@ class _$_Usesr implements _Usesr {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(collegeId) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(department) ^
       const DeepCollectionEquality().hash(level) ^
@@ -209,6 +228,7 @@ class _$_Usesr implements _Usesr {
 abstract class _Usesr implements User {
   const factory _Usesr(
       {@required UniqueID id,
+      @required CollegeId collegeId,
       @required FullName name,
       Department department,
       Level level,
@@ -217,6 +237,8 @@ abstract class _Usesr implements User {
 
   @override
   UniqueID get id;
+  @override
+  CollegeId get collegeId;
   @override
   FullName get name;
   @override

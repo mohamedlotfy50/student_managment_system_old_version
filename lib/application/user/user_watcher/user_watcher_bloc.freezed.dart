@@ -14,15 +14,8 @@ class _$UserWatcherEventTearOff {
   const _$UserWatcherEventTearOff();
 
 // ignore: unused_element
-  _GetAllStudents getAllUsers(String role) {
-    return _GetAllStudents(
-      role,
-    );
-  }
-
-// ignore: unused_element
-  _GetcurrentUser getcurrentUser() {
-    return const _GetcurrentUser();
+  _GetAllStudents getAllUsers() {
+    return const _GetAllStudents();
   }
 }
 
@@ -34,24 +27,20 @@ const $UserWatcherEvent = _$UserWatcherEventTearOff();
 mixin _$UserWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result getAllUsers(String role),
-    @required Result getcurrentUser(),
+    @required Result getAllUsers(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result getAllUsers(String role),
-    Result getcurrentUser(),
+    Result getAllUsers(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result getAllUsers(_GetAllStudents value),
-    @required Result getcurrentUser(_GetcurrentUser value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result getAllUsers(_GetAllStudents value),
-    Result getcurrentUser(_GetcurrentUser value),
     @required Result orElse(),
   });
 }
@@ -78,7 +67,6 @@ abstract class _$GetAllStudentsCopyWith<$Res> {
   factory _$GetAllStudentsCopyWith(
           _GetAllStudents value, $Res Function(_GetAllStudents) then) =
       __$GetAllStudentsCopyWithImpl<$Res>;
-  $Res call({String role});
 }
 
 /// @nodoc
@@ -91,66 +79,43 @@ class __$GetAllStudentsCopyWithImpl<$Res>
 
   @override
   _GetAllStudents get _value => super._value as _GetAllStudents;
-
-  @override
-  $Res call({
-    Object role = freezed,
-  }) {
-    return _then(_GetAllStudents(
-      role == freezed ? _value.role : role as String,
-    ));
-  }
 }
 
 /// @nodoc
 class _$_GetAllStudents implements _GetAllStudents {
-  const _$_GetAllStudents(this.role) : assert(role != null);
-
-  @override
-  final String role;
+  const _$_GetAllStudents();
 
   @override
   String toString() {
-    return 'UserWatcherEvent.getAllUsers(role: $role)';
+    return 'UserWatcherEvent.getAllUsers()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _GetAllStudents &&
-            (identical(other.role, role) ||
-                const DeepCollectionEquality().equals(other.role, role)));
+    return identical(this, other) || (other is _GetAllStudents);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(role);
-
-  @override
-  _$GetAllStudentsCopyWith<_GetAllStudents> get copyWith =>
-      __$GetAllStudentsCopyWithImpl<_GetAllStudents>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result getAllUsers(String role),
-    @required Result getcurrentUser(),
+    @required Result getAllUsers(),
   }) {
     assert(getAllUsers != null);
-    assert(getcurrentUser != null);
-    return getAllUsers(role);
+    return getAllUsers();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result getAllUsers(String role),
-    Result getcurrentUser(),
+    Result getAllUsers(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (getAllUsers != null) {
-      return getAllUsers(role);
+      return getAllUsers();
     }
     return orElse();
   }
@@ -159,10 +124,8 @@ class _$_GetAllStudents implements _GetAllStudents {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result getAllUsers(_GetAllStudents value),
-    @required Result getcurrentUser(_GetcurrentUser value),
   }) {
     assert(getAllUsers != null);
-    assert(getcurrentUser != null);
     return getAllUsers(this);
   }
 
@@ -170,7 +133,6 @@ class _$_GetAllStudents implements _GetAllStudents {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result getAllUsers(_GetAllStudents value),
-    Result getcurrentUser(_GetcurrentUser value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -182,101 +144,7 @@ class _$_GetAllStudents implements _GetAllStudents {
 }
 
 abstract class _GetAllStudents implements UserWatcherEvent {
-  const factory _GetAllStudents(String role) = _$_GetAllStudents;
-
-  String get role;
-  _$GetAllStudentsCopyWith<_GetAllStudents> get copyWith;
-}
-
-/// @nodoc
-abstract class _$GetcurrentUserCopyWith<$Res> {
-  factory _$GetcurrentUserCopyWith(
-          _GetcurrentUser value, $Res Function(_GetcurrentUser) then) =
-      __$GetcurrentUserCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetcurrentUserCopyWithImpl<$Res>
-    extends _$UserWatcherEventCopyWithImpl<$Res>
-    implements _$GetcurrentUserCopyWith<$Res> {
-  __$GetcurrentUserCopyWithImpl(
-      _GetcurrentUser _value, $Res Function(_GetcurrentUser) _then)
-      : super(_value, (v) => _then(v as _GetcurrentUser));
-
-  @override
-  _GetcurrentUser get _value => super._value as _GetcurrentUser;
-}
-
-/// @nodoc
-class _$_GetcurrentUser implements _GetcurrentUser {
-  const _$_GetcurrentUser();
-
-  @override
-  String toString() {
-    return 'UserWatcherEvent.getcurrentUser()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetcurrentUser);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result getAllUsers(String role),
-    @required Result getcurrentUser(),
-  }) {
-    assert(getAllUsers != null);
-    assert(getcurrentUser != null);
-    return getcurrentUser();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result getAllUsers(String role),
-    Result getcurrentUser(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (getcurrentUser != null) {
-      return getcurrentUser();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result getAllUsers(_GetAllStudents value),
-    @required Result getcurrentUser(_GetcurrentUser value),
-  }) {
-    assert(getAllUsers != null);
-    assert(getcurrentUser != null);
-    return getcurrentUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result getAllUsers(_GetAllStudents value),
-    Result getcurrentUser(_GetcurrentUser value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (getcurrentUser != null) {
-      return getcurrentUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetcurrentUser implements UserWatcherEvent {
-  const factory _GetcurrentUser() = _$_GetcurrentUser;
+  const factory _GetAllStudents() = _$_GetAllStudents;
 }
 
 /// @nodoc
@@ -301,13 +169,6 @@ class _$UserWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  LoadSingleUserSuccess loadSingleUserSuccess(User user) {
-    return LoadSingleUserSuccess(
-      user,
-    );
-  }
-
-// ignore: unused_element
   LoadFailed loadFailed(UserFailure failure) {
     return LoadFailed(
       failure,
@@ -326,7 +187,6 @@ mixin _$UserWatcherState {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   });
   @optionalTypeArgs
@@ -334,7 +194,6 @@ mixin _$UserWatcherState {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   });
@@ -343,7 +202,6 @@ mixin _$UserWatcherState {
     @required Result initial(Initial value),
     @required Result loading(Loading value),
     @required Result loadSuccess(LoadSuccess value),
-    @required Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     @required Result loadFailed(LoadFailed value),
   });
   @optionalTypeArgs
@@ -351,7 +209,6 @@ mixin _$UserWatcherState {
     Result initial(Initial value),
     Result loading(Loading value),
     Result loadSuccess(LoadSuccess value),
-    Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     Result loadFailed(LoadFailed value),
     @required Result orElse(),
   });
@@ -413,13 +270,11 @@ class _$Initial implements Initial {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return initial();
   }
@@ -430,7 +285,6 @@ class _$Initial implements Initial {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
@@ -447,13 +301,11 @@ class _$Initial implements Initial {
     @required Result initial(Initial value),
     @required Result loading(Loading value),
     @required Result loadSuccess(LoadSuccess value),
-    @required Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     @required Result loadFailed(LoadFailed value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return initial(this);
   }
@@ -464,7 +316,6 @@ class _$Initial implements Initial {
     Result initial(Initial value),
     Result loading(Loading value),
     Result loadSuccess(LoadSuccess value),
-    Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     Result loadFailed(LoadFailed value),
     @required Result orElse(),
   }) {
@@ -519,13 +370,11 @@ class _$Loading implements Loading {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return loading();
   }
@@ -536,7 +385,6 @@ class _$Loading implements Loading {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
@@ -553,13 +401,11 @@ class _$Loading implements Loading {
     @required Result initial(Initial value),
     @required Result loading(Loading value),
     @required Result loadSuccess(LoadSuccess value),
-    @required Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     @required Result loadFailed(LoadFailed value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return loading(this);
   }
@@ -570,7 +416,6 @@ class _$Loading implements Loading {
     Result initial(Initial value),
     Result loading(Loading value),
     Result loadSuccess(LoadSuccess value),
-    Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     Result loadFailed(LoadFailed value),
     @required Result orElse(),
   }) {
@@ -649,13 +494,11 @@ class _$LoadSuccess implements LoadSuccess {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return loadSuccess(users);
   }
@@ -666,7 +509,6 @@ class _$LoadSuccess implements LoadSuccess {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
@@ -683,13 +525,11 @@ class _$LoadSuccess implements LoadSuccess {
     @required Result initial(Initial value),
     @required Result loading(Loading value),
     @required Result loadSuccess(LoadSuccess value),
-    @required Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     @required Result loadFailed(LoadFailed value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return loadSuccess(this);
   }
@@ -700,7 +540,6 @@ class _$LoadSuccess implements LoadSuccess {
     Result initial(Initial value),
     Result loading(Loading value),
     Result loadSuccess(LoadSuccess value),
-    Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     Result loadFailed(LoadFailed value),
     @required Result orElse(),
   }) {
@@ -717,152 +556,6 @@ abstract class LoadSuccess implements UserWatcherState {
 
   List<User> get users;
   $LoadSuccessCopyWith<LoadSuccess> get copyWith;
-}
-
-/// @nodoc
-abstract class $LoadSingleUserSuccessCopyWith<$Res> {
-  factory $LoadSingleUserSuccessCopyWith(LoadSingleUserSuccess value,
-          $Res Function(LoadSingleUserSuccess) then) =
-      _$LoadSingleUserSuccessCopyWithImpl<$Res>;
-  $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
-}
-
-/// @nodoc
-class _$LoadSingleUserSuccessCopyWithImpl<$Res>
-    extends _$UserWatcherStateCopyWithImpl<$Res>
-    implements $LoadSingleUserSuccessCopyWith<$Res> {
-  _$LoadSingleUserSuccessCopyWithImpl(
-      LoadSingleUserSuccess _value, $Res Function(LoadSingleUserSuccess) _then)
-      : super(_value, (v) => _then(v as LoadSingleUserSuccess));
-
-  @override
-  LoadSingleUserSuccess get _value => super._value as LoadSingleUserSuccess;
-
-  @override
-  $Res call({
-    Object user = freezed,
-  }) {
-    return _then(LoadSingleUserSuccess(
-      user == freezed ? _value.user : user as User,
-    ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    if (_value.user == null) {
-      return null;
-    }
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
-}
-
-/// @nodoc
-class _$LoadSingleUserSuccess implements LoadSingleUserSuccess {
-  const _$LoadSingleUserSuccess(this.user) : assert(user != null);
-
-  @override
-  final User user;
-
-  @override
-  String toString() {
-    return 'UserWatcherState.loadSingleUserSuccess(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is LoadSingleUserSuccess &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
-
-  @override
-  $LoadSingleUserSuccessCopyWith<LoadSingleUserSuccess> get copyWith =>
-      _$LoadSingleUserSuccessCopyWithImpl<LoadSingleUserSuccess>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User user),
-    @required Result loadFailed(UserFailure failure),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
-    assert(loadFailed != null);
-    return loadSingleUserSuccess(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User user),
-    Result loadFailed(UserFailure failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadSingleUserSuccess != null) {
-      return loadSingleUserSuccess(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(Initial value),
-    @required Result loading(Loading value),
-    @required Result loadSuccess(LoadSuccess value),
-    @required Result loadSingleUserSuccess(LoadSingleUserSuccess value),
-    @required Result loadFailed(LoadFailed value),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
-    assert(loadFailed != null);
-    return loadSingleUserSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(Initial value),
-    Result loading(Loading value),
-    Result loadSuccess(LoadSuccess value),
-    Result loadSingleUserSuccess(LoadSingleUserSuccess value),
-    Result loadFailed(LoadFailed value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadSingleUserSuccess != null) {
-      return loadSingleUserSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LoadSingleUserSuccess implements UserWatcherState {
-  const factory LoadSingleUserSuccess(User user) = _$LoadSingleUserSuccess;
-
-  User get user;
-  $LoadSingleUserSuccessCopyWith<LoadSingleUserSuccess> get copyWith;
 }
 
 /// @nodoc
@@ -939,13 +632,11 @@ class _$LoadFailed implements LoadFailed {
     @required Result initial(),
     @required Result loading(),
     @required Result loadSuccess(List<User> users),
-    @required Result loadSingleUserSuccess(User user),
     @required Result loadFailed(UserFailure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return loadFailed(failure);
   }
@@ -956,7 +647,6 @@ class _$LoadFailed implements LoadFailed {
     Result initial(),
     Result loading(),
     Result loadSuccess(List<User> users),
-    Result loadSingleUserSuccess(User user),
     Result loadFailed(UserFailure failure),
     @required Result orElse(),
   }) {
@@ -973,13 +663,11 @@ class _$LoadFailed implements LoadFailed {
     @required Result initial(Initial value),
     @required Result loading(Loading value),
     @required Result loadSuccess(LoadSuccess value),
-    @required Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     @required Result loadFailed(LoadFailed value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loadSuccess != null);
-    assert(loadSingleUserSuccess != null);
     assert(loadFailed != null);
     return loadFailed(this);
   }
@@ -990,7 +678,6 @@ class _$LoadFailed implements LoadFailed {
     Result initial(Initial value),
     Result loading(Loading value),
     Result loadSuccess(LoadSuccess value),
-    Result loadSingleUserSuccess(LoadSingleUserSuccess value),
     Result loadFailed(LoadFailed value),
     @required Result orElse(),
   }) {

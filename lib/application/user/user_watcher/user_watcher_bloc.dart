@@ -35,15 +35,6 @@ class UserWatcherBloc extends Bloc<UserWatcherEvent, UserWatcherState> {
           (successUser) => UserWatcherState.loadSuccess(successUser),
         );
       },
-      getcurrentUser: (e) async* {
-        yield const UserWatcherState.loading();
-        final Option<User> _user = await _authMethods.currentUser();
-        yield _user.fold(
-          () => const UserWatcherState.loadFailed(
-              UserFailure.invalidSignedInUser(failure: 'error')),
-          (successUser) => UserWatcherState.loadSingleUserSuccess(successUser),
-        );
-      },
     );
   }
 }

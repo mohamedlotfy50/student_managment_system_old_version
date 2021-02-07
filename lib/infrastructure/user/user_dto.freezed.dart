@@ -19,6 +19,7 @@ class _$UserDtoTearOff {
 // ignore: unused_element
   _UserDto call(
       {@required String id,
+      @required String collegeId,
       @required String fullName,
       @required String department,
       @required String level,
@@ -26,6 +27,7 @@ class _$UserDtoTearOff {
       @required String role}) {
     return _UserDto(
       id: id,
+      collegeId: collegeId,
       fullName: fullName,
       department: department,
       level: level,
@@ -47,6 +49,7 @@ const $UserDto = _$UserDtoTearOff();
 /// @nodoc
 mixin _$UserDto {
   String get id;
+  String get collegeId;
   String get fullName;
   String get department;
   String get level;
@@ -63,6 +66,7 @@ abstract class $UserDtoCopyWith<$Res> {
       _$UserDtoCopyWithImpl<$Res>;
   $Res call(
       {String id,
+      String collegeId,
       String fullName,
       String department,
       String level,
@@ -81,6 +85,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
+    Object collegeId = freezed,
     Object fullName = freezed,
     Object department = freezed,
     Object level = freezed,
@@ -89,6 +94,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
+      collegeId: collegeId == freezed ? _value.collegeId : collegeId as String,
       fullName: fullName == freezed ? _value.fullName : fullName as String,
       department:
           department == freezed ? _value.department : department as String,
@@ -108,6 +114,7 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   @override
   $Res call(
       {String id,
+      String collegeId,
       String fullName,
       String department,
       String level,
@@ -127,6 +134,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
+    Object collegeId = freezed,
     Object fullName = freezed,
     Object department = freezed,
     Object level = freezed,
@@ -135,6 +143,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   }) {
     return _then(_UserDto(
       id: id == freezed ? _value.id : id as String,
+      collegeId: collegeId == freezed ? _value.collegeId : collegeId as String,
       fullName: fullName == freezed ? _value.fullName : fullName as String,
       department:
           department == freezed ? _value.department : department as String,
@@ -153,12 +162,14 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
   const _$_UserDto(
       {@required this.id,
+      @required this.collegeId,
       @required this.fullName,
       @required this.department,
       @required this.level,
       @required this.emailAddress,
       @required this.role})
       : assert(id != null),
+        assert(collegeId != null),
         assert(fullName != null),
         assert(department != null),
         assert(level != null),
@@ -172,6 +183,8 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
   @override
   final String id;
   @override
+  final String collegeId;
+  @override
   final String fullName;
   @override
   final String department;
@@ -184,7 +197,7 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserDto(id: $id, fullName: $fullName, department: $department, level: $level, emailAddress: $emailAddress, role: $role)';
+    return 'UserDto(id: $id, collegeId: $collegeId, fullName: $fullName, department: $department, level: $level, emailAddress: $emailAddress, role: $role)';
   }
 
   @override
@@ -193,6 +206,7 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
     properties
       ..add(DiagnosticsProperty('type', 'UserDto'))
       ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('collegeId', collegeId))
       ..add(DiagnosticsProperty('fullName', fullName))
       ..add(DiagnosticsProperty('department', department))
       ..add(DiagnosticsProperty('level', level))
@@ -206,6 +220,9 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
         (other is _UserDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.collegeId, collegeId) ||
+                const DeepCollectionEquality()
+                    .equals(other.collegeId, collegeId)) &&
             (identical(other.fullName, fullName) ||
                 const DeepCollectionEquality()
                     .equals(other.fullName, fullName)) &&
@@ -225,6 +242,7 @@ class _$_UserDto extends _UserDto with DiagnosticableTreeMixin {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(collegeId) ^
       const DeepCollectionEquality().hash(fullName) ^
       const DeepCollectionEquality().hash(department) ^
       const DeepCollectionEquality().hash(level) ^
@@ -245,6 +263,7 @@ abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
   const factory _UserDto(
       {@required String id,
+      @required String collegeId,
       @required String fullName,
       @required String department,
       @required String level,
@@ -255,6 +274,8 @@ abstract class _UserDto extends UserDto {
 
   @override
   String get id;
+  @override
+  String get collegeId;
   @override
   String get fullName;
   @override

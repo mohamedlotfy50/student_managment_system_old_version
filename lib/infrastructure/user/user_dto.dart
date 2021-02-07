@@ -8,10 +8,12 @@ import '../../domain/user/user.dart';
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
 
+//TODO:change the auth to take a user type and use userDto
 @freezed
 abstract class UserDto with _$UserDto {
   const factory UserDto({
     @required String id,
+    @required String collegeId,
     @required String fullName,
     @required String department,
     @required String level,
@@ -24,6 +26,7 @@ abstract class UserDto with _$UserDto {
 
   factory UserDto.fromDomain(User user) {
     return UserDto(
+      collegeId: user.collegeId.getOrCrash(),
       role: user.userRole.getOrCrash(),
       id: user.id.getOrCrash(),
       fullName: user.name.getOrCrash(),
@@ -35,6 +38,7 @@ abstract class UserDto with _$UserDto {
 
   User toDomain() {
     return User(
+      collegeId: CollegeId(collegeId),
       userRole: UserRole(role),
       id: UniqueID.fromUniqueString(id),
       name: FullName(fullName),

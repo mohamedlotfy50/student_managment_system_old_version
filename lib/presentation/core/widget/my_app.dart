@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:e_exame/presentation/core/conts/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,7 +36,12 @@ class MyApp extends StatelessWidget {
                 ),
                 title: 'coolity',
                 theme: ThemeData(
-                  primarySwatch: Colors.blue,
+                  textTheme: const TextTheme(
+                      bodyText2: TextStyle(color: Colors.white)),
+                  canvasColor: const Color(MyColors.backGround),
+                  scaffoldBackgroundColor: const Color(MyColors.backGround),
+                  accentColor: const Color(MyColors.backGroundLightShade),
+                  primaryColor: const Color(MyColors.backGroundLightShade),
                   visualDensity: VisualDensity.adaptivePlatformDensity,
                 ),
                 home: AuthWrapper(),
