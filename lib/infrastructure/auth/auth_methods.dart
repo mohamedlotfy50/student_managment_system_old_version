@@ -26,8 +26,7 @@ class AuthApiRequester implements AuthMethods {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: _emailString, password: _passwordString);
       return right(unit);
-    } on FirebaseAuthException catch (e) {
-      print(e);
+    } on FirebaseAuthException catch (_) {
       return left(const WrongEmailAndPasswordCompination());
     }
   }
@@ -55,9 +54,10 @@ class AuthApiRequester implements AuthMethods {
               email: _emailString, password: _passwordString)
           .then((value) {
         _users.doc(value.user.uid).set({
-          'name': _nameString,
-          'email': _emailString,
-          'college id': _collegeIDString,
+          'id': value.user.uid,
+          'fullName': _nameString,
+          'emailAddress': _emailString,
+          'collegeId': _collegeIDString,
           'role': _userRoleString,
           'level': _levelString,
           'department': _departmentString,

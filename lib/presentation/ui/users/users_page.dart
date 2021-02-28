@@ -89,43 +89,52 @@ class _Body extends StatelessWidget {
                 ),
                 child: ListView(
                   children: data.users.map((user) {
-                    if (!notMe(user.id.getOrCrash()) ||
+                    if (notMe(user.id.getOrCrash()) &&
                         canSeeUser(user.userRole.getOrCrash(),
                             user.department.getOrCrash())) {
-                      return ListTile(
-                        onTap: () {
-                          if (myRole == 'Admin') {
-                            ExtendedNavigator.of(context).push(
-                              Routes.editPage,
-                              arguments: EditPageArguments(user: user),
-                            );
-                          }
-                        },
-                        leading: const CircleAvatar(
-                          backgroundColor: Color(MyColors.backGroundLightShade),
-                          backgroundImage: AssetImage(
-                            Images.user,
-                          ),
-                        ),
-                        tileColor: const Color(MyColors.backGroundLightShade),
-                        title: Text(
-                          user.name.getOrCrash(),
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          user.department.getOrCrash(),
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        trailing: user.userRole.getOrCrash() == 'Admin'
-                            ? IconButton(
-                                icon: const Icon(Icons.delete),
-                                color: Colors.red,
-                                onPressed: () {},
-                              )
-                            : const SizedBox(
-                                width: 60,
-                                height: 60,
+                      return Column(
+                        children: [
+                          ListTile(
+                            onTap: () {
+                              if (myRole == 'Admin') {
+                                ExtendedNavigator.of(context).push(
+                                  Routes.editPage,
+                                  arguments: EditPageArguments(user: user),
+                                );
+                              }
+                            },
+                            leading: const CircleAvatar(
+                              backgroundColor:
+                                  Color(MyColors.backGroundLightShade),
+                              backgroundImage: AssetImage(
+                                Images.user,
                               ),
+                            ),
+                            tileColor:
+                                const Color(MyColors.backGroundLightShade),
+                            title: Text(
+                              '${user.userRole.getOrCrash()} : ${user.name.getOrCrash()}',
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              'Depatment : ${user.department.getOrCrash()}',
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            trailing: myRole == 'Admin'
+                                ? IconButton(
+                                    icon: const Icon(Icons.delete),
+                                    color: Colors.red,
+                                    onPressed: () {},
+                                  )
+                                : const SizedBox(
+                                    width: 60,
+                                    height: 60,
+                                  ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                        ],
                       );
                     } else {
                       return Container();

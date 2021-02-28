@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:e_exame/domain/auth/auth_failure.dart';
 import 'package:e_exame/domain/auth/auth_methods.dart';
 import 'package:e_exame/domain/auth/value_objects.dart';
-import 'package:e_exame/domain/core/value_object.dart';
 import 'package:e_exame/domain/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

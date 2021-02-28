@@ -13,7 +13,7 @@ class MainPage extends StatelessWidget {
 
   String roleWelcome(String role) {
     if (role == "Admin") {
-      return 'Mr';
+      return 'Admin';
     } else if (role == "Professor") {
       return 'Dr';
     } else {

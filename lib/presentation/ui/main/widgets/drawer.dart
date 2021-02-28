@@ -67,27 +67,28 @@ class MyDrawer extends StatelessWidget {
                 ),
               ),
             ),
-          ListTile(
-            onTap: () {
-              ExtendedNavigator.of(context).push(
-                Routes.chatPage,
-                arguments: ChatPageArguments(
-                  department: user.department.getOrCrash(),
-                  my: user,
-                ),
-              );
-            },
-            leading: const Icon(
-              Icons.message,
-              color: Colors.white,
-            ),
-            title: const Text(
-              "Caht",
-              style: TextStyle(
+          if (user.userRole.getOrCrash() != "Admin")
+            ListTile(
+              onTap: () {
+                ExtendedNavigator.of(context).push(
+                  Routes.chatPage,
+                  arguments: ChatPageArguments(
+                    department: user.department.getOrCrash(),
+                    my: user,
+                  ),
+                );
+              },
+              leading: const Icon(
+                Icons.message,
                 color: Colors.white,
               ),
+              title: const Text(
+                "Caht",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
-          ),
           ListTile(
             onTap: () {
               context.read<WrapperBloc>().add(const WrapperEvent.signOut());

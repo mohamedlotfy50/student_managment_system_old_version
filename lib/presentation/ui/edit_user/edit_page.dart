@@ -95,8 +95,10 @@ class EditPage extends StatelessWidget {
                   }).toList(),
                   onChanged: (val) {}),
             MyButton(
-              onpress: () {},
-              text: 'Submit',
+              onpress: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Submit'),
             ),
           ],
         ),

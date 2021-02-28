@@ -137,6 +137,8 @@ class _MessageBody extends StatelessWidget {
                 ),
               )),
               IconButton(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 iconSize: 35,
                 icon: const Icon(Icons.send),
                 onPressed: () {

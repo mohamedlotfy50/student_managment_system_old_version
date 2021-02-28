@@ -4,11 +4,11 @@ import '../../../core/conts/colors.dart';
 
 class MyButton extends StatelessWidget {
   final void Function() onpress;
-  final String text;
+  final Widget child;
   const MyButton({
     Key key,
     @required this.onpress,
-    @required this.text,
+    @required this.child,
   }) : super(key: key);
 
   @override
@@ -22,13 +22,7 @@ class MyButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),
         ),
-        child: Text(
-          text,
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 16,
-          ),
-        ),
+        child: child,
       ),
     );
   }

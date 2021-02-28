@@ -1,4 +1,5 @@
 import 'package:e_exame/application/auth/signin_and_register/signin_and_register_bloc.dart';
+import 'package:e_exame/presentation/shared/dialog.dart';
 import 'package:fa_stepper/fa_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +31,40 @@ class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SigninAndRegisterBloc, SigninAndRegisterState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state.authFailureOrSuccess.isSome()) {
+          state.authFailureOrSuccess.fold(
+            () {},
+            (a) => a.fold(
+              (l) => l.maybeMap(
+                  emailIsAlreadyInUse: (_) {
+                    showMessage(context,
+                        message: 'Email is already in use', title: 'Error');
+                  },
+                  serverError: (_) {
+                    showMessage(context,
+                        message: 'Server error', title: 'Error');
+                  },
+                  noSuchLevel: (_) {
+                    showMessage(context,
+                        message: 'no such a level', title: 'Error');
+                  },
+                  noSuchCategory: (_) {
+                    showMessage(context,
+                        message: 'no such a gategory', title: 'Error');
+                  },
+                  orElse: () {}),
+              (r) {
+                showMessage(
+                  context,
+                  message: 'Email is successfuly created',
+                  title: 'Success',
+                );
+              },
+            ),
+          );
+        }
+      },
       builder: (context, state) {
         return Background(
           formKey: formKeys[_currentStep],
@@ -336,21 +370,24 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   Row(
                     children: [
-                      SizedBox(
-                        width: 100,
-                        height: 50,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          color: const Color(MyColors.textFieldIcons),
-                          onPressed: onStepContinue,
-                          child: Text(
-                            _currentStep == 2 ? "Sign up" : "Next",
-                            style: const TextStyle(fontSize: 16),
+                      if (state.isSubmiting)
+                        const CircularProgressIndicator()
+                      else
+                        SizedBox(
+                          width: 100,
+                          height: 50,
+                          child: RaisedButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            color: const Color(MyColors.textFieldIcons),
+                            onPressed: onStepContinue,
+                            child: Text(
+                              _currentStep == 2 ? "Sign up" : "Next",
+                              style: const TextStyle(fontSize: 16),
+                            ),
                           ),
                         ),
-                      ),
                       const SizedBox(
                         width: 15,
                       ),
